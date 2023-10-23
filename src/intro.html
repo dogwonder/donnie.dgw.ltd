@@ -1,0 +1,20 @@
+{% extends "layouts/swf.html" %}
+
+{% set swfFile = "intro.swf" %}
+
+{% block content %}
+<div id="swf"></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.RufflePlayer = window.RufflePlayer || {};
+  window.addEventListener("load", (event) => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      const container = document.getElementById("swf");
+      container.appendChild(player);
+      player.load("{{ swfFile }}");
+  });
+</script>
+{% endblock %}

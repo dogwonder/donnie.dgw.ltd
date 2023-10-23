@@ -1,2 +1,0 @@
-playing = false;
-stop();

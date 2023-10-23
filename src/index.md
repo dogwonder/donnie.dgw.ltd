@@ -1,6 +1,4 @@
 ---
 title: 'Donnie Darko'
-layout: 'layouts/home.html'
+layout: 'layouts/swf.html'
 ---
-
-Hello world!

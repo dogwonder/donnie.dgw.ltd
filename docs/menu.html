@@ -27,8 +27,8 @@
     <main>
       <div class="container full">
         
-              This is content
-        
+<div id="swf"></div>
+
       </div>
     </main>
 
@@ -36,6 +36,17 @@
 
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 
+    
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+          const ruffle = window.RufflePlayer.newest();
+          const player = ruffle.createPlayer();
+          const container = document.getElementById("swf");
+          container.appendChild(player);
+          player.load("menu.swf");
+      });
+    </script>
     
 
     
