@@ -101,11 +101,71 @@
       "type": "html"
     },
     {
+      "url": "news/newspaper4.htm", 
+      "type": "html"
+    },
+    {
       "url": "news/newspaper6.htm", 
       "type": "html"
     },
     {
+      "url": "news/pop1.html", 
+      "type": "html"
+    },
+    {
       "url": "news/pop2.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/pop3.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/pop6.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/index1.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/index2.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/index3.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/index4.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/index5.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/index6.html", 
+      "type": "html"
+    },
+    {
+      "url": "news/header.html", 
+      "type": "html"
+    },
+    {
+      "url": "pop/go_level2.html", 
+      "type": "html"
+    },
+    {
+      "url": "pop/level2.html", 
+      "type": "html"
+    },
+    {
+      "url": "pop/pop_level2.html", 
+      "type": "html"
+    },
+    {
+      "url": "pop/level3.html", 
       "type": "html"
     },
     {
@@ -189,68 +249,9 @@
       "url": "further.html", 
       "type": "html"
     },
-    {
-      "url": "news/header.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/index1.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/index2.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/index3.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/index4.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/index5.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/index6.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/newspaper4.htm", 
-      "type": "html"
-    },
-    {
-      "url": "news/pop1.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/pop3.html", 
-      "type": "html"
-    },
-    {
-      "url": "news/pop6.html", 
-      "type": "html"
-    },
+  
     {
       "url": "pop/close.html", 
-      "type": "html"
-    },
-    {
-      "url": "pop/go_level2.html", 
-      "type": "html"
-    },
-    {
-      "url": "pop/level2.html", 
-      "type": "html"
-    },
-    {
-      "url": "pop/level3.html", 
-      "type": "html"
-    },
-    {
-      "url": "pop/pop_level2.html", 
       "type": "html"
     },
     {
@@ -266,7 +267,7 @@
       "type": "html"
     },
     {
-      "url": "the/tangent", 
+      "url": "the/tangent/index.html", 
       "type": "folder"
     },
     {

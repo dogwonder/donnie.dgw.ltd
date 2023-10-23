@@ -1,0 +1,17 @@
+---
+permalink: /news/pop3.html
+---
+
+{% extends "layouts/swf.html" %}
+
+{% block content %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function openPopup() {
+    window.open("/news/newspaper2.html", "newspaper2", "width=800,height=600");
+  }
+  window.addEventListener("load", openPopup);
+</script>
+{% endblock %}

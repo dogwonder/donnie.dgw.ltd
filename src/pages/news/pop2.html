@@ -1,4 +1,17 @@
-<html>
-    <head></head>
-    <body></body>
-</html>
+---
+permalink: /news/pop2.html
+---
+
+{% extends "layouts/swf.html" %}
+
+{% block content %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function openPopup() {
+    window.open("/news/newspaper3.html", "newspaper3", "width=800,height=600");
+  }
+  window.addEventListener("load", openPopup);
+</script>
+{% endblock %}

@@ -1,0 +1,31 @@
+---
+permalink: /the/tangent/index.html
+---
+
+{% css %}
+html body {
+    background-color: #333333;
+    color: #000000;
+}
+body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+{% endcss %}
+
+{% extends "layouts/swf.html" %}
+
+{% block content %}
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+    <tbody>
+        <tr>
+            <td align="right" valign="bottom">
+                <object>
+                    <embed src="/the/tangent/smurf.swf" width="800" height="500" />
+                </object>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
