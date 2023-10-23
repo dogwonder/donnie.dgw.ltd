@@ -1,0 +1,23 @@
+{% extends "layouts/full.html" %}
+
+{% block content %}
+  <div class="wrapper">
+    <section>
+      <div id="swf"></div>
+    </section>
+  </div> 
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.RufflePlayer = window.RufflePlayer || {};
+  window.addEventListener("load", (event) => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      const container = document.getElementById("swf");
+      container.appendChild(player);
+      player.load("{{ "/" | url }}swf/intro.swf");
+  });
+</script>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+{% endblock %}

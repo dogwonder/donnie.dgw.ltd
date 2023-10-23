@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="419.45px" width="739.45px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, -5.0, -81.5)">
+    <path d="M61.0 110.65 L159.05 161.7 M6.0 82.0 L57.85 109.0" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0"/>
+    <path d="M309.2 251.6 L624.95 408.95 M413.95 259.0 L743.95 345.95" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0"/>
+    <path d="M201.1 183.6 L57.0 500.95 44.0 500.95 190.6 178.0 201.1 183.6 M225.2 196.45 L87.0 500.95 81.0 500.95 220.4 193.9 225.2 196.45 M291.85 225.9 L167.0 500.95 160.0 500.95 285.6 224.3 291.85 225.9 M317.85 232.5 L196.0 500.95 187.0 500.95 309.8 230.45 317.85 232.5 M304.4 229.1 L181.0 500.95 175.0 500.95 299.05 227.7 304.4 229.1 M251.0 210.2 L119.0 500.95 116.0 500.95 248.6 208.9 251.0 210.2 M270.0 220.3 L278.45 222.45 152.0 500.95 130.0 500.95 259.85 214.9 270.0 220.3 M238.1 203.35 L103.0 500.95 100.0 500.95 235.7 202.05 238.1 203.35 M233.3 200.75 L97.0 500.95 95.0 500.95 231.65 199.9 233.3 200.75 M162.35 163.15 L9.0 500.95 5.0 500.95 159.15 161.45 162.35 163.15" fill="url(#gradient0)" fill-rule="evenodd" stroke="none"/>
+  </g>
+  <defs>
+    <radialGradient cx="0" cy="0" gradientTransform="matrix(0.4683, 0.0, -0.2126, 0.4683, 54.95, 489.95)" gradientUnits="userSpaceOnUse" id="gradient0" r="819.2" spreadMethod="pad">
+      <stop offset="0.0" stop-color="#ff0000"/>
+      <stop offset="1.0" stop-color="#000000"/>
+    </radialGradient>
+  </defs>
+</svg>

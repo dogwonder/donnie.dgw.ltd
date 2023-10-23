@@ -1,0 +1,8 @@
+swfcombine -d clouds.swf -o clouds_new.swf
+
+ https://web.archive.org/web/20040611154855fw_/http://www.donniedarko.com/intro.swf
+ https://web.archive.org/web/20040611154855fw_/http://www.donniedarko.com/clouds.swf
+ 
+
+https://web.archive.org/web/20160303085928oe_/http://archive.hi-res.net/donniedarko/book.swf
+https://web.archive.org/web/20160303085928oe_/http://archive.hi-res.net/donniedarko/menu.swf

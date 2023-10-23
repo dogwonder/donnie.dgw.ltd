@@ -1,0 +1,29 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  font-family: var(--heading);
+  line-height: 1;
+  margin-inline: 0;
+  margin-block: 1em 1rem;
+}
+
+//Usage @extend %dgwltd-heading-m;
+%dgwltd-heading-xl,
+.dgwltd-heading-xl,
+h1 {
+  font-size: var(--font-size-xxxl);
+  line-height: var(--line-height-small);
+  letter-spacing: var(--letter-spacing-small);
+}
+
+%dgwltd-heading-l,
+.dgwltd-heading-l,
+h2 {
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-small);
+  letter-spacing: var(--letter-spacing-small);
+}

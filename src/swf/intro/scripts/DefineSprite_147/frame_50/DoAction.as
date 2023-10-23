@@ -1,0 +1,2 @@
+_root.nextFrame();
+stop();

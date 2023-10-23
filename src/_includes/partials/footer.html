@@ -1,0 +1,8 @@
+<footer class="dgwltd-footer container">
+  <ul>
+    {% for menu in menusFooter -%}
+      <li class="{{ menu.classes }}">{{ menu.label }}</li>
+    {%- endfor %}
+  </ul>
+  <p>© {% year %} Dogwonder Ltd.</p>
+</footer>

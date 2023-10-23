@@ -1,0 +1,53 @@
+
+html { font-family: var(--body), Helvetica, Arial, sans-serif; }
+
+//Global
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--body);
+  font-weight: normal;
+  font-size: var(--font-size-base); 
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  word-spacing: var(--word-spacing--base);
+  text-align: left;
+  background-color: var(--background);
+  color: var(--text-color);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+//Links
+a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-thickness: unquote("max(0.0875em, .0625rem)");
+  text-underline-offset: 0.1em;
+  &:visited {
+    color: var(--text-color);
+  }
+  &:hover {
+    text-decoration-color: var(--highlight);
+  }
+  &:active {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  &:focus {
+    color: var(--text-color);
+    background-color: var(--focus);
+    outline: 3px solid transparent;
+    box-shadow: 0 -2px var(--focus), 0 4px #0b0c0c;
+    text-decoration: none;
+  }
+}
+
+.dgwltd-header {
+    .logo {
+        width: clamp(2rem, 1.80rem + 1.00vw, 3rem);
+        height: clamp(2rem, 1.80rem + 1.00vw, 3rem);
+    }
+  }

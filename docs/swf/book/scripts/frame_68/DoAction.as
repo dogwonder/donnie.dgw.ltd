@@ -1,0 +1,1 @@
+spear.gotoAndPlay("level3");
