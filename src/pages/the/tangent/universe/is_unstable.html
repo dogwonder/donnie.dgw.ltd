@@ -2,10 +2,28 @@
 permalink: /the/tangent/universe/is_unstable.html
 ---
 
-{% extends "layouts/swf.html" %}
+{% css %}
+html body {
+    background-color: #000000;
+}
+body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+{% endcss %}
 
-{% set swfFile = "/the/tangent/universe/philosophy.swf" %}
+{% extends "layouts/base.html" %}
 
 {% block content %}
-<div id="swf"></div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+    <tbody><tr>
+      <td align="right" valign="top">
+        <object>
+          <embed src="/the/tangent/universe/philosophy.swf" width="800" height="500">
+        </object>
+      </td>
+    </tr>
+  </tbody>
+</table>
 {% endblock %}

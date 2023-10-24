@@ -4,6 +4,7 @@ const sass = require("sass");
 const path = require('node:path');
 const slugify = require("slugify");
 const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
+const now = String(Date.now())
 
 // Create a helpful production flag
 const isProduction = process.env.NODE_ENV === 'production';
@@ -12,14 +13,19 @@ module.exports = eleventyConfig => {
 
     eleventyConfig.addPassthroughCopy({"src/images": "images"});
     eleventyConfig.addPassthroughCopy({"src/scripts": "scripts"});
+    eleventyConfig.addPassthroughCopy({'./node_modules/alpinejs/dist/cdn.min.js': './scripts/alpine.js'})
     eleventyConfig.addPassthroughCopy({"src/files": "./"});
     eleventyConfig.addPassthroughCopy({"src/swf": "./"});
     eleventyConfig.addPassthroughCopy({"src/dns": "./"});
     eleventyConfig.addPassthroughCopy({"src/fonts": "fonts"});
 
+    //Tailwind
+    eleventyConfig.addWatchTarget('./tailwind.config.js')
+    eleventyConfig.addWatchTarget('./css/tailwind.css')
+
     //Plugins 
     eleventyConfig.addPlugin(EleventyRenderPlugin);
-    eleventyConfig.addPlugin(bundlerPlugin)
+    eleventyConfig.addPlugin(bundlerPlugin);
     eleventyConfig.addPlugin(lightningCSS);
 
     //Templates
@@ -56,15 +62,19 @@ module.exports = eleventyConfig => {
       return new Date().getFullYear();
   });
 
-    return {
-      markdownTemplateEngine: 'njk',
-      dataTemplateEngine: 'njk',
-      htmlTemplateEngine: 'njk',
-      dir: {
-        input: 'src',
-        output: 'docs'
-      }
-    };
+  eleventyConfig.addShortcode('version', function () {
+    return now
+  });
+
+  return {
+    markdownTemplateEngine: 'njk',
+    dataTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    dir: {
+      input: 'src',
+      output: 'docs'
+    }
+  };
 
 
 }

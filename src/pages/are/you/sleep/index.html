@@ -1,0 +1,19 @@
+---
+permalink: /are/you/sleep/index.html
+---
+
+{% extends "layouts/base.html" %}
+
+{% css %}
+html body {
+    background-color: #666666;
+}
+{% endcss %}
+
+{% extends "layouts/base.html" %}
+
+{% set swfFile = "/are/you/linker.swf" %}
+
+{% block content %}
+<div id="swf"></div>
+{% endblock %}

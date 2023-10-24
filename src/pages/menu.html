@@ -2,10 +2,30 @@
 permalink: /menu.html
 ---
 
-{% extends "layouts/swf.html" %}
+{% extends "layouts/base.html" %}
 
-{% set swfFile = "menu.swf" %}
+{% css %}
+body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+{% endcss %}
+
 
 {% block content %}
-<div id="swf"></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" height="100%">
+    <tbody>
+      <tr>
+        <td valign="bottom"> 
+          <div align="right">
+            <object>
+              <embed src="/menu.swf" width="800" height="500">
+            </object>
+            <!-- <p class="font-bold text-red-500 pb-2 pr-4"><a href="/the/tangent">Do you believe in time travel?</a></p> -->
+          </div>
+        </td>
+      </tr>
+    </tbody>
+</table>
 {% endblock %}
