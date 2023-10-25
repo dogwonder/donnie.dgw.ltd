@@ -9,7 +9,7 @@
     overflow-y: hidden;
 }
 .iframe-modal  {
-  max-width: 700px !important;
+  max-width: 730px !important;
 }
 @font-face {
       font-family: 'Söhne Dreiviertelfett';
@@ -29,9 +29,6 @@
     
 <link rel="stylesheet" href="/css/98.css" /> 
 
-
-    <script type="module" src=""></script>
-    
 
   </head>
   <body>
@@ -58,15 +55,12 @@
       <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
 
       <!-- Panel -->
-      <div
-          class="relative min-h-screen flex items-center justify-center p-4"
-      >
+      <div class="relative min-h-screen flex items-center justify-center p-4">
           <div
               x-dialog:panel
               x-transition
-              class="iframe-modal relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
+              class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
           >
-
               <div class="title-bar">
                 <div class="title-bar-text"></div>
                 <div class="title-bar-controls">
@@ -93,12 +87,12 @@
     <!--Alpine JS-->
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.1-beta.0/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/focus@3.13.1/dist/cdn.min.js"></script>
-    <script defer src=" /scripts/alpine.js?v=1698230934298"></script>
+    <script defer src=" /scripts/alpine.js?v=1698252603741"></script>
     
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698230934298"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698252603741"></script> -->
 
     
 
@@ -108,6 +102,10 @@
           unmuteOverlay: "hidden",
       };
     </script>
+
+    <script type="module" src="/bundle/rY6FaQK-hJ.js"></script>
+    
+
 
     
 

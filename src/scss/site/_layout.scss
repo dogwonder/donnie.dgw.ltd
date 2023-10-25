@@ -4,6 +4,7 @@ html { font-family: var(--body), Helvetica, Arial, sans-serif; }
 //Global
 html {
   font-size: 100%;
+  height: 100%;
 }
 
 body {
@@ -18,6 +19,11 @@ body {
   color: var(--text-color);
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100%;
+}
+
+main {
+  height: 100%;
 }
 
 //Links

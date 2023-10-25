@@ -1,4 +1,12 @@
-ruffle-player {
-    width: 100%;
-    height: 100vh;
+object.aspect-ratio {
+    display:block;
+    width: 100vw;
+    @media (min-width: $lg) {
+        width: 60vw;
+    }
+    ruffle-player, 
+    ruffle-embed {
+        width: 100%;
+        height: 100vh;
+    }
 }

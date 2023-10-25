@@ -2,12 +2,23 @@
 permalink: /are/you/sleep/golfing/index.html
 ---
 
+{% css %}
+html body {
+    background-color: #000000;
+    color: white;
+}
+{% endcss %}
+
 {% extends "layouts/base.html" %}
 
-{% set swfFile = "/are/you/sleep/golfing/golf.swf" %}
-
-{# Style this without tables black background #}
 
 {% block content %}
-<div id="swf"></div>
+<div class="flex items-end h-full">
+    <object class="aspect-ratio">
+        <embed src="/are/you/sleep/golfing/golf.swf" width="800" height="500">
+    </object>  
+</div>
+{% endblock %}
+
+{% block scripts %}
 {% endblock %}

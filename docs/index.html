@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex">
 
-    <style>body {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-@font-face {
+    <style>@font-face {
       font-family: 'Söhne Dreiviertelfett';
       font-weight: 700;
       font-style: normal;
@@ -27,9 +22,6 @@
 
     
 
-    <script type="module" src=""></script>
-    
-
   </head>
   <body>
 
@@ -37,20 +29,11 @@
     <main>
       <div class="container full">
         
-<table width="100%" border="0" cellpadding="0" cellspacing="0" height="100%">
-  <tbody>
-    <tr>
-      <td valign="bottom"> 
-        <div align="right">
-          <object>
-            <embed src="/intro.swf" width="800" height="500">
-          </object>
-          <!-- <p class="font-bold text-red-500 pb-2 pr-4"><a href="/the/tangent">Do you believe in time travel?</a></p> -->
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="flex items-end justify-end h-full">
+  <object class="aspect-ratio">
+    <embed src="/intro.swf" width="800" height="500">
+  </object>  
+</div>
 
       </div>
     </main>
@@ -61,7 +44,7 @@
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698230934298"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698252603741"></script> -->
 
     
 
@@ -72,14 +55,11 @@
       };
     </script>
 
+    <script type="module" src="/bundle/rY6FaQK-hJ.js"></script>
     
-<script>
-// const rufflePlayer = RufflePlayer.newest(ruffleContainer, "/intro.swf");
 
-// rufflePlayer.on("finish", () => {
-//   console.log("End of playback reached");
-// });
-</script>
+
+    
 
 
   </body>

@@ -24,9 +24,8 @@
     <link rel="stylesheet" href="/css/tailwind.css" /> 
 
     
+<link rel="stylesheet" href="/css/98.css" /> 
 
-    <script type="module" src=""></script>
-    
 
   </head>
   <body>
@@ -35,9 +34,48 @@
     <main>
       <div class="container full">
         
-<object>
-    <embed src="/news/header.swf" width="770" height="52" />
-</object>
+
+<div class="flex items-center justify-center">
+    <object>
+        <embed src="/news/header.swf" width="770" height="52" />
+    </object>
+</div>
+
+<div x-data="{ open: true }" class="flex justify-center">
+
+    <!-- Modal -->
+    <div
+        x-dialog
+        x-model="open"
+        style="display: none"
+        class="fixed inset-0 overflow-y-auto z-10"
+    >
+        <!-- Overlay -->
+        <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
+  
+        <!-- Panel -->
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div
+                x-dialog:panel
+                x-transition
+                class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
+            >
+                <div class="title-bar">
+                  <div class="title-bar-text"></div>
+                  <div class="title-bar-controls">
+                      <button aria-label="Close" @click="$dialog.close()"></button>
+                    </div>
+                </div>
+  
+                <!-- Body -->
+                <div class="p-1">
+                    The following document may give you knowledge which you may not want to have prior to seeing the movie!
+                </div>
+  
+            </div>
+        </div>
+    </div>
+  </div>
 
       </div>
     </main>
@@ -45,10 +83,15 @@
     <script type="module" src=""></script>
     
     
+    <!--Alpine JS-->
+    <script defer src="https://unpkg.com/@alpinejs/ui@3.13.1-beta.0/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/@alpinejs/focus@3.13.1/dist/cdn.min.js"></script>
+    <script defer src=" /scripts/alpine.js?v=1698252603741"></script>
+    
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698230934298"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698252603741"></script> -->
 
     
 
@@ -59,10 +102,11 @@
       };
     </script>
 
+    <script type="module" src="/bundle/rY6FaQK-hJ.js"></script>
     
-<script>
-    window.alert("The following document may give you knowledge which you may not want to have prior to seeing the movie!");
-</script>
+
+
+    
 
 
   </body>

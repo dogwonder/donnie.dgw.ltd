@@ -1,3 +1,13 @@
+@function px-to-em($px, $base-font-size: 16px) {
+    @return ($px / $base-font-size) * 1em;
+}
+
+$sm: px-to-em(320px);
+$md: px-to-em(768px);
+$lg: px-to-em(1024px);
+$xl: px-to-em(1440px);
+$xxl: px-to-em(1920px);
+
 :root {
     --body: -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans","Helvetica Neue",sans-serif;
     --heading: "Söhne Dreiviertelfett", sans-serif;

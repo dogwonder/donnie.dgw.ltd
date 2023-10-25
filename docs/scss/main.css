@@ -155,6 +155,7 @@ html {
 
 html {
   font-size: 100%;
+  height: 100%;
 }
 
 body {
@@ -169,6 +170,11 @@ body {
   color: var(--text-color);
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100%;
+}
+
+main {
+  height: 100%;
 }
 
 a {
@@ -200,7 +206,17 @@ a:focus {
   height: clamp(2rem, 1.8rem + 1vw, 3rem);
 }
 
-ruffle-player {
+object.aspect-ratio {
+  display: block;
+  width: 100vw;
+}
+@media (min-width: 64em) {
+  object.aspect-ratio {
+    width: 60vw;
+  }
+}
+object.aspect-ratio ruffle-player,
+object.aspect-ratio ruffle-embed {
   width: 100%;
   height: 100vh;
 }
@@ -241,6 +257,7 @@ ruffle-player {
 
 .container {
   width: 100%;
+  height: 100%;
   max-width: var(--containerWidth);
   position: relative;
   margin: 0;

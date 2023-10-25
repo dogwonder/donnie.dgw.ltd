@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex">
 
-    <style>@font-face {
+    <style>html body {
+    background-color: #000000;
+    color: white;
+}
+@font-face {
       font-family: 'Söhne Dreiviertelfett';
       font-weight: 700;
       font-style: normal;
@@ -22,9 +26,6 @@
 
     
 
-    <script type="module" src=""></script>
-    
-
   </head>
   <body>
 
@@ -32,7 +33,11 @@
     <main>
       <div class="container full">
         
-<div id="swf"></div>
+<div class="flex items-end h-full">
+    <object class="aspect-ratio">
+        <embed src="/are/you/sleep/golfing/golf.swf" width="800" height="500">
+    </object>  
+</div>
 
       </div>
     </main>
@@ -43,19 +48,8 @@
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698230934298"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698252603741"></script> -->
 
-    
-    <script>
-      window.RufflePlayer = window.RufflePlayer || {};
-      window.addEventListener("load", (event) => {
-          const ruffle = window.RufflePlayer.newest();
-          const player = ruffle.createPlayer();
-          const container = document.getElementById("swf");
-          container.appendChild(player);
-          player.load("/are/you/sleep/golfing/golf.swf");
-      });
-    </script>
     
 
     <script>
@@ -65,7 +59,12 @@
       };
     </script>
 
+    <script type="module" src="/bundle/rY6FaQK-hJ.js"></script>
     
+
+
+    
+
 
   </body>
 </html>
