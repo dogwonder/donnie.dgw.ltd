@@ -22,6 +22,8 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="{{ "/" | url }}css/tailwind.css" /> 
 
+    {% block styles %}{% endblock %}
+
     <script type="module" src="{% getBundleFileUrl 'js', 'default' %}"></script>
     {% js %}
     {% endjs %}
@@ -49,6 +51,7 @@
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <!-- <script defer src="{{ " /" | url }}scripts/ruffle.js?v={% version %}"></script> -->
 
     {% if swfFile %}
     <script>

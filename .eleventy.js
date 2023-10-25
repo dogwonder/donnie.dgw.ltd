@@ -18,10 +18,12 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy({"src/swf": "./"});
     eleventyConfig.addPassthroughCopy({"src/dns": "./"});
     eleventyConfig.addPassthroughCopy({"src/fonts": "fonts"});
+    eleventyConfig.addPassthroughCopy({"src/scss/vendor/98": "css"});
+    
 
     //Tailwind
-    eleventyConfig.addWatchTarget('./tailwind.config.js')
-    eleventyConfig.addWatchTarget('./css/tailwind.css')
+    eleventyConfig.addWatchTarget('tailwind.config.js')
+    eleventyConfig.addWatchTarget('css/tailwind.css')
 
     //Plugins 
     eleventyConfig.addPlugin(EleventyRenderPlugin);
