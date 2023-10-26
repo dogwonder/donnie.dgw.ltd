@@ -12,8 +12,10 @@ html body {
 
 {% extends "layouts/base.html" %}
 
-{% set swfFile = "/are/you/linker.swf" %}
-
 {% block content %}
-<div id="swf"></div>
+<div class="h-screen flex items-center justify-center text-center">
+    <object>
+        <embed src="/are/you/sleep/linker.swf" width="80" height="80">
+    </object>  
+</div>
 {% endblock %}

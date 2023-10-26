@@ -1,0 +1,22 @@
+---
+permalink: /from/the/sky/index.html
+---
+
+{% css %}
+html body {
+    background-color: #ddddcc;
+}
+{% endcss %}
+
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="flex items-end h-full">
+    <object class="aspect-ratio">
+        <embed src="/from/the/sky/trampolin.swf" width="800" height="500">
+    </object>  
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

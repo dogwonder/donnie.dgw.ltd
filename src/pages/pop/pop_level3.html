@@ -10,15 +10,25 @@ permalink: /pop/pop_level3.html
 
 {% css %}
 html body {
-    background-color: #000000;
+    background-image: url("{{ "/" | url }}images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 {% endcss %}
 
 {% block content %}
 <div class="flex items-end justify-end h-full">
-  <object class="aspect-ratio">
-      <embed src="/pop/pass3.swf" width="800" height="500">
-  </object>  
+  <div class="window m-56">
+    <div class="title-bar">
+      <div class="title-bar-text"></div>
+      <div class="title-bar-controls">
+          <button aria-label="Close" @click="$dialog.close()"></button>
+        </div>
+    </div>
+    <object>
+        <embed src="/pop/pass3.swf" width="400" height="400">
+    </object>  
+  </div>
 </div>
 {% endblock %}
 

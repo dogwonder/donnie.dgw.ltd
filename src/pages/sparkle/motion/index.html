@@ -4,5 +4,17 @@ permalink: /sparkle/motion/index.html
 
 {% extends "layouts/base.html" %}
 
+{% css %}
+html body {
+    background-color: #000000;
+    background: linear-gradient(to bottom, #3c3a3c, #000000);
+}
+{% endcss %}
+
 {% block content %}
+<div class="flex items-end justify-end h-full">
+  <object class="aspect-ratio">
+    <embed src="/sparkle/motion/phase2_end.swf" width="800" height="500">
+  </object>  
+</div>
 {% endblock %}
