@@ -7,17 +7,53 @@ html body {
     background-color: #000000;
     color: white;
 }
+.ruffle-container {
+    display:block;
+    width: 100vw;
+}
+.ruffle-container ruffle-player {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 800 / 500;
+}
+@media (min-width: 1280px) {
+    .ruffle-container {
+        width: 60vw;
+    }
+}
+p {
+    max-width: 60vw;
+    font-size: 14px;
+}
+p > a {
+    color: white !important;
+}
 {% endcss %}
 
 {% extends "layouts/base.html" %}
 
 {% block content %}
+
 <div class="flex items-end h-full">
-    <object class="aspect-ratio">
-        <embed src="/are/you/sleep/golfing/golf.swf" width="800" height="500">
-    </object>  
+    <div id="swf" class="ruffle-container"></div>
+    <p>* The second part of this game is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game <a href="/are/you/sleep/golfing/missing/1.html">click here</a> to continue </p>
 </div>
 {% endblock %}
 
 {% block scripts %}
+<script>
+window.RufflePlayer = window.RufflePlayer || {};
+window.addEventListener("load", (event) => {
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    const container = document.getElementById("swf");
+    container.appendChild(player);
+    player.load({
+        url: "/are/you/sleep/golfing/golf.swf", 
+        parameters: "", 
+    });
+    player.style.width = "800px"; 
+    player.style.height = "500px";
+});
+</script>
 {% endblock %}

@@ -206,17 +206,16 @@ a:focus {
   height: clamp(2rem, 1.8rem + 1vw, 3rem);
 }
 
-object.aspect-ratio {
+.aspect-ratio {
   display: block;
   width: 100vw;
 }
 @media (min-width: 64em) {
-  object.aspect-ratio {
+  .aspect-ratio {
     width: 60vw;
   }
 }
-object.aspect-ratio ruffle-player,
-object.aspect-ratio ruffle-embed {
+.aspect-ratio ruffle-embed {
   width: 100%;
   height: 100vh;
 }

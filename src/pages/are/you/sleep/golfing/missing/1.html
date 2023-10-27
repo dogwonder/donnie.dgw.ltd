@@ -1,0 +1,92 @@
+---
+permalink: /are/you/sleep/golfing/missing/1.html
+---
+
+{% css %}
+html body {
+    background-color: #000000;
+    color: white;
+}
+.aspect-ratio {
+    position: relative;
+    aspect-ratio: 800 / 500;
+}
+.aspect-ratio canvas {
+    width: 100%;
+    height: auto;
+    background-image: url("/images/missing/exercise-1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.exercise-1 {
+    position: absolute;
+    right: 8.5rem;
+    top: 5rem;
+}
+.exercise-1 p {
+    font-size: 1rem;
+    margin-block-end: 0.75rem;
+}
+{% endcss %}
+
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="flex items-end h-full">
+    <div class="aspect-ratio">
+        <!-- <img id="image" src="/images/missing/exercise-1.jpg"> -->
+        <canvas id="image" width="800" height="500"></canvas>
+        <div class="exercise-1">
+                <p>Lifeline Exercise #1</p>
+                <p>Juanita has an important math test<br>
+                today. She has known about it for<br> 
+                several weeks, but has not studied. In<br>
+                order to keep from failing the class<br>
+                Juanita decides that she will cheat on<br>
+                the math test.
+                </p>
+                <p>Please make your mark on the Lifeline.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const image = document.getElementById('image');
+    const ctx = image.getContext('2d');
+    const color = 'white';
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    function drawLine(x1, y1, x2, y2) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = color; // Set the stroke color
+        ctx.stroke();
+    }
+
+    image.addEventListener('mousedown', (event) => {
+        isDrawing = true;
+        lastX = event.offsetX;
+        lastY = event.offsetY;
+    });
+
+    image.addEventListener('mousemove', (event) => {
+        if (isDrawing) {
+            drawLine(lastX, lastY, event.offsetX, event.offsetY);
+            lastX = event.offsetX;
+            lastY = event.offsetY;
+        }
+    });
+
+    image.addEventListener('mouseup', () => {
+        isDrawing = false;
+        // Load 2.html when the X is drawn
+        window.location.href = '2.html';
+    });
+</script>
+{% endblock %}
