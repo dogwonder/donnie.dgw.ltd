@@ -240,12 +240,12 @@
     <!--Alpine JS-->
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.1-beta.0/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/focus@3.13.1/dist/cdn.min.js"></script>
-    <script defer src=" /scripts/alpine.js?v=1698423643554"></script>
+    <script defer src=" /scripts/alpine.js?v=1698423788418"></script>
     
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698423643554"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698423788418"></script> -->
 
     
 
@@ -303,7 +303,6 @@
 
         const cells = document.querySelectorAll('.col');
         const order = [0, 1, 8, 9, 13, 12, 6, 3, 4, 11, 15, 16];
-        const orderSorted = order.sort((a, b) => a - b);
 
         for (let i = 0; i < order.length; i++) {
             setTimeout(() => {
@@ -314,6 +313,8 @@
                 }
             }, i * 200);
         }
+
+        const orderSorted = order.slice().sort((a, b) => a - b);
 
         document.addEventListener('animationCompleted', () => {
             for (let i = 0; i < orderSorted.length; i++) {
