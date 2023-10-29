@@ -1,0 +1,54 @@
+---
+permalink: /are/you/sleep/golfing/missing/6.html
+---
+
+{% block styles %}
+<link rel="stylesheet" href="{{ "/" | url }}css/98.css" /> 
+{% endblock %}
+
+{% css %}
+html body {
+    background-color: #000000;
+    color: white;
+}
+.window {
+    width: 200px;
+    height: 200px;
+}
+.window img {
+    width: 100%;
+    height: calc(100% - 22px);
+    object-fit: cover;
+}
+.interlace:hover {
+    cursor: pointer;
+    filter: url(#noise);
+    animation: .3s linear forwards noise infinite;
+}
+{% endcss %}
+
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="flex items-end h-full">
+    <div class="aspect-ratio">
+        <img class="" src="/images/missing/sleepgolfing-bg-3.jpg">
+    </div>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">Some text</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>    
+            </div>
+          </div>
+          <div class="interlace">
+            <img src="/images/missing/sleepgolfing-wallet.jpg">
+          </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

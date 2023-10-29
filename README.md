@@ -55,9 +55,14 @@ https://archive.hi-res.net/donniedarko/the/tangent/universe/is_unstable.html
 
 # Need to recreate:
 
+Need to get audio for the missing pages - Lossless cut
+
 Level 2 - http://localhost:8080/aid/aid6.html
 5.html - Golf course 'Do you think he was sleepgolfing' click on donnie
 6.html - animation of donnie waking up. click on white arrow. popup asks "who found the wallet?" enter ling ling / or not. (from what i can tell the screen leads to the same/next page automatically even if you don't enter the password).
 7.html - sidewalk screen - ("i've been waiting for you"). click on o dot - a popup of donnie looking at jim's wallet appears. click inside popup.
 8.html - red lines remain - click on the blinking red dot at the tip of the longest line. this leads to a popup article on Cunning Visions. ..... go to next section
 
+# Credit
+https://jdan.github.io/98.css/
+https://aaadaaam.com - noise filters

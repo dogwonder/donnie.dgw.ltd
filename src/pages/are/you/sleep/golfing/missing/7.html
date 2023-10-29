@@ -1,0 +1,77 @@
+---
+permalink: /are/you/sleep/golfing/missing/7.html
+---
+
+{% css %}
+html body {
+    background-color: #000000;
+    color: white;
+}
+.line {
+    height: 2px;
+    width: 0;
+    background: #be2538;
+    transform: rotate(-45deg);
+    transform-origin: left;
+    animation: grow 1s linear forwards;
+    position: absolute;
+    top: 0;
+    margin-block-start: var(--line-height, 600px);
+    left: var(--line-offset, 600px);
+    --line-animation: 600px;
+}
+.line-100 {
+    --line-offset: 100px;
+    --line-animation: 100px;
+}
+.line-200 {
+    --line-offset: 200px;
+    --line-animation: 200px;
+}
+.line-200:nth-of-type(1) {
+    --line-offset: 210px;
+    --line-animation: 220px
+}
+.line-300 {
+    --line-offset: 300px;
+    --line-animation: 300px;
+}
+.line-400 {
+    --line-offset: 400px;
+    --line-animation: 400px;
+}
+.line-500 {
+    --line-offset: 500px;
+    --line-animation: 500px;
+}
+.line-600 {
+    --line-offset: 600px;
+    --line-animation: 600px;
+}
+@keyframes grow {
+    to {
+        width: var(--line-animation);
+    }
+}
+{% endcss %}
+
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="flex items-end h-full">
+    <div class="aspect-ratio">
+        <div class="lines">
+        <div class="line opacity-20 line-200"></div>
+        <div class="line opacity-10 line-200"></div>
+        <div class="line opacity-70 line-100"></div>
+        <div class="line opacity-40 line-300"></div>
+        <div class="line opacity-90 line-600"></div>
+        <div class="line opacity-40 line-500"></div>
+        <div class="line opacity-70 line-100"></div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
