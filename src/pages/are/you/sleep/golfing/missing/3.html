@@ -98,15 +98,38 @@ html body {
 .iframe-modal  {
     max-width: 730px !important;
 }
+.start {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index:10000;
+}
+#playButton svg {
+    width: 1em;
+    height: 1em;
+}
+#playButton {
+    display: flex;
+    align-items: center;
+    justify-center: center;
+    gap: 1ch;
+}
 {% endcss %}
 
-{% extends "layouts/base.html" %}
+{% extends "layouts/base-no-swf.html" %}
 
 {% block content %}
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
         <div class="scene-fear-love">
-            <div class="scene-1" id="scene-1" style="display: block;">
+            <div class="start" id="scene-0" style="display: block;">
+                <button id="playButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+                    Play
+                </button>
+            </div>
+            <div class="scene-1" id="scene-1" style="display: none;">
                 well, life isn't that simple. I mean - who cares if Ling Ling returns the<br>
                 wallet and keeps the money? It has nothing to do with either fear or<br> 
                 love. there are other things that need to be taken into account here,<br> 
@@ -218,44 +241,66 @@ html body {
 
 {% block scripts %}
 <script>
+    
 
-    const cells = document.querySelectorAll('.col');
-    const text = document.getElementById('scene-1');
-    const words = text.innerHTML.split(' ');
-    text.innerHTML = '';
+    const animateText = function() {
 
-    const numTimeouts = words.length;
-    let timeoutsFinished = 0;
+        const text = document.getElementById('scene-1');
+        const words = text.innerHTML.split(' ');
+        text.innerHTML = '';
+        const cells = document.querySelectorAll('.col');
 
-    for (let i = 0; i < words.length; i++) {
+        const numTimeouts = words.length;
+        let timeoutsFinished = 0;
+
+        const audio = new Audio('/mp3/lifeline-1.mp3');
+        audio.play();
+
+        for (let i = 0; i < words.length; i++) {
         setTimeout(() => {
-            text.innerHTML += words[i] + ' ';
-            timeoutsFinished++;
-            if (timeoutsFinished === numTimeouts) {
-                const event = new CustomEvent('timeoutsCompleted');
-                document.dispatchEvent(event);
-            }
-            if (i === words.length - 1) {
-                setTimeout(() => {
-                    document.getElementById('scene-2').style.display = 'block';
+                text.innerHTML += words[i] + ' ';
+                timeoutsFinished++;
+                if (timeoutsFinished === numTimeouts) {
+                    audio.pause();
+                    const event = new CustomEvent('timeoutsCompleted');
+                    document.dispatchEvent(event);
+                }
+                if (i === words.length - 1) {
                     setTimeout(() => {
-                        document.getElementById('scene-1').style.display = 'none';
-                        document.getElementById('scene-2').style.display = 'none';
+                        document.getElementById('scene-2').style.display = 'block';
                         setTimeout(() => {
-                            const event = new CustomEvent('scene2Completed');
-                            document.dispatchEvent(event);
+                            document.getElementById('scene-1').style.display = 'none';
+                            document.getElementById('scene-2').style.display = 'none';
+                            setTimeout(() => {
+                                const event = new CustomEvent('scene2Completed');
+                                document.dispatchEvent(event);
+                            }, 1000);
                         }, 1000);
                     }, 1000);
-                }, 1000);
-            }
-        }, i * 10);
+                }
+            }, i * 10);
+        }
     }
+
+    //Load MP3
+    const playbutton = document.getElementById('playButton');
+
+    //Ask permission to place the audio
+    playbutton.addEventListener('click', () => {
+        document.getElementById('scene-0').style.display = 'none';
+        document.getElementById('scene-1').style.display = 'block';
+        animateText();
+        playbutton.removeEventListener('click', () => {});
+    });
 
     document.addEventListener('scene2Completed', () => {
 
-        console.log('Scene 2 completed');
+        // console.log('Scene 2 completed');
 
         document.getElementById('scene-3').style.display = 'flex';
+        
+        const audio = new Audio('/mp3/lifeline-2.mp3');
+        audio.play();
 
         const cells = document.querySelectorAll('.col');
         const order = [0, 1, 8, 9, 13, 12, 6, 3, 4, 11, 15, 16];
@@ -294,8 +339,8 @@ html body {
 
     //When the modal is closed via #close move onto /sparkle/motion/index.html
     document.getElementById('close').addEventListener('click', () => {
-        window.location.href = '/sparkle/motion/index.html';
-    });
+        window.location.href = '/are/you/sleep/golfing/missing/4.html';
+    }); 
 
 </script>
 {% endblock %}

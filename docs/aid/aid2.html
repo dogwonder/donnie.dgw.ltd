@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex">
 
-    <style>body {
-    overflow-x: scroll !important;
-    overflow-y: hidden;
+    <style>.frames {
+  overflow-x: scroll;
+  display: flex;
+  gap: 4ch;
+}
+.frame {
+  max-width: 400px;
+}
+.frame .frame__image {
+
+}
+.frame .frame__content {
+  font-size: 12px;
+  color: #000000;
+}
+.frame .frame__content span {
+  color: #FF0033;
+  display: inline-block;
 }
 @font-face {
       font-family: 'Söhne Dreiviertelfett';
@@ -33,59 +48,46 @@
     <main>
       <div class="container full">
         
-<table width="100%" border="0" cellspacing="5" cellpadding="5">
-    <tbody><tr> 
-      <td width="21%" height="28">• <font size="2" face="Arial">go to <a href="https://web.archive.org/web/20130515105051/http://www.donniedarko.com/">official 
-        site</a> </font></td>
-      <td width="21%" height="28">&nbsp;</td>
-      <td width="14%" height="28">&nbsp;</td>
-      <td width="20%" height="28">&nbsp;</td>
-      <td width="24%" height="28">&nbsp;</td>
-    </tr>
-    <tr> 
-      <td width="21%" valign="middle"> <font face="Verdana" size="2" color="#000000">----&gt; 
-        level 1</font></td>
-      <td width="21%">
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="14%">
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="20%">
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="24%">&nbsp;</td>
-    </tr>
-    <tr> 
-      <td width="21%" height="98"><img src="/images/aid/no2c.jpg" width="252" height="150" border="1"></td>
-      <td width="21%" height="98"><img src="/images/aid/l21.jpg" width="216" height="127" border="1"></td>
-      <td width="14%" height="98"><img src="/images/aid/l21pop1.jpg" width="216" height="136" border="1"></td>
-      <td width="20%" height="98"><img src="/images/aid/l21pop.jpg" width="216" height="132" border="1"></td>
-      <td width="24%" height="98"><img src="/images/aid/l21pop2.jpg" width="216" height="132" border="1"></td>
-    </tr>
-    <tr> 
-      <td width="21%" valign="top" height="2"><font face="Arial" size="2">- main 
-        screen/access to all levels - <font color="#FF0033">6.</font> <b>click</b> 
-        on <font size="3"><b><font color="#CC0033">o</font></b></font><b> </b>circle<b> 
-        </b>level one (is active) - </font></td>
-      <td width="21%" valign="top" height="2"><font size="2" face="Arial" color="#FF0033">7.</font><font size="2" face="Arial"> 
-        <font size="1">("things aren't that simple")</font> <b>click</b> 
-        on <font size="3"><b><font color="#CC0033">o</font></b></font> circle, (she 
-        died alone)</font></td>
-      <td width="14%" valign="top" height="2"><font size="2" face="Arial" color="#FF0033">8.</font><font size="2" face="Arial"> 
-        Middlesex Times Dispatch article/obituary on Roberta Sparrow. </font></td>
-      <td width="20%" valign="top" height="2"><font size="2" face="Arial" color="#FF0033">8a.</font><font size="2" face="Arial"> 
-        If you <b>click on</b> any other part of the Times website - archives, yellow 
-        pages, maps, etc - leads to a <b>File Not Found</b> page. Click on webmaster 
-        link &amp; the screen changes to ascii Frank, <font size="1">("why 
-        are you wearing that stupid man-suit?")</font></font></td>
-      <td width="24%" valign="top" height="2"><font size="2" face="Arial" color="#FF0033">9.</font><font size="2" face="Arial"> 
-        (close popup #8 window) <b>click</b> on second <font size="3"><b><font color="#CC0033">o</font></b></font> 
-        circle, (let no one know i gave you this). Leads to another popup - Middlesex 
-        Times Dispatch article/obituary on Dr. Kenneth Monnitoff</font><font size="2" face="Arial">. 
-        (close window)....... <a href="aid3.html">go to next section</a></font></td>
-    </tr>
-  </tbody></table>
+<div class="frames p-2">
+<div class="frame">
+  <img class="frame__image mb-2" src="/images/aid/no2c.jpg" width="252" height="150" border="1">
+  <p class="frame__content">
+    <span>6.</span> 
+    click on <b>o</b> circle level one (is active)
+  </p>
+</div>
+<div class="frame">
+  <img class="frame__image mb-2" src="/images/aid/l21.jpg" width="216" height="127" border="1">
+  <p class="frame__content">
+    <span>7.</span> 
+    click on <b>o</b> circle, (she died alone)
+  </p>
+</div>
+<div class="frame">
+  <img class="frame__image mb-2" src="/images/aid/l21pop1.jpg" width="216" height="136" border="1">
+  <p class="frame__content">
+    <span>8.</span> 
+    Middlesex Times Dispatch article/obituary on Roberta Sparrow.
+  </p>
+</div>
+<div class="frame">
+  <img class="frame__image mb-2" src="/images/aid/l21pop.jpg" width="216" height="132" border="1">
+  <p class="frame__content">
+    <span>8a.</span> 
+    If you click on any other part of the Times website - archives, yellow pages, maps, etc - leads to a File Not Found page. Click on webmaster.
+  </p>
+</div>
+<div class="frame">
+  <img class="frame__image mb-2" src="/images/aid/l21pop2.jpg" width="216" height="132" border="1">
+  <p class="frame__content">
+    <span>9</span> 
+      (close popup #8 window) <b>click</b> on second <font size="3"><b><font color="#CC0033">o</font></b></font> 
+      circle, (let no one know i gave you this). Leads to another popup - Middlesex 
+      Times Dispatch article/obituary on Dr. Kenneth Monnitoff</font><font size="2" face="Arial">. 
+      (close window)....... <a href="aid3.html">go to next section</a></font>
+  </p>
+</div>
+</div>
 
       </div>
     </main>
@@ -96,7 +98,7 @@
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698593342939"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698673912438"></script> -->
 
     
 
@@ -108,6 +110,7 @@
     </script>
 
     <script type="module" src="/bundle/X9AT44Agso.js"></script>
+    
     
 
     <svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">

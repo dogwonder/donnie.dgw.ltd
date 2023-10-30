@@ -3,66 +3,67 @@ permalink: /aid/aid3.html
 ---
 
 {% css %}
-body {
-    overflow-x: scroll !important;
-    overflow-y: hidden;
+.frames {
+  overflow-x: scroll;
+  display: flex;
+  gap: 4ch;
+}
+.frame {
+  max-width: 400px;
+}
+.frame .frame__image {
+
+}
+.frame .frame__content {
+  font-size: 12px;
+  color: #000000;
+}
+.frame .frame__content span {
+  color: #FF0033;
+  display: inline-block;
 }
 {% endcss %}
 
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<table width="100%" border="0" cellspacing="5" cellpadding="5">
-    <tbody><tr> 
-      <td width="19%" height="28">• <font size="2" face="Arial">go to <a href="https://web.archive.org/web/20130508065437/http://www.donniedarko.com/">official 
-        site</a> </font></td>
-      <td width="23%" height="28">&nbsp;</td>
-      <td width="19%" height="28">&nbsp;</td>
-      <td width="19%" height="28">&nbsp;</td>
-      <td width="20%" height="28">&nbsp;</td>
-    </tr>
-    <tr> 
-      <td width="19%" valign="middle"> <font face="Verdana" size="2" color="#000000">----&gt; 
-        level 1</font></td>
-      <td width="23%"> 
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="19%"> 
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="19%"> 
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="20%">&nbsp;</td>
-    </tr>
-    <tr> 
-      <td width="19%" height="18"><img src="/images/aid/l212.jpg" width="216" height="126" border="1"></td>
-      <td width="23%" height="18"><img src="/images/aid/l213.jpg" width="216" height="128" border="1"></td>
-      <td width="19%" height="18"><img src="/images/aid/l214.jpg" width="216" height="127" border="1"></td>
-      <td width="19%" height="18"><img src="/images/aid/l215.jpg" width="216" height="126" border="1"></td>
-      <td width="20%" height="18"><img src="/images/aid/tuni1.jpg" width="216" height="126" border="1"></td>
-    </tr>
-    <tr> 
-      <td width="19%" valign="top" height="2"><font face="Arial" size="2"><font color="#FF0033">10. 
-        </font> third circle <font size="3"><b><font color="#CC0033">o</font></b></font> 
-        appears (a guide in a time of great danger), <b>click</b> on it, "her 
-        name was that of a bird *******" password = <font color="#0033CC">sparrow</font></font></td>
-      <td width="23%" valign="top" height="2"><font size="2" face="Arial" color="#FF0033">11.</font><font size="2" face="Arial"> 
-        Karen P. Monnitoff's letter to Elizabeth/hartford/library of congress, gift 
-        of the book of time travel. <b>click</b> on screen...</font></td>
-      <td width="19%" valign="top" height="2"><font size="2" face="Arial" color="#FF0033">12.</font><font size="2" face="Arial"> 
-        DO YOU BELIEVE IN TIME TRAVEL? <b>click</b> on question... leads to the 
-        <a href="https://web.archive.org/web/20130508065437/http://www.donniedarko.com/the/tangent/">tangent</a> area...</font></td>
-      <td width="19%" valign="top" height="2"><font size="2" face="Arial" color="#FF0033">13.</font><font size="2" face="Arial"> 
-        <b>click</b> on boxes -- new box appears w/ frank, says smurf (a password). 
-        <b>close</b> box, leads to the <a href="https://web.archive.org/web/20130508065437/http://www.donniedarko.com/the/tangent/universe/main.html">tangent 
-        universe</a>.</font></td>
-      <td width="20%" valign="top" height="2"><font size="2" face="Arial" color="#FF0033">14.</font><font size="2" face="Arial"> 
-        <b>click</b> on red dot - popup opens, click <b>inside</b> it - another 
-        opens, <b>click</b> inside the second box - third opens between the first 
-        two, <b>click</b> inside it....... <a href="aid4.html">go to next section</a></font></td>
-    </tr>
-  </tbody></table>
+<div class="frames p-2">
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/l212.jpg" width="216" height="126" border="1">
+    <p class="frame__content">
+      <span>10.</span> 
+      third circle <b>o</b> appears (a guide in a time of great danger), <b>click</b> on it, "her name was that of a bird *******" password = <font color="#0033CC">sparrow</font>
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/l213.jpg" width="216" height="128" border="1">
+    <p class="frame__content">
+      <span>11.</span> 
+      Karen P. Monnitoff's letter to Elizabeth/hartford/library of congress, gift of the book of time travel. <b>click</b> on screen...
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/l214.jpg" width="216" height="127" border="1">
+    <p class="frame__content">
+      <span>12.</span> 
+      DO YOU BELIEVE IN TIME TRAVEL? <b>click</b> on question... leads to the <a href="https://web.archive.org/web/20130508065437/http://www.donniedarko.com/the/tangent/">tangent</a> area...
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/l215.jpg" width="216" height="126" border="1">
+    <p class="frame__content">
+      <span>13.</span> 
+      <b>click</b> on boxes -- new box appears w/ frank, says smurf (a password). <b>close</b> box, leads to the <a href="https://web.archive.org/web/20130508065437/http://www.donniedarko.com/the/tangent/universe/main.html">tangent universe</a>.
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/tuni1.jpg" width="216" height="126" border="1">
+    <p class="frame__content">
+      <span>14.</span> 
+      <b>click</b> on red dot - popup opens, click <b>inside</b> it - another opens, <b>click</b> inside the second box - third opens between the first two, <b>click</b> inside it....... <a href="aid4.html">go to next section</a>
+    </p>
+  </div>
+</div>
 {% endblock %}
 
 {% block scripts %}

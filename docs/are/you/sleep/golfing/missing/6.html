@@ -9,9 +9,26 @@
     background-color: #000000;
     color: white;
 }
+.aspect-ratio {
+    position: relative;
+}
+.crosshair {
+    position: absolute;
+    right: 30%;
+    bottom: 20%;
+    font-size: 1.4rem;
+}
+.crosshair:hover {
+    cursor: pointer;
+    filter: url(#noise);
+}
 .window {
     width: 200px;
     height: 200px;
+    position: absolute;
+    right: 20%;
+    bottom: 10%;
+    display: none;
 }
 .window img {
     width: 100%;
@@ -51,20 +68,21 @@
         
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
-        <img class="" src="/images/missing/sleepgolfing-bg-3.jpg">
-    </div>
-    <div class="window">
-        <div class="title-bar">
-            <div class="title-bar-text">Some text</div>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>    
-            </div>
-          </div>
-          <div class="interlace">
-            <img src="/images/missing/sleepgolfing-wallet.jpg">
-          </div>
+        <img src="/images/missing/sleepgolfing-bg-3.jpg">
+        <span id="popup" class="crosshair">⌖</span>
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text px-1">Microsoft Explorer</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>    
+                </div>
+              </div>
+              <div class="interlace" data-url="/are/you/sleep/golfing/missing/7.html">
+                <img src="/images/missing/sleepgolfing-wallet.jpg">
+              </div>
+        </div>
     </div>
 </div>
 
@@ -77,7 +95,7 @@
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698593342939"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698673912438"></script> -->
 
     
 
@@ -89,6 +107,7 @@
     </script>
 
     <script type="module" src="/bundle/X9AT44Agso.js"></script>
+    
     
 
     <svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
@@ -123,6 +142,18 @@
   </svg>
 
     
+<script>
+//If click on #popup then show .window
+document.getElementById('popup').addEventListener('click', event => {
+    document.querySelector('.window').style.display = 'block';
+})
+//If click on .interlace then go to data-url
+document.querySelectorAll('.interlace').forEach(item => {
+    item.addEventListener('click', event => {
+        window.location.href = item.dataset.url;
+    })
+})
+</script>
 
 
   </body>

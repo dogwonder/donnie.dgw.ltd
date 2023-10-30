@@ -3,76 +3,78 @@ permalink: /aid/aid5.html
 ---
 
 {% css %}
-body {
-    overflow-x: scroll !important;
-    overflow-y: hidden;
+.frames {
+  overflow-x: scroll;
+  display: flex;
+  gap: 4ch;
+}
+.frame {
+  max-width: 400px;
+}
+.frame .frame__image {
+
+}
+.frame .frame__content {
+  font-size: 12px;
+  color: #000000;
+}
+.frame .frame__content span {
+  color: #FF0033;
+  display: inline-block;
 }
 {% endcss %}
 
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<table width="167%" border="0" cellspacing="5" cellpadding="5">
-    <tbody><tr> 
-      <td width="21%" height="28">• <font size="2" face="Arial">go to <a href="https://web.archive.org/web/20130511032633/http://www.donniedarko.com/">official 
-        site</a> </font></td>
-      <td width="21%" height="28">&nbsp;</td>
-      <td width="21%" height="28">&nbsp;</td>
-      <td width="22%" height="28">&nbsp;</td>
-      <td width="30%" height="28">&nbsp;</td>
-      <td width="30%" height="28">&nbsp;</td>
-    </tr>
-    <tr> 
-      <td width="21%" valign="middle"> <font face="Verdana" size="2" color="#000000">----&gt; 
-        level 2</font></td>
-      <td width="21%"> 
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="21%"> 
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="22%"> 
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="30%">&nbsp;</td>
-      <td width="30%">&nbsp;</td>
-    </tr>
-    <tr> 
-      <td width="21%" height="77"><img src="/images/aid/no2c.jpg" width="252" height="150" border="1"></td>
-      <td width="21%" height="77"><img src="/images/aid/lev2a.jpg" width="216" height="128" border="1"></td>
-      <td width="21%" height="77"><img src="/images/aid/lev2c.jpg" width="216" height="127" border="1"></td>
-      <td width="22%" height="77"> 
-        <div align="center"><img src="/images/aid/lev2d.jpg" width="216" height="128" border="1"></div>
-      </td>
-      <td width="30%" height="77"><img src="/images/aid/lev2e.jpg" width="216" height="131" border="1"></td>
-      <td width="30%" height="77"><img src="/images/aid/lev2g.jpg" width="216" height="129" border="1"></td>
-    </tr>
-    <tr> 
-      <td width="21%" valign="top" height="40"><font face="Arial" size="2"><font color="#FF0033">20. 
-        </font> main menu - <b>click</b> on <font size="3" color="#FF3300"><b>o</b></font> 
-        level two. <font size="3" color="#FF3300"></font></font></td>
-      <td width="21%" valign="top" height="40"><font size="2" face="Arial" color="#FF0033">21.</font><font size="2" face="Arial"> 
-        "enter the password from level 1" = <font color="#3333CC">breathe. 
-        </font></font></td>
-      <td width="21%" valign="top" height="40"><font size="2" face="Arial" color="#FF0033">22.</font><font size="2" face="Arial"> 
-        <b>click</b> on cross, goes to the "are you sleepgolfing?" <a href="https://web.archive.org/web/20130511032633/http://www.donniedarko.com/are/you/sleep/golfing/">section</a>.</font></td>
-      <td width="22%" valign="top" height="40"><font size="2" face="Arial" color="#FF0033">23.</font><font size="2" face="Arial"> 
-        at the golf course - <b>click</b> on the red square dot ("don't be 
-        a prisoner of fear"), this will cause a pop-up article on Jim Cunningham. 
-        (close screen). </font></td>
-      <td width="30%" valign="top" height="40"><font size="2" face="Arial" color="#FF0033">24.</font><font size="2" face="Arial"> 
-        another red square ("wake up donnie!) will appear, <b>click</b> on 
-        it, stripes appear to the left &amp; donnie/2 golfers appear, (letters now 
-        read "place an x on the lifeline") - <b>click</b> on the <b>2 
-        golfers</b>.</font></td>
-      <td width="30%" valign="top" height="40"><font size="2" face="Arial" color="#FF0033">25.</font><font size="2" face="Arial"> 
-        chalkboard screen - <b>click</b> on the tv screen. exercise #1 appears, 
+<div class="frames p-2">
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/no2c.jpg" width="252" height="150" border="1">
+    <p class="frame__content">
+      <span>20.</span> 
+      main menu - click on o level two.
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/lev2a.jpg" width="216" height="128" border="1">
+    <p class="frame__content">
+      <span>21.</span> 
+      "enter the password from level 1" = breathe.
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/lev2c.jpg" width="216" height="127" border="1">
+    <p class="frame__content">
+      <span>22.</span> 
+      click on cross, goes to the "are you sleepgolfing?" section.
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/lev2d.jpg" width="216" height="128" border="1">
+    <p class="frame__content">
+      <span>23.</span> 
+      at the golf course - click on the red square dot ("don't be a prisoner of fear"), this will cause a pop-up article on Jim Cunningham. (close screen).
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/lev2e.jpg" width="216" height="131" border="1">
+    <p class="frame__content">
+      <span>24.</span> 
+      another red square ("wake up donnie!) will appear, click on
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/lev2g.jpg" width="216" height="129" border="1">
+    <p class="frame__content">
+      <span>25. </span> 
+      chalkboard screen - <b>click</b> on the tv screen. exercise #1 appears, 
         make the correct mark on the lifeline (if you mark a wrong answer the screen 
         will not forward to the next question until you make the correct mark.) 
         jim cunnigham will show on the tv either way. use the same process for exercise 
-        #2. .... <a href="aid6.html">go to next section</a> </font></td>
-    </tr>
-  </tbody></table>
+        #2. .... <a href="aid6.html">go to next section</a> 
+    </p>
+  </div>
+</div>
 {% endblock %}
 
 {% block scripts %}
