@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex">
 
-    <style>body {
-    overflow-x: scroll !important;
-    overflow-y: hidden;
+    <style>.frames {
+  overflow-x: scroll;
+  display: flex;
+  gap: 4ch;
+}
+.frame {
+  max-width: 400px;
+}
+.frame .frame__image {
+
+}
+.frame .frame__content {
+  font-size: 12px;
+  color: #000000;
+}
+.frame .frame__content span {
+  color: #FF0033;
+  display: inline-block;
 }
 @font-face {
       font-family: 'Söhne Dreiviertelfett';
@@ -33,44 +48,36 @@
     <main>
       <div class="container full">
         
-<table width="88%" border="0" cellspacing="5" cellpadding="5">
-    <tbody><tr> 
-      <td width="33%" height="7">• <font size="2" face="Arial">go to <a href="https://web.archive.org/web/20130428045459/http://www.donniedarko.com/">official 
-        site</a> </font></td>
-      <td width="4%" height="7">&nbsp;</td>
-      <td width="63%" height="7">&nbsp;</td>
-    </tr>
-    <tr> 
-      <td width="33%" valign="middle" height="2"> <font face="Verdana" size="2" color="#000000">----&gt; 
-        level 3</font></td>
-      <td width="4%" height="2"> 
-        <div align="right"><font face="Verdana" size="2">----&gt;</font></div>
-      </td>
-      <td width="63%" height="2"> 
-        <div align="right"><img src="/images/aid/end1.gif" width="30" height="29"></div>
-      </td>
-    </tr>
-    <tr> 
-      <td width="33%" height="65"><img src="/images/aid/level3b.jpg" width="216" height="126" border="1"></td>
-      <td width="4%" height="65"><img src="/images/aid/level3d.jpg" width="216" height="126" border="1"></td>
-      <td width="63%" height="65"><img src="/images/aid/level3e.jpg" width="216" height="127" border="1"></td>
-    </tr>
-    <tr> 
-      <td width="33%" valign="top" height="40"><font size="2" face="Arial" color="#FF0033">41.</font><font size="2" face="Arial"> 
-        <b>click</b> on the telephone symbol inside the chandelier popup. faa info 
-        appears - <b>click</b> on "launch the document" at the bottom. 
-        <font color="#CC3300">(if this doesn't work/doesn't show up, reload the 
-        page.)</font></font></td>
-      <td width="4%" valign="top" height="40"><font size="2" face="Arial" color="#FF0033">42. 
-        </font><font size="2" face="Arial">engine phone conversation/ transcript.</font><font face="Arial" size="2"> 
-        after this the screen automatically changes to...</font></td>
-      <td width="63%" valign="top" height="40"><font size="2" face="Arial" color="#FF0033">43.</font><font size="2" face="Arial"> 
-        time is up, donnie. /// fin. kaput. done. the end. (<font size="1">...is 
-        that all there is, is that all there is... if that's all there is my friends, 
-        then let's keep dancing. let's break out the...</font> - that is to say 
-        i think that's all there is.)</font></td>
-    </tr>
-  </tbody></table>
+<div class="frames p-2">
+  <div class="frame">
+    <img class="frame__image mb-2" src="/images/aid/lev2h.jpg" width="216" height="128" border="1">
+    <p class="frame__content">
+      <span>37.</span> 
+      At main menu - click on <b><font size="3" color="#FF0000">o</font></b> level three. The password for Level three is the name of the street he lives in... like the flower. Password = <font color="#6600FF">rose</font>.
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image" src="/images/aid/level3b.jpg" width="216" height="126" border="1">
+    <p class="frame__content">
+      <span>41.</span> 
+      <font size="2" face="Arial" color="#FF0033">click</font> on the telephone symbol inside the chandelier popup. faa info appears - <font size="2" face="Arial" color="#FF0033">click</font> on "launch the document" at the bottom. <font color="#CC3300">(if this doesn't work/doesn't show up, reload the page.)</font>
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image" src="/images/aid/level3d.jpg" width="216" height="126" border="1">
+    <p class="frame__content">
+      <span>42.</span> 
+      <font size="2" face="Arial">engine phone conversation/ transcript.</font><font face="Arial" size="2"> after this the screen automatically changes to...</font>
+    </p>
+  </div>
+  <div class="frame">
+    <img class="frame__image" src="/images/aid/level3e.jpg" width="216" height="127" border="1">
+    <p class="frame__content">
+      <span>43.</span> 
+      <font size="2" face="Arial" color="#FF0033">time is up, donnie. /// fin. kaput. done. the end.</font> (<font size="1">...is that all there is, is that all there is... if that's all there is my friends, then let's keep dancing. let's break out the...</font> - that is to say i think that's all there is.)
+    </p>
+  </div>
+</div>
 
       </div>
     </main>
@@ -81,7 +88,7 @@
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698683432272"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698684119272"></script> -->
 
     
 
