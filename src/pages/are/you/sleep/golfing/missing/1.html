@@ -34,7 +34,6 @@ html body {
 {% block content %}
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
-        <!-- <img id="image" src="/images/missing/exercise-1.jpg"> -->
         <canvas id="image" width="800" height="500"></canvas>
         <div class="exercise-1">
             <p>Lifeline Exercise #1</p>
@@ -53,12 +52,28 @@ html body {
 
 {% block scripts %}
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+    
     const image = document.getElementById('image');
     const ctx = image.getContext('2d');
     const color = 'white';
+
+    //Get the width and height of the canvas
+    let width = image.clientWidth;
+    let height = image.clientHeight;
+
+    // console.log(width, height);
+
+    //Apply the new width and height for the canvas [FIXES BLUR ISSUE]
+    image.width = width;
+    image.height = height;
+
+    let rect = image.getBoundingClientRect(); 
+
     let isDrawing = false;
     let lastX = 0;
     let lastY = 0;
+    let lineCount = 0;
 
     function drawLine(x1, y1, x2, y2) {
         ctx.beginPath();
@@ -70,22 +85,31 @@ html body {
 
     image.addEventListener('mousedown', (event) => {
         isDrawing = true;
-        lastX = event.offsetX;
-        lastY = event.offsetY;
+        const rect = image.getBoundingClientRect();
+        lastX = event.clientX - rect.left;
+        lastY = event.clientY - rect.top;
     });
 
     image.addEventListener('mousemove', (event) => {
         if (isDrawing) {
-            drawLine(lastX, lastY, event.offsetX, event.offsetY);
-            lastX = event.offsetX;
-            lastY = event.offsetY;
+            const rect = image.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            drawLine(lastX, lastY, x, y);
+            lastX = x;
+            lastY = y;
+            console.log(lineCount);
         }
     });
 
     image.addEventListener('mouseup', () => {
         isDrawing = false;
-        // Load 2.html when the X is drawn
-        window.location.href = '2.html';
+        lineCount++;
+        if (lineCount >= 2) {
+            window.location.href = '2.html';
+        }
     });
+
+});
 </script>
 {% endblock %}

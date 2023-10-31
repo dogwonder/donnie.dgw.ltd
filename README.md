@@ -60,7 +60,10 @@ Level 3
 Transcript
 Need to add time is up donnie
 
+Redirect from pop3
 
+<meta http-equiv="refresh" content="0; URL=/are/you/sleep/golfing/index.html">
+<!-- <meta http-equiv="refresh" content="0; URL=/from/the/sky/index.html"> -->
 
 # Credit
 https://jdan.github.io/98.css/
