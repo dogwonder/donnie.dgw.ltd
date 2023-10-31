@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex">
 
-    <style>html body {
-    background-color: #000000;
-    background: linear-gradient(to bottom, #3c3a3c, #000000);
+    <style>:root {
+  --gradient: linear-gradient(to top, #000000 0%, #333333 100%);
+}
+html body {
+    background-color: #333333;
+    background: var(--gradient);
 }
 @font-face {
       font-family: 'Söhne Dreiviertelfett';
@@ -34,6 +37,7 @@
       <div class="container full">
         
 <div class="flex items-end justify-end h-full">
+  <div id="boundingBox"></div>
   <object class="aspect-ratio">
     <embed src="/sparkle/motion/phase2_end.swf" width="800" height="500">
   </object>  
@@ -48,7 +52,7 @@
 
     <!--Ruffle JS-->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <!-- <script defer src=" /scripts/ruffle.js?v=1698772144354"></script> -->
+    <!-- <script defer src=" /scripts/ruffle.js?v=1698778204846"></script> -->
 
     
 
@@ -95,6 +99,23 @@
   </svg>
 
     
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const obj = document.getElementById('boundingBox');
+  //Get the width and height of the canvas
+  let width = obj.clientWidth;
+  let height = obj.clientHeight;
+
+  //Get the distance from the top of the page to the canvas
+  let distanceFromTop = obj.getBoundingClientRect().top;
+
+  console.log(`Distance from top: ${distanceFromTop}`);
+  
+  //Change the CSS var --gradient to match the height of the canvas
+  // document.documentElement.style.setProperty('--gradient', `linear-gradient(to top 0%, #000000, #333333 ${distanceFromTop}px)`);
+});
+</script>
+
 
   </body>
 </html>
