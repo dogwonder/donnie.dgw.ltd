@@ -6,8 +6,12 @@
     "clean": "trash \"./docs/\"",
     "watch:eleventy": "npx eleventy --serve",
     "watch:tailwind": "npx tailwindcss -i ./src/css/tailwind.css -o ./docs/css/tailwind.css --watch",
+    "watch:scripts": "onchange \"./src/scripts/app.js\" -- npm run scripts:concat",
     "watch": "run-p watch:*",
-    "build": "NODE_ENV=production npm run-s clean css && NODE_ENV=production npx eleventy"
+    "scripts:concat": "concat ./src/scripts/app.js -o ./src/scripts/min/app.min.js",
+    "scripts:minify": "uglifyjs ./src/scripts/min/app.min.js --compress --output ./src/scripts/app.min.js",
+    "scripts": "run-p scripts:*",
+    "build": "NODE_ENV=production npm run-s clean css scripts && NODE_ENV=production npx eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -18,15 +22,18 @@
     "alpinejs": "^3.13.2",
     "autoprefixer": "^10.4.16",
     "clean-css": "^5.3.2",
+    "concat": "^1.0.3",
     "concurrently": "^8.2.2",
     "del": "^7.1.0",
     "dotenv": "^16.3.1",
     "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
     "postcss": "^8.4.31",
     "postcss-scss": "^4.0.9",
     "sass": "^1.69.4",
     "slugify": "^1.6.6",
     "tailwindcss": "^3.3.5",
-    "trash-cli": "^5.0.0"
+    "trash-cli": "^5.0.0",
+    "uglify-js": "^3.17.4"
   }
 }

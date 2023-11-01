@@ -2,6 +2,8 @@
 permalink: /are/you/sleep/golfing/missing/1.html
 ---
 
+{% set isRuffle = false %}
+
 {% css %}
 html body {
     background-color: #000000;
@@ -19,32 +21,37 @@ html body {
     background-repeat: no-repeat;
     position: relative;
 }
-.exercise-1 {
+.text {
     position: absolute;
-    right: 8.5rem;
+    left: 60%;
     top: 5rem;
-}
-.exercise-1 p {
-    font-size: 1rem;
-    margin-block-end: 0.75rem;
 }
 {% endcss %}
 
-{% extends "layouts/base-no-swf.html" %}
+{% extends "layouts/base.html" %}
 {% block content %}
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
         <canvas id="image" width="800" height="500"></canvas>
-        <div class="exercise-1">
-            <p>Lifeline Exercise #1</p>
-            <p>Juanita has an important math test<br>
+        <div id="welcome" class="text">
+            Welcome to the Jim Cunningham<br>
+            Lifeline Exercises.<br><br>
+            You will be presented with several<br>
+            situations during this test and will be<br>
+            asked to make an X on the lifeline on<br> 
+            the blackboard in the corresponding<br> 
+            position between Love and Fear.<br><br>
+            Click on the screen to continue.
+        </div>
+        <div id="exercise-1" class="exercise-1 text" style="display: none;">
+            Lifeline Exercise #1<br><br>
+            Juanita has an important math test<br>
             today. She has known about it for<br> 
             several weeks, but has not studied. In<br>
             order to keep from failing the class<br>
             Juanita decides that she will cheat on<br>
-            the math test.
-            </p>
-            <p>Please make your mark on the Lifeline.</p>
+            the math test.<br><br>
+            Please make your mark on the Lifeline.</p>
         </div>
     </div>
 </div>
@@ -53,62 +60,114 @@ html body {
 {% block scripts %}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+
+    // TODO 
+    // Audio not working as a button needs to be clicked, e.g. the TV
+    // Also allow animate text to work without audio file
+    // Add TV click and hover effect
+
+    const welcome = document.getElementById('welcome');
+    const exercise = document.getElementById('exercise-1');
+    const exeriseReady = false;
+
+    const animateText = function( element, audioFile  ) {
+        
+        const text = document.getElementById(element);
+        //If no text is found bail
+        if (!text) return;
+
+        const words = text.innerHTML.split(' ');
+        text.innerHTML = '';
+
+        const numTimeouts = words.length;
+        let timeoutsFinished = 0;
+
+        const audio = new Audio(audioFile);
+        audio.play();
+
+        for (let i = 0; i < words.length; i++) {
+        setTimeout(() => {
+                text.innerHTML += words[i] + ' ';
+                timeoutsFinished++;
+                if (timeoutsFinished === numTimeouts) {
+                    audio.pause();
+                    const event = new CustomEvent('timeoutsCompleted');
+                    document.dispatchEvent(event);
+                }
+            }, i * 10);
+        }
+    };
+
+    //Click on the TV screen to start the exercise
+    welcome.addEventListener('click', () => {
+        const event = new CustomEvent('exerciseReady');
+        document.dispatchEvent(event);
+    });
+
+    document.addEventListener('exerciseReady', () => {
+
+        welcome.style.display = 'none';
+        exercise.style.display = 'block';
+
+        animateText('exercise-1', '/mp3/keys.mp3');
     
-    const image = document.getElementById('image');
-    const ctx = image.getContext('2d');
-    const color = 'white';
+        const image = document.getElementById('image');
+        const ctx = image.getContext('2d');
+        const color = 'white';
 
-    //Get the width and height of the canvas
-    let width = image.clientWidth;
-    let height = image.clientHeight;
+        //Get the width and height of the canvas
+        let width = image.clientWidth;
+        let height = image.clientHeight;
 
-    // console.log(width, height);
+        // console.log(width, height);
 
-    //Apply the new width and height for the canvas [FIXES BLUR ISSUE]
-    image.width = width;
-    image.height = height;
+        //Apply the new width and height for the canvas [FIXES BLUR ISSUE]
+        image.width = width;
+        image.height = height;
 
-    let rect = image.getBoundingClientRect(); 
+        let rect = image.getBoundingClientRect(); 
 
-    let isDrawing = false;
-    let lastX = 0;
-    let lastY = 0;
-    let lineCount = 0;
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        let lineCount = 0;
 
-    function drawLine(x1, y1, x2, y2) {
-        ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.strokeStyle = color; // Set the stroke color
-        ctx.stroke();
-    }
+        function drawLine(x1, y1, x2, y2) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.strokeStyle = color; // Set the stroke color
+            ctx.stroke();
+        }
 
-    image.addEventListener('mousedown', (event) => {
-        isDrawing = true;
-        const rect = image.getBoundingClientRect();
-        lastX = event.clientX - rect.left;
-        lastY = event.clientY - rect.top;
-    });
-
-    image.addEventListener('mousemove', (event) => {
-        if (isDrawing) {
+        image.addEventListener('mousedown', (event) => {
+            isDrawing = true;
             const rect = image.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-            drawLine(lastX, lastY, x, y);
-            lastX = x;
-            lastY = y;
-            console.log(lineCount);
-        }
-    });
+            lastX = event.clientX - rect.left;
+            lastY = event.clientY - rect.top;
+        });
 
-    image.addEventListener('mouseup', () => {
-        isDrawing = false;
-        lineCount++;
-        if (lineCount >= 2) {
-            window.location.href = '2.html';
-        }
+        image.addEventListener('mousemove', (event) => {
+            if (isDrawing) {
+                const rect = image.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                drawLine(lastX, lastY, x, y);
+                lastX = x;
+                lastY = y;
+                console.log(lineCount);
+            }
+        });
+
+        image.addEventListener('mouseup', () => {
+            isDrawing = false;
+            lineCount++;
+            if (lineCount >= 2) {
+                window.location.href = '2.html';
+            }
+        });
     });
+    
 
 });
 </script>

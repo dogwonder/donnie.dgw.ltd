@@ -5,6 +5,7 @@ permalink: /from/the/sky/index.html
 {% css %}
 html body {
     background-color: #ddddcc;
+    background: linear-gradient(to top, #ffffff 0%, #ffffff 400px, #ddddcc 500px, #ddddcc 100%);
 }
 {% endcss %}
 
@@ -12,6 +13,7 @@ html body {
 
 {% block content %}
 <div class="flex items-end h-full">
+    <div id="boundingBox"></div>
     <object class="aspect-ratio">
         <embed src="/from/the/sky/trampolin.swf" width="800" height="500">
     </object>  

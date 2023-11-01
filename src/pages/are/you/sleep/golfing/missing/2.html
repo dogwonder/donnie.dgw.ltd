@@ -2,6 +2,8 @@
 permalink: /are/you/sleep/golfing/missing/2.html
 ---
 
+{% set isRuffle = false %}
+
 {% css %}
 html body {
     background-color: #000000;
@@ -21,31 +23,25 @@ html body {
 }
 .exercise-2 {
     position: absolute;
-    right: 8.5rem;
+    left: 60%;
     top: 5rem;
-}
-.exercise-2 p {
-    font-size: 1rem;
-    margin-block-end: 0.75rem;
 }
 {% endcss %}
 
-{% extends "layouts/base-no-swf.html" %}
+{% extends "layouts/base.html" %}
 
 {% block content %}
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
-        <!-- <img id="image" src="/images/missing/exercise-1.jpg"> -->
         <canvas id="image" width="800" height="500"></canvas>
-        <div class="exercise-2">
-                <p>Lifeline Exercise #2</p>
-                <p>Ling Ling finds a wallet on the ground<br>
-                    filled with money. She takes the <br>
-                    wallet to the address on the drivers <br>
-                    license, but keeps the money inside<br>
-                    the wallet. 
-                </p>
-                <p>Please make your mark on the Lifeline.</p>
+        <div id="exercise-2" class="exercise-2 text">
+            Lifeline Exercise #2<br><br>
+            Ling Ling finds a wallet on the ground<br>
+            filled with money. She takes the <br>
+            wallet to the address on the drivers <br>
+            license, but keeps the money inside<br>
+            the wallet.<br><br>
+            Please make your mark on the Lifeline.</p>
         </div>
     </div>
 </div>
@@ -54,6 +50,42 @@ html body {
 {% block scripts %}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+
+        const animateText = function( element, audioFile = null ) {
+
+            const text = document.getElementById(element);
+            //If no text is found bail
+            if (!text) return;
+
+            const words = text.innerHTML.split(' ');
+            text.innerHTML = '';
+
+            const numTimeouts = words.length;
+            let timeoutsFinished = 0;
+
+            //If there is an audio file play it
+            if (audioFile) {
+                const audio = new Audio(audioFile);
+                audio.play();
+            }
+
+            for (let i = 0; i < words.length; i++) {
+            setTimeout(() => {
+                    text.innerHTML += words[i] + ' ';
+                    timeoutsFinished++;
+                    if (timeoutsFinished === numTimeouts) {
+                        if (audioFile) {
+                            audio.pause();
+                        }
+                        const event = new CustomEvent('timeoutsCompleted');
+                        document.dispatchEvent(event);
+                    }
+                }, i * 10);
+            }
+
+        };
+
+        animateText('exercise-2');
         
         const image = document.getElementById('image');
         const ctx = image.getContext('2d');

@@ -135,18 +135,10 @@ h6 {
   margin-block: 1em 1rem;
 }
 
-.dgwltd-heading-xl,
-h1 {
-  font-size: var(--font-size-xxxl);
-  line-height: var(--line-height-small);
-  letter-spacing: var(--letter-spacing-small);
-}
-
-.dgwltd-heading-l,
-h2 {
-  font-size: var(--font-size-xxl);
-  line-height: var(--line-height-small);
-  letter-spacing: var(--letter-spacing-small);
+.text {
+  font-size: 0.9375rem;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 html {

@@ -2,6 +2,8 @@
 permalink: /are/you/sleep/golfing/missing/3.html
 ---
 
+{% set isRuffle = false %}
+
 {% set isAlpine = true %}
 
 {% block styles %}
@@ -117,7 +119,7 @@ html body {
 }
 {% endcss %}
 
-{% extends "layouts/base-no-swf.html" %}
+{% extends "layouts/base.html" %}
 
 {% block content %}
 <div class="flex items-end h-full">
@@ -241,7 +243,6 @@ html body {
 
 {% block scripts %}
 <script>
-    
 
     const animateText = function() {
 
@@ -254,6 +255,7 @@ html body {
         let timeoutsFinished = 0;
 
         const audio = new Audio('/mp3/lifeline-1.mp3');
+        
         audio.play();
 
         for (let i = 0; i < words.length; i++) {
