@@ -1,14 +1,4 @@
-## Progress
-
-Level 2
-
-## Video
-
-Donnie Darko website.mp4
-Edit - LosslessCut
-
 # Archive
-
 https://web.archive.org/web/*/http://archive.hi-res.net/donniedarko/*
 https://web.archive.org/web/*/http://ww2.donniedarko.com/are/you/sleep/golfing/*
 https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm
@@ -41,7 +31,6 @@ OR
     <embed src="/are/you/sleep/golfing/golf.swf" width="800" height="500">
 </object>  
 
-
 # Notes 
 
 Web archive gets stuck on 
@@ -50,20 +39,6 @@ https://web.archive.org/web/20150203001722/http://archive.hi-res.net/donniedarko
 >>
 https://archive.hi-res.net/donniedarko/the/tangent/universe/is_unstable.html
 
-
-# Need to recreate:
-
-Level 2
-Better crosshair
-
-Level 3
-Transcript
-Need to add time is up donnie
-
-Redirect from pop3
-
-<meta http-equiv="refresh" content="0; URL=/are/you/sleep/golfing/index.html">
-<!-- <meta http-equiv="refresh" content="0; URL=/from/the/sky/index.html"> -->
 
 # Credit
 https://jdan.github.io/98.css/
