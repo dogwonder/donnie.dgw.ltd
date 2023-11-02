@@ -3,11 +3,6 @@ https://web.archive.org/web/*/http://archive.hi-res.net/donniedarko/*
 https://web.archive.org/web/*/http://ww2.donniedarko.com/are/you/sleep/golfing/*
 https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm
 
-https://web.archive.org/web/20040613014057/http://www.donniedarko.com/are/you/sleep/golfing/street.swf
-https://web.archive.org/web/20040613014057/http://www.donniedarko.com/are/you/sleep/golfing/love.swf
-https://web.archive.org/web/20040613014057/http://www.donniedarko.com/are/you/sleep/golfing/fear.swf
-https://web.archive.org/web/20040613014057/http://www.donniedarko.com/are/you/sleep/golfing/texts.html
-
 
 Missing
 
@@ -47,5 +42,7 @@ https://aaadaaam.com - noise filters
 
 
 # To Do 
+Document and readme
 
-Fake email from webmaster
+Easter eggs
+http://localhost:8080/news/pop2.html - Contact link from newspaper pop-ups
