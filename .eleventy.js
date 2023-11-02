@@ -22,7 +22,6 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy({"src/fonts": "fonts"});
     eleventyConfig.addPassthroughCopy({"src/audio": "mp3"});
     eleventyConfig.addPassthroughCopy({"src/scss/vendor/98": "css"});
-    
 
     //Tailwind
     eleventyConfig.addWatchTarget('tailwind.config.js')
