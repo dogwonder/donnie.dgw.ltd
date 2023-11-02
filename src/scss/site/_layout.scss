@@ -51,9 +51,36 @@ a {
   }
 }
 
-.dgwltd-header {
-    .logo {
-        width: clamp(2rem, 1.80rem + 1.00vw, 3rem);
-        height: clamp(2rem, 1.80rem + 1.00vw, 3rem);
+.scrollable-frames {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.frames {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-items: stretch;
+  gap: 4ch;
+}
+.frame {
+  max-width: 400px;
+  flex-shrink: 0;
+  &__image {
+
+  }
+  &__content {
+    font-size: 12px;
+    color: #000000;
+    span {
+      color: #FF0033;
+      display: inline-block;
     }
+    a {
+      text-decoration: underline;
+    }
+  }
+  
 }

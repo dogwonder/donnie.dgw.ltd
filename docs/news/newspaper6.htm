@@ -18,6 +18,9 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/tailwind.css" /> 
 
+    <!-- 98.css -->
+    <link rel="stylesheet" href="/css/98.css" />
+
     
 
   </head>
@@ -47,13 +50,13 @@
               <table border="0" cellspacing="0" cellpadding="10" align="left">
                 <tbody><tr> 
                     <td valign="top"> 
-                        <p><font size="2">Taken from the Middlesex Times-Dispatch (Fell's 
+                        <p><span>Taken from the Middlesex Times-Dispatch (Fell's 
                           Opinion Section ) <b>October 2, 1991</b><br>
-                          <font size="1">Article ID 853287,1991,10,02,F076</font></font></p>
-                        <p><font size="4"><b><br>
-                          THE MYSTERY OF ENGINE X</b></font><b><font size="4"><font size="2"><br>
-                          </font></font></b><font size="2">by Daniel Fell</font></p>
-                        <p><font size="2">(MIDDLESEX)</font></p>
+                          <span>Article ID 853287,1991,10,02,F076</span></span></p>
+                        <p><span><b><br>
+                          THE MYSTERY OF ENGINE X</b></span><b><span><span><br>
+                          </span></span></b><span>by Daniel Fell</span></p>
+                        <p><span>(MIDDLESEX)</span></p>
                         <table border="0" cellspacing="0" cellpadding="10" align="left">
                           <tbody><tr> 
                             <td><img src="/news/files/images/fell.jpg" width="178" height="247"></td>
@@ -128,8 +131,7 @@
     
 
     <!--Bundle SVG-->
-    <svg width="0" height="0" aria-hidden="true" style="position: absolute;">
-  <defs><svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
+    <svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
     <filter id='noise' x='0%' y='0%' width='100%' height='100%'>
       <feTurbulence type="fractalNoise" baseFrequency="0 0.2" result="NOISE" numOctaves="2">
         <animate
@@ -158,7 +160,12 @@
       <feTurbulence type="fractalNoise" baseFrequency="5 0.3" result="NOISE" numOctaves="2" />
       <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="500" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>  
     </filter>
-</svg></defs>
+    <filter id="noisetv" x='0%' y='0%' width='100%' height='100%'>
+      <feTurbulence id="turbulence">
+        <animate attributeName="baseFrequency" dur="8s" values="0.9 0.9;0.8 0.8; 0.9 0.9" ></animate>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
+    </filter>
 </svg>
 
 

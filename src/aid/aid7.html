@@ -3,32 +3,15 @@ permalink: /aid/aid7.html
 ---
 
 {% css %}
-.frames {
-  overflow-x: scroll;
-  display: flex;
-  gap: 4ch;
-}
-.frame {
-  max-width: 400px;
-}
-.frame .frame__image {
-
-}
-.frame .frame__content {
-  font-size: 12px;
-  color: #000000;
-}
-table  {
-  display: none;
-}
 {% endcss %}
 
 {% extends "layouts/base.html" %}
 
 {% block content %}
+<div class="scrollable-frames mt-5">
 <div class="frames p-2">
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lburn1.jpg" width="216" height="128" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lburn1.jpg" width="216" height="128">
     <p class="frame__content">
       <span>32.</span> 
       burn it down/sparkle motion <a href="https://web.archive.org/web/20130506084843/http://www.donniedarko.com/sparkle/motion/">section</a> 
@@ -45,7 +28,7 @@ table  {
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lburn3.jpg" width="216" height="128" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lburn3.jpg" width="216" height="128">
     <p class="frame__content">
       <span>34.</span> 
       sparkle motion dancers animation/ fire popups/ "burn it down now you 
@@ -54,7 +37,7 @@ table  {
   </div>
   <div class="frame">
     <div align="center">
-      <img class="frame__image mb-2" src="/images/aid/lburn4.jpg" width="216" height="127" border="1">
+      <img class="frame__image mb-2" src="/images/aid/lburn4.jpg" width="216" height="127">
     </div>
     <p class="frame__content">
       <span>35.</span> 
@@ -62,13 +45,14 @@ table  {
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lburn5.jpg" width="216" height="127" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lburn5.jpg" width="216" height="127">
     <p class="frame__content">
       <span>36.</span> 
       "burn it down donnie." automatically forwards back to main menu. 
       ....... <a href="aid8.html">go to next section</a>
     </p>
   </div>
+</div>
 </div>
 {% endblock %}
 

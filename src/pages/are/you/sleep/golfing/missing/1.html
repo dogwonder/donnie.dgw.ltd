@@ -17,7 +17,7 @@ html body {
     width: 100%;
     height: auto;
     background-image: url("/images/missing/exercise-1.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
 }
@@ -33,17 +33,7 @@ html body {
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
         <canvas id="image" width="800" height="500"></canvas>
-        <div id="welcome" class="text">
-            Welcome to the Jim Cunningham<br>
-            Lifeline Exercises.<br><br>
-            You will be presented with several<br>
-            situations during this test and will be<br>
-            asked to make an X on the lifeline on<br> 
-            the blackboard in the corresponding<br> 
-            position between Love and Fear.<br><br>
-            Click on the screen to continue.
-        </div>
-        <div id="exercise-1" class="exercise-1 text" style="display: none;">
+        <div id="exercise-1" class="exercise-1 text">
             Lifeline Exercise #1<br><br>
             Juanita has an important math test<br>
             today. She has known about it for<br> 
@@ -61,111 +51,60 @@ html body {
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    // TODO 
-    // Audio not working as a button needs to be clicked, e.g. the TV
-    // Also allow animate text to work without audio file
-    // Add TV click and hover effect
+    ddScripts.animateText('exercise-1');
+    
+    const image = document.getElementById('image');
+    const ctx = image.getContext('2d');
+    const color = 'white';
 
-    const welcome = document.getElementById('welcome');
-    const exercise = document.getElementById('exercise-1');
-    const exeriseReady = false;
+    //Get the width and height of the canvas
+    let width = image.clientWidth;
+    let height = image.clientHeight;
 
-    const animateText = function( element, audioFile  ) {
-        
-        const text = document.getElementById(element);
-        //If no text is found bail
-        if (!text) return;
+    //Apply the new width and height for the canvas [FIXES BLUR ISSUE]
+    image.width = width;
+    image.height = height;
 
-        const words = text.innerHTML.split(' ');
-        text.innerHTML = '';
+    let rect = image.getBoundingClientRect(); 
 
-        const numTimeouts = words.length;
-        let timeoutsFinished = 0;
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+    let lineCount = 0;
 
-        const audio = new Audio(audioFile);
-        audio.play();
+    function drawLine(x1, y1, x2, y2) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = color; // Set the stroke color
+        ctx.stroke();
+    }
 
-        for (let i = 0; i < words.length; i++) {
-        setTimeout(() => {
-                text.innerHTML += words[i] + ' ';
-                timeoutsFinished++;
-                if (timeoutsFinished === numTimeouts) {
-                    audio.pause();
-                    const event = new CustomEvent('timeoutsCompleted');
-                    document.dispatchEvent(event);
-                }
-            }, i * 10);
-        }
-    };
-
-    //Click on the TV screen to start the exercise
-    welcome.addEventListener('click', () => {
-        const event = new CustomEvent('exerciseReady');
-        document.dispatchEvent(event);
+    image.addEventListener('mousedown', (event) => {
+        isDrawing = true;
+        const rect = image.getBoundingClientRect();
+        lastX = event.clientX - rect.left;
+        lastY = event.clientY - rect.top;
     });
 
-    document.addEventListener('exerciseReady', () => {
-
-        welcome.style.display = 'none';
-        exercise.style.display = 'block';
-
-        animateText('exercise-1', '/mp3/keys.mp3');
-    
-        const image = document.getElementById('image');
-        const ctx = image.getContext('2d');
-        const color = 'white';
-
-        //Get the width and height of the canvas
-        let width = image.clientWidth;
-        let height = image.clientHeight;
-
-        // console.log(width, height);
-
-        //Apply the new width and height for the canvas [FIXES BLUR ISSUE]
-        image.width = width;
-        image.height = height;
-
-        let rect = image.getBoundingClientRect(); 
-
-        let isDrawing = false;
-        let lastX = 0;
-        let lastY = 0;
-        let lineCount = 0;
-
-        function drawLine(x1, y1, x2, y2) {
-            ctx.beginPath();
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
-            ctx.strokeStyle = color; // Set the stroke color
-            ctx.stroke();
-        }
-
-        image.addEventListener('mousedown', (event) => {
-            isDrawing = true;
+    image.addEventListener('mousemove', (event) => {
+        if (isDrawing) {
             const rect = image.getBoundingClientRect();
-            lastX = event.clientX - rect.left;
-            lastY = event.clientY - rect.top;
-        });
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            drawLine(lastX, lastY, x, y);
+            lastX = x;
+            lastY = y;
+            console.log(lineCount);
+        }
+    });
 
-        image.addEventListener('mousemove', (event) => {
-            if (isDrawing) {
-                const rect = image.getBoundingClientRect();
-                const x = event.clientX - rect.left;
-                const y = event.clientY - rect.top;
-                drawLine(lastX, lastY, x, y);
-                lastX = x;
-                lastY = y;
-                console.log(lineCount);
-            }
-        });
-
-        image.addEventListener('mouseup', () => {
-            isDrawing = false;
-            lineCount++;
-            if (lineCount >= 2) {
-                window.location.href = '2.html';
-            }
-        });
+    image.addEventListener('mouseup', () => {
+        isDrawing = false;
+        lineCount++;
+        if (lineCount >= 2) {
+            window.location.href = '2.html';
+        }
     });
     
 

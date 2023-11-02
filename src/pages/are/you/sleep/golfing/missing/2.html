@@ -17,7 +17,7 @@ html body {
     width: 100%;
     height: auto;
     background-image: url("/images/missing/exercise-2.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
 }
@@ -51,41 +51,7 @@ html body {
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-        const animateText = function( element, audioFile = null ) {
-
-            const text = document.getElementById(element);
-            //If no text is found bail
-            if (!text) return;
-
-            const words = text.innerHTML.split(' ');
-            text.innerHTML = '';
-
-            const numTimeouts = words.length;
-            let timeoutsFinished = 0;
-
-            //If there is an audio file play it
-            if (audioFile) {
-                const audio = new Audio(audioFile);
-                audio.play();
-            }
-
-            for (let i = 0; i < words.length; i++) {
-            setTimeout(() => {
-                    text.innerHTML += words[i] + ' ';
-                    timeoutsFinished++;
-                    if (timeoutsFinished === numTimeouts) {
-                        if (audioFile) {
-                            audio.pause();
-                        }
-                        const event = new CustomEvent('timeoutsCompleted');
-                        document.dispatchEvent(event);
-                    }
-                }, i * 10);
-            }
-
-        };
-
-        animateText('exercise-2');
+        ddScripts.animateText('exercise-2');
         
         const image = document.getElementById('image');
         const ctx = image.getContext('2d');

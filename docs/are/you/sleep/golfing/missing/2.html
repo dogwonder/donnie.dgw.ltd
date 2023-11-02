@@ -17,7 +17,7 @@
     width: 100%;
     height: auto;
     background-image: url("/images/missing/exercise-2.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
 }
@@ -34,6 +34,9 @@
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/tailwind.css" /> 
+
+    <!-- 98.css -->
+    <link rel="stylesheet" href="/css/98.css" />
 
     
 
@@ -78,41 +81,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-        const animateText = function( element, audioFile = null ) {
-
-            const text = document.getElementById(element);
-            //If no text is found bail
-            if (!text) return;
-
-            const words = text.innerHTML.split(' ');
-            text.innerHTML = '';
-
-            const numTimeouts = words.length;
-            let timeoutsFinished = 0;
-
-            //If there is an audio file play it
-            if (audioFile) {
-                const audio = new Audio(audioFile);
-                audio.play();
-            }
-
-            for (let i = 0; i < words.length; i++) {
-            setTimeout(() => {
-                    text.innerHTML += words[i] + ' ';
-                    timeoutsFinished++;
-                    if (timeoutsFinished === numTimeouts) {
-                        if (audioFile) {
-                            audio.pause();
-                        }
-                        const event = new CustomEvent('timeoutsCompleted');
-                        document.dispatchEvent(event);
-                    }
-                }, i * 10);
-            }
-
-        };
-
-        animateText('exercise-2');
+        ddScripts.animateText('exercise-2');
         
         const image = document.getElementById('image');
         const ctx = image.getContext('2d');
@@ -175,8 +144,7 @@
 
 
     <!--Bundle SVG-->
-    <svg width="0" height="0" aria-hidden="true" style="position: absolute;">
-  <defs><svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
+    <svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
     <filter id='noise' x='0%' y='0%' width='100%' height='100%'>
       <feTurbulence type="fractalNoise" baseFrequency="0 0.2" result="NOISE" numOctaves="2">
         <animate
@@ -205,7 +173,12 @@
       <feTurbulence type="fractalNoise" baseFrequency="5 0.3" result="NOISE" numOctaves="2" />
       <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="500" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>  
     </filter>
-</svg></defs>
+    <filter id="noisetv" x='0%' y='0%' width='100%' height='100%'>
+      <feTurbulence id="turbulence">
+        <animate attributeName="baseFrequency" dur="8s" values="0.9 0.9;0.8 0.8; 0.9 0.9" ></animate>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
+    </filter>
 </svg>
 
 

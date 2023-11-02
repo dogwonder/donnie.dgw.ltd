@@ -1,0 +1,102 @@
+---
+permalink: /are/you/sleep/golfing/missing/intro.html
+---
+
+{% set isRuffle = false %}
+
+{% css %}
+html body {
+    background-color: #000000;
+    color: white;
+}
+.aspect-ratio {
+    position: relative;
+    aspect-ratio: 800 / 500;
+}
+.aspect-ratio canvas {
+    width: 100%;
+    height: auto;
+    background-image: url("/images/missing/intro.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.text {
+    position: absolute;
+    left: 60%;
+    top: 5rem;
+}
+.tv-cabinet {
+    position: absolute;
+    display: block;
+    width: 29%;
+    height: 34%;
+    bottom: 0;
+    right: 0;
+}
+.tv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.tv-frame, 
+.tv-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+}
+.tv-frame {
+    z-index: 3;
+}
+.tv-screen {
+    z-index: 2;
+}
+.noise {
+    background: repeating-linear-gradient(#111, #111 50%, #76838c 50%, #76838c);
+    background-size: 5px 5px;
+    filter: url(#noisetv);
+    overflow: hidden;
+}
+{% endcss %}
+
+{% extends "layouts/base.html" %}
+{% block content %}
+<div class="flex items-end h-full">
+    <div class="aspect-ratio">
+        <canvas id="image" width="800" height="500"></canvas>
+        <div id="tv" class="tv-cabinet">
+            <div class="tv">
+                <div class="tv-frame"><a href="1.html"><img src="/images/missing/tv.png" alt="TV"></a></div>
+                <div id="noise" class="tv-screen noise"></div>
+            </div>            
+        </div>
+        <div id="welcome" class="text">
+            Welcome to the Jim Cunningham<br>
+            Lifeline Exercises.<br><br>
+            You will be presented with several<br>
+            situations during this test and will be<br>
+            asked to make an X on the lifeline on<br> 
+            the blackboard in the corresponding<br> 
+            position between Love and Fear.<br><br>
+            Click on the screen to continue.
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // TODO 
+    // Add TV click and hover effect
+
+    const welcome = document.getElementById('welcome');
+    ddScripts.animateText('welcome');
+
+
+});
+</script>
+{% endblock %}

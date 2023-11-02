@@ -22,6 +22,10 @@
     cursor: pointer;
     filter: url(#noise);
 }
+.crosshair svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
 .window {
     width: 200px;
     height: 200px;
@@ -49,9 +53,10 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/tailwind.css" /> 
 
-    
-<link rel="stylesheet" href="/css/98.css" /> 
+    <!-- 98.css -->
+    <link rel="stylesheet" href="/css/98.css" />
 
+    
 
   </head>
   <body>
@@ -62,7 +67,9 @@
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
         <img src="/images/missing/sleepgolfing-bg-3.jpg">
-        <span id="popup" class="crosshair">⌖</span>
+        <span id="popup" class="crosshair">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 219"><defs><style>.cross-1{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:20px}</style></defs><circle cx="109.5" cy="109.5" r="51.1" class="cross-1"/><path d="M110.96 0v58.4M110.96 160.6V219M219 108.04h-58.4M58.4 108.04H0" class="cross-1"/></svg>
+        </span>
         <div class="window">
             <div class="title-bar">
                 <div class="title-bar-text px-1">Microsoft Explorer</div>
@@ -119,8 +126,7 @@ document.querySelectorAll('.interlace').forEach(item => {
 
 
     <!--Bundle SVG-->
-    <svg width="0" height="0" aria-hidden="true" style="position: absolute;">
-  <defs><svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
+    <svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
     <filter id='noise' x='0%' y='0%' width='100%' height='100%'>
       <feTurbulence type="fractalNoise" baseFrequency="0 0.2" result="NOISE" numOctaves="2">
         <animate
@@ -149,7 +155,12 @@ document.querySelectorAll('.interlace').forEach(item => {
       <feTurbulence type="fractalNoise" baseFrequency="5 0.3" result="NOISE" numOctaves="2" />
       <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="500" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>  
     </filter>
-</svg></defs>
+    <filter id="noisetv" x='0%' y='0%' width='100%' height='100%'>
+      <feTurbulence id="turbulence">
+        <animate attributeName="baseFrequency" dur="8s" values="0.9 0.9;0.8 0.8; 0.9 0.9" ></animate>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
+    </filter>
 </svg>
 
 

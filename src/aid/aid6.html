@@ -4,33 +4,15 @@ permalink: /aid/aid6.html
 
 
 {% css %}
-.frames {
-  overflow-x: scroll;
-  display: flex;
-  gap: 4ch;
-}
-.frame {
-  max-width: 400px;
-}
-.frame .frame__image {
-
-}
-.frame .frame__content {
-  font-size: 12px;
-  color: #000000;
-}
-.frame .frame__content span {
-  color: #FF0033;
-  display: inline-block;
-}
 {% endcss %}
 
 {% extends "layouts/base.html" %}
 
 {% block content %}
+<div class="scrollable-frames mt-5">
 <div class="frames p-2">
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2h.jpg" width="216" height="128" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2h.jpg" width="216" height="128">
     <p class="frame__content">
       <span>26.</span> 
       screen becomes donnie's confrontation with his teacher - click on tv frank - ascii bunny overlaps donnie. click on tv frank again.
@@ -44,33 +26,34 @@ permalink: /aid/aid6.html
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2k.jpg" width="216" height="127" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2k.jpg" width="216" height="127">
     <p class="frame__content">
       <span>28.</span> 
       back to the golfcourse. letters ask "do you think he was sleepgolfing?" click on donnie.
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2l.jpg" width="216" height="127" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2l.jpg" width="216" height="127">
     <p class="frame__content">
       <span>29.</span> 
       animation of donnie waking up. click on white arrow. popup asks "who found the wallet?" enter ling ling / or not. (from what i can tell the screen leads to the same/next page automatically even if you don't enter the password).
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2o.jpg" width="216" height="127" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2o.jpg" width="216" height="127">
     <p class="frame__content">
       <span>30.</span> 
       sidewalk screen - ("i've been waiting for you"). click on o dot - a popup of donnie looking at jim's wallet appears. click inside popup.
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2p.jpg" width="216" height="126" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2p.jpg" width="216" height="126">
     <p class="frame__content">
       <span>31.</span> 
       red lines remain - click on the blinking red dot at the tip of the longest line. this leads to a popup article on Cunning Visions. ..... <a href="aid7.html">go to next section</a>
     </p>
   </div>
+</div>
 </div>
 {% endblock %}
 

@@ -3,68 +3,53 @@ permalink: /aid/aid5.html
 ---
 
 {% css %}
-.frames {
-  overflow-x: scroll;
-  display: flex;
-  gap: 4ch;
-}
-.frame {
-  max-width: 400px;
-}
-.frame .frame__image {
-
-}
-.frame .frame__content {
-  font-size: 12px;
-  color: #000000;
-}
-.frame .frame__content span {
-  color: #FF0033;
-  display: inline-block;
-}
 {% endcss %}
 
 {% extends "layouts/base.html" %}
 
 {% block content %}
+<div class="scrollable-frames mt-5">
 <div class="frames p-2">
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/no2c.jpg" width="252" height="150" border="1">
+    <img class="frame__image mb-2" src="/images/aid/no2c.jpg" width="252" height="150">
     <p class="frame__content">
       <span>20.</span> 
-      main menu - click on o level two.
+      main menu - click on <span color="#FF3300">o</span> level two.
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2a.jpg" width="216" height="128" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2a.jpg" width="216" height="128">
     <p class="frame__content">
       <span>21.</span> 
       "enter the password from level 1" = breathe.
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2c.jpg" width="216" height="127" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2c.jpg" width="216" height="127">
     <p class="frame__content">
       <span>22.</span> 
       click on cross, goes to the "are you sleepgolfing?" section.
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2d.jpg" width="216" height="128" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2d.jpg" width="216" height="128">
     <p class="frame__content">
       <span>23.</span> 
       at the golf course - click on the red square dot ("don't be a prisoner of fear"), this will cause a pop-up article on Jim Cunningham. (close screen).
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2e.jpg" width="216" height="131" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2e.jpg" width="216" height="131">
     <p class="frame__content">
       <span>24.</span> 
-      another red square ("wake up donnie!) will appear, click on
+      another red square ("wake up donnie!) will appear, <b>click</b> on 
+        it, stripes appear to the left &amp; donnie/2 golfers appear, (letters now 
+        read "place an x on the lifeline") - <b>click</b> on the <b>2 
+        golfers</b>.
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/lev2g.jpg" width="216" height="129" border="1">
+    <img class="frame__image mb-2" src="/images/aid/lev2g.jpg" width="216" height="129">
     <p class="frame__content">
       <span>25. </span> 
       chalkboard screen - <b>click</b> on the tv screen. exercise #1 appears, 
@@ -74,6 +59,7 @@ permalink: /aid/aid5.html
         #2. .... <a href="aid6.html">go to next section</a> 
     </p>
   </div>
+</div>
 </div>
 {% endblock %}
 

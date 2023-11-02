@@ -9,6 +9,13 @@
     background-color: #ddddcc;
     background: linear-gradient(to top, #ffffff 0%, #ffffff 400px, #ddddcc 500px, #ddddcc 100%);
 }
+p {
+    max-width: 60vw;
+    font-size: 14px;
+}
+p > a {
+    text-decoration: underline;
+}
 </style>
     
 
@@ -17,6 +24,9 @@
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/tailwind.css" /> 
+
+    <!-- 98.css -->
+    <link rel="stylesheet" href="/css/98.css" />
 
     
 
@@ -32,6 +42,7 @@
         <embed src="/from/the/sky/trampolin.swf" width="800" height="500">
     </object>  
 </div>
+<p class="p-2">* The second part of level 3 is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game <a href="/from/the/sky/transcript.html">click here</a> to continue </p>
 
       </div>
     </main>
@@ -61,8 +72,7 @@
 
 
     <!--Bundle SVG-->
-    <svg width="0" height="0" aria-hidden="true" style="position: absolute;">
-  <defs><svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
+    <svg viewBox="0 0 180 100" class="fx-noise" aria-hidden="true" style="width: 0; height: 0; visibility: hidden;">
     <filter id='noise' x='0%' y='0%' width='100%' height='100%'>
       <feTurbulence type="fractalNoise" baseFrequency="0 0.2" result="NOISE" numOctaves="2">
         <animate
@@ -91,7 +101,12 @@
       <feTurbulence type="fractalNoise" baseFrequency="5 0.3" result="NOISE" numOctaves="2" />
       <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="500" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>  
     </filter>
-</svg></defs>
+    <filter id="noisetv" x='0%' y='0%' width='100%' height='100%'>
+      <feTurbulence id="turbulence">
+        <animate attributeName="baseFrequency" dur="8s" values="0.9 0.9;0.8 0.8; 0.9 0.9" ></animate>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
+    </filter>
 </svg>
 
 

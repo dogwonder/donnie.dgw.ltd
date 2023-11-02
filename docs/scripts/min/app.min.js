@@ -1,8 +1,8 @@
-;(function () {
+var ddScripts = {
 
-    'use strict';
+    // 'use strict';
 
-    const ruffleEmbeds = function() {
+    ruffleEmbeds: function() {
 
         const ruffleSources = ['object.aspect-ratio ruffle-embed', 'object.aspect-ratio ruffle-player', '.ruffle-container'];
 
@@ -17,39 +17,39 @@
           )} / ${object.getAttribute("height")}`;
         });
 
-    };
+    },
 
-    // const animateText = function( element, audioFile ) {
+    animateText: function(element, audioFile) {
 
-    //     const text = document.getElementById(element);
-    //     //If no text is found bail
-    //     if (!text) return;
+        const text = document.getElementById(element);
+        //If no text is found bail
+        if (!text) return;
 
-    //     const words = text.innerHTML.split(' ');
-    //     text.innerHTML = '';
+        const words = text.innerHTML.split(' ');
+        text.innerHTML = '';
 
-    //     const numTimeouts = words.length;
-    //     let timeoutsFinished = 0;
+        const numTimeouts = words.length;
+        let timeoutsFinished = 0;
 
-    //     const audio = new Audio(audioFile);
+        const audio = new Audio(audioFile);
 
-    //     for (let i = 0; i < words.length; i++) {
-    //     setTimeout(() => {
-    //             text.innerHTML += words[i] + ' ';
-    //             timeoutsFinished++;
-    //             if (timeoutsFinished === numTimeouts) {
-    //                 audio.pause();
-    //                 const event = new CustomEvent('timeoutsCompleted');
-    //                 document.dispatchEvent(event);
-    //             }
-    //         }, i * 10);
-    //     }
-    // };
+        for (let i = 0; i < words.length; i++) {
+        setTimeout(() => {
+                text.innerHTML += words[i] + ' ';
+                timeoutsFinished++;
+                if (timeoutsFinished === numTimeouts) {
+                    audio.pause();
+                    const event = new CustomEvent('timeoutsCompleted');
+                    document.dispatchEvent(event);
+                }
+            }, i * 10);
+        }
+    },
 
-    document.addEventListener("DOMContentLoaded", function() {
+}
 
-        ruffleEmbeds();
+document.addEventListener("DOMContentLoaded", function() {
 
-    }); 
+  ddScripts.ruffleEmbeds();
 
-})();
+}); 

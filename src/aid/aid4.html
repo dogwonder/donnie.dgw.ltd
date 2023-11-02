@@ -3,47 +3,29 @@ permalink: /aid/aid4.html
 ---
 
 {% css %}
-.frames {
-  overflow-x: scroll;
-  display: flex;
-  gap: 4ch;
-}
-.frame {
-  max-width: 400px;
-}
-.frame .frame__image {
-
-}
-.frame .frame__content {
-  font-size: 12px;
-  color: #000000;
-}
-.frame .frame__content span {
-  color: #FF0033;
-  display: inline-block;
-}
 {% endcss %}
 
 {% extends "layouts/base.html" %}
 
 {% block content %}
+<div class="scrollable-frames mt-5">
 <div class="frames p-2">
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/tuni3.jpg" width="216" height="127" border="1">
+    <img class="frame__image mb-2" src="/images/aid/tuni3.jpg" width="216" height="127">
     <p class="frame__content">
       <span>15.</span> 
       the 3 popups close, 4 new boxes open - <b>click</b> boxes until they start to fade away into...
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/tuni4.jpg" width="216" height="127" border="1">
+    <img class="frame__image mb-2" src="/images/aid/tuni4.jpg" width="216" height="127">
     <p class="frame__content">
       <span>16.</span> 
-      "you found me... remember the word? ______ " password = <font color="#3333CC">smurf<font color="#000000">.</font></font>
+      "you found me... remember the word? ______ " password = <span color="#3333CC">smurf.</span>
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/tuni5.jpg" width="216" height="127" border="1">
+    <img class="frame__image mb-2" src="/images/aid/tuni5.jpg" width="216" height="127">
     <p class="frame__content">
       <span>17.</span> 
         4 smurf boxes appear - <b>click</b> on any box, boxes change to donnie's 
@@ -51,7 +33,7 @@ permalink: /aid/aid4.html
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/tuni7a.jpg" width="144" height="156" border="1">
+    <img class="frame__image mb-2" src="/images/aid/tuni7a.jpg" width="144" height="156">
     <p class="frame__content">
       <span>18.</span> 
       smurf boxes go away &amp; a popup of roberta appears. if you choose to <b>close</b> 
@@ -59,14 +41,14 @@ permalink: /aid/aid4.html
     </p>
   </div>
   <div class="frame">
-    <img class="frame__image mb-2" src="/images/aid/tuni9.jpg" width="252" height="146" border="1">
+    <img class="frame__image mb-2" src="/images/aid/tuni9.jpg" width="252" height="146">
     <p class="frame__content">
       <span>19.</span> 
       <b>click</b> on red dot, "The Philosophy of Time Travel", another 
       dot "Foreword", "Tangent Universe", etc. appear. when 
       you <b>click on a dot</b> it's referring page from the tt book will appear 
       on the right side of the screen. if you move your cursor across the tt page, 
-      it will become more visible. <font color="#000000">i have no idea how to 
+      it will become more visible. <span color="#000000">i have no idea how to 
       get out of this section when finished, but i just reload the page &amp; 
       select "go on to level 2" instead (<a href="https://web.archive.org/web/20130503125935/http://www.donniedarko.com/further.html">here</a>). 
       (special note: if this section doesn't work 
@@ -74,6 +56,7 @@ permalink: /aid/aid4.html
       ...... <a href="aid5.html">go to next section</a>
     </p>
   </div>
+</div>
 </div>
 {% endblock %}
 

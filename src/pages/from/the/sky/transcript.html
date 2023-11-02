@@ -6,6 +6,36 @@ permalink: /from/the/sky/transcript.html
 html body {
     background-color: #ddddcc;
 }
+.aspect-ratio {
+    position: relative;
+}
+.transcript {
+    position: absolute;
+    top:0;
+    left: 5%;
+    max-width: 90%;
+    font-size: 0.75rem;
+    font-family: Courier, monospace;
+    font-weight: bold;
+    overflow-x: hidden;
+    height: 80%;
+}
+.times-up {
+    position: absolute;
+    bottom: 20%;
+    right: 10%; 
+}
+.blink {
+    animation: blink 1s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+}
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+
 {% endcss %}
 
 {% extends "layouts/base.html" %}
@@ -13,7 +43,7 @@ html body {
 {% block content %}
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
-        <img src="/images/missing/leve3-transcript.jpg">
+        <img src="/images/missing/level3-transcript.jpg">
         <div class="transcript" id="scene-1">
             FEDERAL AVIATION ADMINISTRATION<br>
             OFFICE OF ACCIDENT INVESTIGATION<br>
@@ -29,7 +59,7 @@ html body {
 
             CONTINUE Y/N
         </div>
-        <div class="transcript"  id="scene-2">
+        <div class="transcript"  id="scene-2" style="display:none;">
             FEDERAL AVIATION ADMINISTRATION<br>
             OFFICE OF ACCIDENT INVESTIGATION<br>
             TRANSCRIPT #345512334<br>
@@ -66,7 +96,7 @@ html body {
 
             &lt;&lt;&lt;&lt;&lt;&lt;&lt;DISCONNECT<br>
         </div>
-        <div class="times-up"  id="scene-3">
+        <div class="times-up text-dark"  id="scene-3" style="display:none;">
             time is up, donnie
         </div>
     </div>  
@@ -74,4 +104,58 @@ html body {
 {% endblock %}
 
 {% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const scene1 = document.getElementById('scene-1');
+        const scene2 = document.getElementById('scene-2');
+        const scene3 = document.getElementById('scene-3');
+
+        ddScripts.animateText('scene-1');
+
+        document.addEventListener('timeoutsCompleted', () => {
+
+            //Add a blinking cursor at the end of the text
+            const cursor = document.createElement('span');
+            cursor.classList.add('blink');
+            cursor.innerHTML = '_';
+            document.getElementById('scene-1').appendChild(cursor);
+
+            //Allow the user to continue to the next scene by typing Y or N where the cursor is
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'y' || event.key === 'Y') {
+                    //Remove the cursor
+                    cursor.remove();
+                    //Add a Y to the end of the text
+                    const y = document.createElement('span');
+                    y.innerHTML = 'Y';
+                    scene1.appendChild(y);
+                    //Delay the next scene
+                    setTimeout(() => {
+
+                        scene1.style.display = 'none';
+                        scene2.style.display = 'block';
+
+                        ddScripts.animateText('scene-2');
+
+                        //once the user has scrolled to the bottom of scene 2 trigger and evet
+
+                        scene2.addEventListener('scroll', function() {
+                            if (scene2.scrollTop + scene2.clientHeight >= scene2.scrollHeight) {
+                                // console.log('User has scrolled to the bottom of scene-2');
+                                setTimeout(() => {
+                                    scene2.style.display = 'none';
+                                    scene3.style.display = 'block';
+                                }, 4000);
+                            }
+                        });
+
+                    }, 1000);
+                }
+            });
+
+        });
+        
+    });
+</script>
 {% endblock %}

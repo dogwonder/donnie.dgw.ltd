@@ -6,10 +6,6 @@ permalink: /are/you/sleep/golfing/missing/3.html
 
 {% set isAlpine = true %}
 
-{% block styles %}
-<link rel="stylesheet" href="{{ "/" | url }}css/98.css" /> 
-{% endblock %}
-
 {% css %}
 
 html body {
@@ -24,13 +20,12 @@ html body {
     position: relative;
 }
 .scene-1 {
-    font-size: 120%;
     position: absolute;
     left: 10rem;
     bottom: 8rem;
     max-width: 70%;
+    font-size: 0.9375rem;
     font-weight: bold;
-    line-height: 1.2;
 }
 .scene-1 p {
     font-size: inherit;
@@ -255,7 +250,6 @@ html body {
         let timeoutsFinished = 0;
 
         const audio = new Audio('/mp3/lifeline-1.mp3');
-        
         audio.play();
 
         for (let i = 0; i < words.length; i++) {
@@ -297,8 +291,6 @@ html body {
 
     document.addEventListener('scene2Completed', () => {
 
-        // console.log('Scene 2 completed');
-
         document.getElementById('scene-3').style.display = 'flex';
         
         const audio = new Audio('/mp3/lifeline-2.mp3');
@@ -327,15 +319,11 @@ html body {
             }
         });
 
-        cells.forEach(cell => {
-            cell.addEventListener('click', () => {
-            const url = cell.getAttribute('data-url');
-            //Open modal
-            if (url) {
-                
-            }
-            });
-        });
+        // cells.forEach(cell => {
+        //     cell.addEventListener('click', () => {
+        //         const url = cell.getAttribute('data-url');
+        //     });
+        // });
 
     });
 

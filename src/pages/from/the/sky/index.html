@@ -7,6 +7,13 @@ html body {
     background-color: #ddddcc;
     background: linear-gradient(to top, #ffffff 0%, #ffffff 400px, #ddddcc 500px, #ddddcc 100%);
 }
+p {
+    max-width: 60vw;
+    font-size: 14px;
+}
+p > a {
+    text-decoration: underline;
+}
 {% endcss %}
 
 {% extends "layouts/base.html" %}
@@ -18,6 +25,7 @@ html body {
         <embed src="/from/the/sky/trampolin.swf" width="800" height="500">
     </object>  
 </div>
+<p class="p-2">* The second part of level 3 is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game <a href="/from/the/sky/transcript.html">click here</a> to continue </p>
 {% endblock %}
 
 {% block scripts %}

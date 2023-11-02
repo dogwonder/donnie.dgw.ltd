@@ -141,6 +141,12 @@ h6 {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+.text-dark {
+  font-size: 0.9375rem;
+  font-weight: bold;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
 html {
   font-family: var(--body), Helvetica, Arial, sans-serif;
 }
@@ -193,9 +199,36 @@ a:focus {
   text-decoration: none;
 }
 
-.dgwltd-header .logo {
-  width: clamp(2rem, 1.8rem + 1vw, 3rem);
-  height: clamp(2rem, 1.8rem + 1vw, 3rem);
+.scrollable-frames {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.frames {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-items: stretch;
+  gap: 4ch;
+}
+
+.frame {
+  max-width: 400px;
+  flex-shrink: 0;
+}
+.frame__content {
+  font-size: 12px;
+  color: #000000;
+}
+.frame__content span {
+  color: #FF0033;
+  display: inline-block;
+}
+.frame__content a {
+  text-decoration: underline;
 }
 
 .aspect-ratio {
