@@ -20,16 +20,11 @@ input,
 label,
 option,
 select,
-table,
 textarea,
 ul.tree-view {
 	-webkit-font-smoothing: none;
 	font-family: "Pixelated MS Sans Serif",Arial;
 	font-size: 11px
-}
-u {
-	border-bottom: .5px solid #222;
-	text-decoration: none
 }
 button,
 input[type=reset],
@@ -454,12 +449,6 @@ select:focus option {
 select:active {
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h16v17H0V0zm1 16h14V1H1v15z' fill='gray'/%3E%3Cpath fill='silver' d='M1 1h14v15H1z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 7H5v1h1v1h1v1h1v1h1v-1h1V9h1V8h1V7z' fill='%23000'/%3E%3C/svg%3E")
 }
-a {
-	color: #00f
-}
-a:focus {
-	outline: 1px dotted #00f
-}
 ul.tree-view {
 	background: #fff;
 	box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
@@ -633,35 +622,6 @@ menu[role=tablist].multirows>li {
 	box-sizing: border-box;
 	overflow: auto
 }
-.sunken-panel,
-table {
+.sunken-panel {
 	background-color: #fff
 }
-table {
-	border-collapse: collapse;
-	position: relative;
-	text-align: left;
-	white-space: nowrap
-}
-table>thead>tr>* {
-	background: silver;
-	box-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;
-	box-sizing: border-box;
-	font-weight: 400;
-	height: 17px;
-	padding: 0 6px;
-	position: sticky;
-	top: 0
-}
-table.interactive>tbody>tr {
-	cursor: pointer
-}
-table>tbody>tr.highlighted {
-	background-color: navy;
-	color: #fff
-}
-table>tbody>tr>* {
-	height: 14px;
-	padding: 0 6px
-}
-/*# sourceMappingURL=98.css.map */
