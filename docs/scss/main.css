@@ -220,7 +220,7 @@ a:focus {
   flex-shrink: 0;
 }
 .frame__content {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #000000;
 }
 .frame__content span {
@@ -229,6 +229,14 @@ a:focus {
 }
 .frame__content a {
   text-decoration: underline;
+}
+
+table td img {
+  width: 200%;
+}
+table td, table p {
+  font-family: Times New Roman, Times, serif;
+  font-size: 0.9375rem;
 }
 
 .aspect-ratio {

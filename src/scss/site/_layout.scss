@@ -68,11 +68,8 @@ a {
 .frame {
   max-width: 400px;
   flex-shrink: 0;
-  &__image {
-
-  }
   &__content {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #000000;
     span {
       color: #FF0033;
@@ -82,5 +79,17 @@ a {
       text-decoration: underline;
     }
   }
-  
+}
+
+//Table layouts
+table {
+  td {
+    img {
+      width: 200%;
+    }
+  }
+  td, p {
+    font-family: Times New Roman, Times, serif;
+    font-size: 0.9375rem;
+  }
 }
