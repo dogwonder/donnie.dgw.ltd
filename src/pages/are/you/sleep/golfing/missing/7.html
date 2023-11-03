@@ -21,27 +21,27 @@ html body {
     animation: grow 1s linear forwards;
     position: absolute;
     bottom: 0;
-    margin-block-start: var(--line-height, 600px);
-    left: var(--line-offset, 600px);
-    --line-animation: 600px;
+    margin-block-start: var(--line-height, 60%);
+    left: var(--line-offset, 60%);
+    --line-animation: 60%;
 }
 .line-100 {
-    --line-animation: 100px;
+    --line-animation: 10%;
 }
 .line-200 {
-    --line-animation: 200px;
+    --line-animation: 20%;
 }
 .line-300 {
-    --line-animation: 300px;
+    --line-animation: 30%;
 }
 .line-400 {
-    --line-animation: 400px;
+    --line-animation: 40%;
 }
 .line-500 {
-    --line-animation: 500px;
+    --line-animation: 50%;
 }
 .line-600 {
-    --line-animation: 600px;
+    --line-animation: 60%;
 }
 .target {
     display: flex;
@@ -76,15 +76,19 @@ html body {
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
         <div class="lines">
-            <div class="line opacity-20 line-100" style="--line-offset: 60px"></div>
-            <div class="line opacity-50 line-200" style="--line-offset: 100px"></div>
-            <div class="line opacity-70 line-300" style="--line-offset: 110px"></div>
-            <div class="line opacity-90 line-100" style="--line-offset: 120px"></div>
-            <div class="line opacity-70 line-200" style="--line-offset: 140px"></div>
-            <div class="line opacity-60 line-300" style="--line-offset: 150px"></div>
-            <div class="target line opacity-90 line-500" style="--line-offset: 155px"><span></span></div>
-            <div class="line opacity-20 line-200" style="--line-offset: 175px"></div>
-            <div class="line opacity-80 line-400" style="--line-offset: 220px"></div>
+            <div class="line opacity-20 line-100" style="--line-offset: 6%"></div>
+            <div class="line opacity-50 line-200" style="--line-offset: 10%"></div>
+            <div class="line opacity-70 line-300" style="--line-offset: 11%"></div>
+            <div class="line opacity-90 line-100" style="--line-offset: 12%"></div>
+            <div class="line opacity-70 line-200" style="--line-offset: 14%"></div>
+            <div class="line opacity-60 line-300" style="--line-offset: 15%"></div>
+            <div class="target line opacity-90 line-500" style="--line-offset: 15.5%"><span></span></div>
+            <div class="line opacity-20 line-200" style="--line-offset: 17.5%"></div>
+            <div class="line opacity-80 line-400" style="--line-offset: 22%"></div>
+            <div class="line opacity-20 line-200" style="--line-offset: 30%"></div>
+            <div class="line opacity-10 line-200" style="--line-offset: 32%"></div>
+            <div class="line opacity-10 line-300" style="--line-offset: 35%"></div>
+            <div class="line opacity-30 line-100" style="--line-offset: 40%"></div>
         </div>
     </div>
 </div>

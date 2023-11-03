@@ -11,10 +11,10 @@ html body {
 }
 .transcript {
     position: absolute;
-    top:0;
+    bottom:0;
     left: 5%;
     max-width: 90%;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-family: Courier, monospace;
     font-weight: bold;
     overflow-x: hidden;
@@ -34,8 +34,6 @@ html body {
         visibility: hidden;
     }
 }
-
-
 {% endcss %}
 
 {% extends "layouts/base.html" %}
@@ -96,7 +94,7 @@ html body {
 
             &lt;&lt;&lt;&lt;&lt;&lt;&lt;DISCONNECT<br>
         </div>
-        <div class="times-up text-dark"  id="scene-3" style="display:none;">
+        <div class="times-up text-dark"  id="scene-3" style="opacity: 0;">
             time is up, donnie
         </div>
     </div>  
@@ -138,19 +136,21 @@ html body {
 
                         ddScripts.animateText('scene-2');
 
-                        //once the user has scrolled to the bottom of scene 2 trigger and evet
-
-                        scene2.addEventListener('scroll', function() {
-                            if (scene2.scrollTop + scene2.clientHeight >= scene2.scrollHeight) {
-                                // console.log('User has scrolled to the bottom of scene-2');
-                                setTimeout(() => {
-                                    scene2.style.display = 'none';
-                                    scene3.style.display = 'block';
-                                }, 4000);
-                            }
-                        });
+                        const event = new CustomEvent('scene2Completed');
+                        document.dispatchEvent(event);
 
                     }, 1000);
+
+                    document.addEventListener('timeoutsCompleted', () => {
+
+                        setTimeout(() => {
+                                scene2.style.display = 'none';
+                                scene3.style.transition = 'opacity 1s ease-in-out';
+                                scene3.style.opacity = 1;
+                        }, 10000);
+
+                    });
+
                 }
             });
 

@@ -7,12 +7,12 @@ permalink: /are/you/sleep/golfing/missing/3.html
 {% set isAlpine = true %}
 
 {% css %}
-
 html body {
     background-color: #000000;
     color: #000000;
 }
 .scene-fear-love {
+    width: 100%;
     aspect-ratio: 800 / 500;
     background-image: url("/images/missing/animation-bg.jpg");
     background-size: contain;
@@ -33,15 +33,17 @@ html body {
 .scene-2 {
     color: white;
     position: absolute;
-    left: 6rem;
-    bottom: 0;
+    left: 15%;
+    bottom: 2%;
     max-width: 70%;
-    color: white;
-    font-size: 14px;
-    font-family: 'Courier New', Courier, monospace;
 }
 .scene-2 pre {
     padding: 0;
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: monospace;
+    letter-spacing: 0.05em;
 }
 .scene-3 {
     display: flex !important;
@@ -50,22 +52,16 @@ html body {
     height: 100%;
 }
 .grid {
-    width: fit-content;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
+    gap: 2%;
 }
 .grid .col {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.grid .col.has-bunny {
-    width: 118px;
-    height: 133px;
-}
-.grid .col.has-bunny {
-    
+    aspect-ratio: 118 / 133;
 }
 .grid .col.animate {
     background-image: url("/images/missing/assets/window.jpg");
@@ -77,7 +73,7 @@ html body {
 .grid .col span {
     margin-block-start: 10px;
     font-weight: bold;
-    font-size: 90px;
+    font-size: 5vw;
     opacity: 0.7;
     color: #560600;
     display: none;
@@ -134,39 +130,56 @@ html body {
                 you can't just lump everything into these two categories and then just deny everything else ...<br>
             </div>
             <div class="scene-2" id="scene-2" style="display: none;">
-                <pre>
-                \\
-                /@c                                  
-               \$                             \\/@c
-              .++:+*                       /B$7000g3           
-             @@@.-.#+                   ~ Хдо  . VC    
-             035:/                     03g$g0
-             :%.-:=:#+              .:-%%#*#:               
-              ==* +#+++              .+%@%%#*#:           
-              :+%-.*%#++*+        -*% #%+:=:*.          
-                .+=.*%@*=%# .=+%%%%=** +%+=.          
-                 +%:.#@@-=%+-%%%%%=-*--%@*-           
-                 .@- *%%*:%%%%%%%%*.-.*%%=            
-                 .%: -%%=-%%%%%%%%#.= +%+             
-                   :@%*.. *%%%%%%+.+--%%#             
-                    @@*+-..+#%%#+. +.:#%@:            
-                   =%*:  *+=+  *#- : =#%@#-           
-             gUC^• /v^. .://^^-^g8U30GBB0/
-              VU&G: ^32000BBG **ХХХС33 /8$0
-             #++++#%. :+=##%%%##=..   .:+@#           
-            ==+***%%:.+*%@*%%+::.  :   .:%@=          
-            +=*+##%@##%@%%%#@%#++**#=::-++@@.         
-           ++++++#%@@@%*--+*#%*. .=%%%*-.#@%          
-          =*=*##*#%@@@@@@@@@@@@@@@@%#*#+. -%*         
-           .+**=+*%@@@@@@@@@@@@@@@@*#*#*-:-%=          
-             .++*@@@@@@@@@@@@@@@@@@@@%*#*#%%:         
-            .+#%*++*%@@@@@@@@@@@@@@@%#*   @*-        
-          -+*%*=..:-+***%%@@@@@@@%%#+-     *-+=:     
-        -*+:....::-++:==**###%##**#         #=::---.    
-     :==-==-:-+++*+#%#+***+*%@@@#*-        +=====:   
-    .++*#%%%+=#%%@@@@@%@%%%%%#*+-         ..:=+#%#**: 
-    +=*#@@@@#+#@@@@@@@@@%%@@%%      .:.:=#@#%%+
-    </pre>
+            <pre>
+                          &lt;&lt;
+                          /@x                                   
+                          &lt;$                              
+                          8$@                           
+                        &lt;@@@$g&lt;                      
+                          @@$$G8
+                          &lt;$$B3^                        &lt;&lt;/&lt;@&lt;  
+                          03$:/                        /B$$@@@g3                                       
+                          &lt;&$BCC3C&lt;                 ~ Хg0&lt;    .VC              
+                          gCGX3                  (^C$$~     /               
+                          &lt;*B$G30&lt;                    C$@@B   
+                          /$B$$-/                 03$gO            
+                          X$$B$8$                  g$G8( 
+                          (gGB$0$0                 ^80C30
+                          8$88&lt;                &lt;VS@@8&lt;
+                          gbb/G                   ^gb@@$^
+                          &lt;08                 VGV
+                          VCV88                 ^gG0
+                          ^Х(((С&lt;::      &lt;&lt;XGbB$$
+                          g3CCXC(VB0g$$B$@@$3.$/ 
+                        &lt;/03    ^&lt;Vg$$$@@@$$G(B8C
+                      (       ^^  &lt;$$$$$B$)&lt;V$3(3/
+                    &lt;GB3^`      &lt;&lt;`^^&lt;VB$$$$$B0g0gC83/
+                    GVV^        `(^   &lt;&lt;$$$GGg$$VV^`^
+                    gVC^^       ,://^^(~^9gBV30g8b0/    (
+                  (/V^ .&lt;      (VV8G:  ^VA00BBG   ( 
+                  VV3(.^     ~~&lt;XXXC33 ( (/8$080V0 /
+                  3333 . ` . ^X/&lt;G0B08g$$0G$$gB0`&lt;`   /
+                &lt;C3G3(/3C8GgB0GBB$$0G$$BC        ^/
+                gGVV(  `&lt;GB$$8 / 8@$$@$$BG^^/&lt;
+                0GG0/ `VX    &lt;(3&lt;  /8$@@$08X^BX^((
+                GG8VX// (XCC3c~ . 3gg$88/ &lt;0G~3
+                83BgG/ &lt;/ 3GV&lt;~C8(0gg00g0gX&lt;&lt;
+                8XgB8B@ / &lt;C3(&lt;3/$$$B0$$GV
+                (VXV3GG .^(( ~XBg@GcC$V
+                (XV3C:.&lt;    .`&lt;(Gg^^&lt; ^$$VX
+              &lt;^X: ((//X3/^:&lt;^.&lt;VC3G~cX/ g£(^(&lt; ^
+           &lt;3X((&lt;(V/ : &lt;&lt;//3gBB@@@@8838g8V~./VX&lt;^&lt;^
+      `VCVXC3Ggg@833CXVGC08@@B$$$8gB8/ ~^(g$B8(^.&lt;/^
+    ^88gg0833$@@@$BB8g0g00088$$$0g008X&lt;&lt;(Vg@@@0V&lt;~^(&lt;(^  
+    »B$@@@BGGgG0@@@@@0gg0$0B8800G0g0@033/ (/ ~^`&lt;(&lt;//: ( &lt;
+  / g@@@@@@@@@@Bg@@@@$$00$BG8V3C/&lt;^^^&lt;&lt;: (&lt;~`.`   `~:VGV : .
+&lt;gg@@@@@$B$@$@@@@@Bg@@@@@$000$BgG33V(~ . .^:( ~ `  /X
+0g8@@@@@$$80@@@@@@$$@@@$B$0BBg88GGGV( ~ &lt;: : . `    ^/C(3&lt;8
+g000@@@@@@@0g@@@@@@$$@@@@@@@$B0gCCG/&lt;. `&lt;           ~:(3((V
+gg0$$@@@@@@@$$B@@@@@@@@@@@@@@B0g8GGG£/^```           `.&lt;GX/x
+8gGGg$@@@@@@@@@BB@@@@@$@@@@@@@Bg0GGGG&lt;^             ``~3X3/&lt;
+$Bg8V@@@@@@@@@$0BB$@@@@@@@@@@@g0g8888G:~`          .&lt;^3CGC/                          
+</pre>
     </div>
     <div id="scene-3" class="scene-3" style="display: none;">
         <div class="grid">
@@ -271,7 +284,7 @@ html body {
                                 const event = new CustomEvent('scene2Completed');
                                 document.dispatchEvent(event);
                             }, 1000);
-                        }, 1000);
+                        }, 2000);
                     }, 1000);
                 }
             }, i * 10);
@@ -319,11 +332,11 @@ html body {
             }
         });
 
-        // cells.forEach(cell => {
-        //     cell.addEventListener('click', () => {
-        //         const url = cell.getAttribute('data-url');
-        //     });
-        // });
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                const url = cell.getAttribute('data-url');
+            });
+        });
 
     });
 
