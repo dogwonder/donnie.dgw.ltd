@@ -31,19 +31,17 @@ https://jdan.github.io/98.css/
 https://aaadaaam.com - noise filters
 
 
-
 ## To Do 
 Improve
-Ascii - /are/you/sleep/golfing/missing/3.html
 Lines - /are/you/sleep/golfing/missing/7.html
-Record audio from /from/the/sky/index.html for transcript.html
+List out the user journey of the folders - swf and pages and pop ups 
 
 Document and readme
 
 Notes: 
 
+AI assistance
 Best on the desktop as requires some keyboard input. 
-
 New tabs are a little glitchy
 
 Inspiration...

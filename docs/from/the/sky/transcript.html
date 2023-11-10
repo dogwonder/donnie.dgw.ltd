@@ -177,6 +177,10 @@
                         scene1.style.display = 'none';
                         scene2.style.display = 'block';
 
+                        //Load MP3 file
+                        const audio = new Audio('/mp3/transcript.mp3');
+                        audio.play();
+
                         ddScripts.animateText('scene-2');
 
                         const event = new CustomEvent('scene2Completed');
