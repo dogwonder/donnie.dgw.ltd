@@ -36,6 +36,18 @@ Improve
 Lines - /are/you/sleep/golfing/missing/7.html
 List out the user journey of the folders - swf and pages and pop ups 
 
+
+/from/the/sky/phone.swf 
+Create a fake phone.swf that loads /from/the/sky/transcript.html?
+
+/are/you/sleep/golfing/love.swf
+Create a fake phone.swf that loads /are/you/sleep/golfing/missing/intro.html
+
+Fonts
+35_Frutiger
+73_Times
+276_HI-LOGIN-BOLD
+
 Document and readme
 
 Notes: 
