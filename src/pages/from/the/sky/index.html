@@ -25,8 +25,29 @@ p > a {
         <embed src="/from/the/sky/trampolin.swf" width="800" height="500">
     </object>  
 </div>
-<p class="p-4 max-w-lg">* The second part of level 3 is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game <a href="/from/the/sky/transcript.html">click here</a> to continue </p>
 {% endblock %}
 
 {% block scripts %}
+<script>
+let observer = new PerformanceObserver((list) => {
+    for (let entry of list.getEntries()) {
+        if (entry.name.includes('phone.swf')) {
+            fetch('/from/the/sky/phone.swf')
+                .then(response => {
+                    if (!response.ok) {
+                        // If the response is not successful, redirect
+                        window.location.href = '/from/the/sky/transcript.html';
+                    }
+                    // Handle successful response
+                })
+                .catch(error => {
+                    // Handle network errors
+                    window.location.href = '/from/the/sky/transcript.html';
+                });
+        }
+    }
+});
+
+observer.observe({ entryTypes: ['resource'] });
+</script>
 {% endblock %}

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* https://hankchizljaw.com/wrote/a-modern-css-reset/ */
 /* Box sizing rules */
 *,
@@ -78,17 +77,15 @@ select {
   }
 }
 :root {
-  --body: -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans","Helvetica Neue",sans-serif;
-  --heading: "Söhne Dreiviertelfett", sans-serif;
+  --body: "Arial", sans-serif;
+  --mono: "Pixelated MS Sans Serif", monospace;
+  --mono-2: "HI-LOGIN-BOLD-Regular", monospace;
+  --times: "Times New Roman", "Times", serif;
   --text-color: hsl(98, 0%, 0%);
   --background: #ffffff;
-  --color-dark: rgb(64, 64, 64);
-  --color-light: rgb(243, 243, 243);
-  --color-primary: 181.5, 83.2%;
-  --color-secondary: 320.9, 100%;
-  --l: 46.7%;
-  --highlight: hsl(var(--color-secondary),var(--l));
-  --border: hsl(var(--color-primary),var(--l));
+  --color-primary: 0, 98%;
+  --l: 49%;
+  --highlight: hsl(var(--color-primary),var(--l));
   --hover: hsl(var(--color-primary),calc(var(--l) - 10%));
   --focus: hsl(var(--color-primary),var(--l));
   --visited: hsl(var(--color-primary),var(--l));
@@ -129,7 +126,6 @@ h4,
 h5,
 h6 {
   color: var(--text-color);
-  font-family: var(--heading);
   line-height: 1;
   margin-inline: 0;
   margin-block: 1em 1rem;
@@ -235,7 +231,7 @@ table td img {
   width: 200%;
 }
 table td, table p {
-  font-family: Times New Roman, Times, serif;
+  font-family: var(--times);
   font-size: 0.9375rem;
 }
 

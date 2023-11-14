@@ -19,6 +19,7 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy({"src/files": "./"});
     eleventyConfig.addPassthroughCopy({"src/swf": "./"});
     eleventyConfig.addPassthroughCopy({"src/dns": "./"});
+    eleventyConfig.addPassthroughCopy({"src/fonts": "fonts"});
     eleventyConfig.addPassthroughCopy({"src/audio": "mp3"});
     eleventyConfig.addPassthroughCopy({"src/scss/vendor/98": "css"});
 

@@ -9,21 +9,18 @@ $xl: px-to-em(1440px);
 $xxl: px-to-em(1920px);
 
 :root {
-    --body: -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans","Helvetica Neue",sans-serif;
-    --heading: "Söhne Dreiviertelfett", sans-serif;
+    --body: 'Arial', sans-serif;
+    --mono: 'Pixelated MS Sans Serif', monospace;
+    --mono-2: 'HI-LOGIN-BOLD-Regular', monospace;
+    --times: 'Times New Roman', 'Times', serif;
 
     --text-color: hsl(98, 0%, 0%);
     --background: #ffffff;
 
-    --color-dark: rgb(64, 64, 64);
-    --color-light: rgb(243, 243, 243);
+    --color-primary: 0, 98%; //#f70503 
+    --l: 49%;
 
-    --color-primary: 181.5, 83.2%; //#14D5DE Neon Blue
-    --color-secondary: 320.9, 100%; //#ff00a6 Neon Pink
-    --l: 46.7%;
-
-    --highlight: hsl(var(--color-secondary),var(--l)); //Pink
-    --border: hsl(var(--color-primary),var(--l)); //Pink
+    --highlight: hsl(var(--color-primary),var(--l)); 
     --hover: hsl(var(--color-primary),calc(var(--l) - 10%));
     --focus: hsl(var(--color-primary),var(--l));
     --visited: hsl(var(--color-primary),var(--l));

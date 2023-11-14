@@ -37,7 +37,6 @@ p > a {
 
 <div class="flex items-start justify-end flex-col h-full">
     <div id="swf" class="ruffle-container"></div>
-    <p class="p-4 max-w-lg">* The second part of level 2 is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game <a href="/are/you/sleep/golfing/missing/intro.html">click here</a> to continue </p>
 </div>
 {% endblock %}
 
@@ -56,5 +55,28 @@ window.addEventListener("load", (event) => {
     player.style.width = "800px"; 
     player.style.height = "500px";
 });
+
+
+let observer = new PerformanceObserver((list) => {
+    for (let entry of list.getEntries()) {
+        if (entry.name.includes('love.swf')) {
+            fetch('/are/you/sleep/golfing/love.swf')
+                .then(response => {
+                    if (!response.ok) {
+                        // If the response is not successful, redirect
+                        window.location.href = '/are/you/sleep/golfing/missing/intro.html';
+                    }
+                    // Handle successful response
+                })
+                .catch(error => {
+                    // Handle network errors
+                    window.location.href = '/are/you/sleep/golfing/missing/intro.html';
+                });
+        }
+    }
+});
+
+observer.observe({ entryTypes: ['resource'] });
+
 </script>
 {% endblock %}

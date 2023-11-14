@@ -24,7 +24,8 @@ html body {
     left: 10rem;
     bottom: 8rem;
     max-width: 70%;
-    font-size: 0.9375rem;
+    font-size: 1.15rem;
+    line-height: 1.2;
     font-weight: bold;
 }
 .scene-1 p {
@@ -34,15 +35,16 @@ html body {
     color: white;
     position: absolute;
     left: 15%;
-    bottom: 2%;
+    bottom: 0;
     max-width: 70%;
 }
 .scene-2 pre {
     padding: 0;
     color: white;
-    font-size: 14px;
-    line-height: 18px;
-    font-family: monospace;
+    font-size: 10px;
+    line-height: 14px;
+    font-family: var(--mono);
+    font-weight: bold;
     letter-spacing: 0.05em;
 }
 .scene-3 {
@@ -107,6 +109,7 @@ html body {
     align-items: center;
     justify-center: center;
     gap: 1ch;
+    font-weight: bold;
 }
 {% endcss %}
 
@@ -127,7 +130,8 @@ html body {
                 wallet and keeps the money? It has nothing to do with either fear or<br> 
                 love. there are other things that need to be taken into account here,<br> 
                 like... the whole spectrum of human emotion.<br> 
-                you can't just lump everything into these two categories and then just deny everything else ...<br>
+                you can't just lump everything into these two categories and then just<br>
+                deny everything else ...<br>
             </div>
             <div class="scene-2" id="scene-2" style="display: none;">
             <pre>
@@ -178,7 +182,8 @@ html body {
 g000@@@@@@@0g@@@@@@$$@@@@@@@$B0gCCG/&lt;. `&lt;           ~:(3((V
 gg0$$@@@@@@@$$B@@@@@@@@@@@@@@B0g8GGG£/^```           `.&lt;GX/x
 8gGGg$@@@@@@@@@BB@@@@@$@@@@@@@Bg0GGGG&lt;^             ``~3X3/&lt;
-$Bg8V@@@@@@@@@$0BB$@@@@@@@@@@@g0g8888G:~`          .&lt;^3CGC/                          
+$Bg8V@@@@@@@@@$0BB$@@@@@@@@@@@g0g8888G:~`          .&lt;^3CGC/      
+0g                    
 </pre>
     </div>
     <div id="scene-3" class="scene-3" style="display: none;">
@@ -251,7 +256,6 @@ $Bg8V@@@@@@@@@$0BB$@@@@@@@@@@@g0g8888G:~`          .&lt;^3CGC/
 
 {% block scripts %}
 <script>
-
     const animateText = function() {
 
         const text = document.getElementById('scene-1');

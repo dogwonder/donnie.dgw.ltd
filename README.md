@@ -34,33 +34,19 @@ https://aaadaaam.com - noise filters
 ## To Do 
 Improve
 Lines - /are/you/sleep/golfing/missing/7.html
-List out the user journey of the folders - swf and pages and pop ups 
-
-
-/from/the/sky/phone.swf 
-Create a fake phone.swf that loads /from/the/sky/transcript.html?
-
-/are/you/sleep/golfing/love.swf
-Create a fake phone.swf that loads /are/you/sleep/golfing/missing/intro.html
-
-Fonts
-35_Frutiger
-73_Times
-276_HI-LOGIN-BOLD
+User journey - List out the of the folders - swf and pages and pop ups 
+Responsive typography based on vw  - relative to container
+Noise filters Safari
 
 Document and readme
 
 Notes: 
 
-AI assistance
-Best on the desktop as requires some keyboard input. 
-New tabs are a little glitchy
-
-Inspiration...
+### Inspiration
 I've always loved this website...
 Ruffle.js
 
-Process....
+### Process
 
 Ruffle.js means the game is playable again. And as the Internet Archive has it enabled for old flash sites it was [playable again](https://web.archive.org/web/20160303085928/http://archive.hi-res.net/donniedarko/) after many years! The problem is not all of it appears to have been archvied so the game gets stuck after the initial menu, or just after the first section depening on where you land on the site or indeed what capture you land on. Although many of the pages are still archived there are in different parts of the archive and require you to go directly to some pages to progress through the game. 
 
@@ -70,8 +56,56 @@ After managing to piece together via the Internet Archive, specifically the arch
 
 There were some parts that were just sadely lost to time, specifical a few swf files that appears to be streams (I think). From Level 2, street.swf, love.swf and fear.swf, Level 3; lamp.swf and phone.swf. As such I had to reconstruct these in HTML based on the archvied guide website, and the Website reel. Reddit was also a good source to find some text on the site that people discussed the meaning of (thankfully)
 
-Experience.....
+### Experience
+
+AI assistance
+Piecing together from Internet Archive / Videos / Original film
+
+### Missing parts and notes
+
+Best on the desktop as requires some keyboard input. 
+New tabs are a little glitchy, best to go back to the [menu](menu.html) and start again if that happens
+
+Missing sections - rebuilt some sections based on missing swf files, I've hooked into the loading porcess so whe it tries to get the missing swf file it loads in some parts I built in pure HTML/CSS/JS 
+
+`/are/you/sleep/golfing/love.swf` loads `/are/you/sleep/golfing/missing/intro.html`
+
+```
+The second part of level 2 is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game it shouold load the missing section, otherwise <a href="/are/you/sleep/golfing/missing/intro.html">click here</a> to continue
+```
+
+`/from/the/sky/phone.swf` loads `/from/the/sky/transcript.html`
+
+```
+The second part of level 3 is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game <a href="/from/the/sky/transcript.html">click here</a> to continue
+```
 
 
-Easter eggs
-http://localhost:8080/news/pop2.html - Contact link from newspaper pop-ups
+### Easter eggs
+
+Mailto on News popups
+
+### Flash
+
+```
+sudo apt-get update
+sudo apt-get install mtasc
+touch fear.as
+rmate fear.as
+mtasc -main -header 200:150:30 fear.as -swf fear.swf
+```
+
+
+```
+// ActionScript 2.0
+class OpenURL {
+    static function main() {
+        // Define the URL you want to open
+        var url:String = "/are/you/sleep/golfing/missing/intro.html";
+
+        // Use the getURL function to open the URL in the same window
+        // "_self" specifies that the URL should be opened in the same window
+        getURL(url, "_self");
+    }
+}
+```
