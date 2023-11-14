@@ -1,15 +1,6 @@
-Missing
+# Notes 
 
-Level 2
-/are/you/sleep/golfing/street.swf
-/are/you/sleep/golfing/love.swf
-/are/you/sleep/golfing/fear.swf
-
-Level 3
-/from/the/sky/lamp.swf
-/from/the/sky/phone.swf
-
-# Code
+## SWF embed
 
 {% set swfFile = "/are/you/linker.swf" %}
 <div id="swf"></div>
@@ -18,74 +9,148 @@ OR
 
 <object>
     <embed src="/are/you/sleep/golfing/golf.swf" width="800" height="500">
-</object>  
+</object>
 
-## Notes 
+---
 
-### Credits
+## Missing
+
+Level 2
+
+```
+/are/you/sleep/golfing/street.swf
+/are/you/sleep/golfing/love.swf
+/are/you/sleep/golfing/fear.swf
+```
+
+Level 3
+
+```
+/from/the/sky/lamp.swf
+/from/the/sky/phone.swf
+```
+
+---
+
+## Credits
 Created by the agency Hi-ReS! and launched in October 2001
 https://alexandrajugovic.com/donniedarko
 
-### Resources
+## Resources
 https://jdan.github.io/98.css/
 https://aaadaaam.com - noise filters
 
+---
 
 ## To Do 
 Improve
 Lines - /are/you/sleep/golfing/missing/7.html
-User journey - List out the of the folders - swf and pages and pop ups 
 Responsive typography based on vw  - relative to container
-Noise filters Safari
 
-Document and readme
+---
 
-Notes: 
+## User Journey and site map
 
-### Inspiration
+This is bonkers and amazing. 
+
+### Level 1
+1. intro.html (loads intro.swf / clouds.swf / book.swf) // menu.html (loads menu.swf)
+2. news/pop1.html >> news/newspaper4.htm >> close (top.swf, side.swf)
+3. news/pop2.html >> news/newspaper3.htm >> close (top.swf, side.swf)
+4. the/tangent/index.html (loads smurf.swf)
+5. the/tangent/universe/is_unstable.html (loads philosophy.swf)
+6. loads dad.swf >> gran-donnie.swf >> thebook.swf >> donnie.swf >> straight.swf
+
+### Level 2
+1. menu.html (menu.swf)
+2. pop/pop_level2.html (loads pass2.swf)
+3. pop/close.html
+4. are/you/sleep/golfing/index.html (loads golf.swf, birds.swf, draw.swf)
+5. news/pop3.html >> news/newspaper2.htm
+6. Missing section (fear.swf, love.swf, street.swf)
+    1. are/you/sleep/golfing/missing/1.html
+    2. are/you/sleep/golfing/missing/2.html
+    3. are/you/sleep/golfing/missing/3.html >> news/newspaper5.htm
+    4. are/you/sleep/golfing/missing/4.html
+    5. are/you/sleep/golfing/missing/5.html
+    6. are/you/sleep/golfing/missing/6.html
+    7. are/you/sleep/golfing/missing/7.html
+7. sparkle/motion/index.html (loads phase2_end.swf)
+
+### Level 3
+1. menu.html (menu.swf)
+2. pop/pop_level3.html (loads pass3.swf)
+3. pop/close.html
+4. from/the/sky/index.html (loads trampolin.swf)
+5. news/pop6.html 
+6. Missing section (lamp.swf, phone.swf)
+    1. from/the/sky/transcript.html
+
+## Easter eggs
+
+1. Mailto on News popup, e.g. news/pop1.html (loads iseeyou.swf)
+
+---
+
+## Inspiration
 I've always loved this website...
-Ruffle.js
+Ruffle.js...
 
-### Process
+## Ruffle.js Revival of the Game
 
-Ruffle.js means the game is playable again. And as the Internet Archive has it enabled for old flash sites it was [playable again](https://web.archive.org/web/20160303085928/http://archive.hi-res.net/donniedarko/) after many years! The problem is not all of it appears to have been archvied so the game gets stuck after the initial menu, or just after the first section depening on where you land on the site or indeed what capture you land on. Although many of the pages are still archived there are in different parts of the archive and require you to go directly to some pages to progress through the game. 
+### Playability Through the Internet Archive
+- **Ruffle.js Integration:** The game has been made playable again through Ruffle.js. 
+- **Internet Archive:** The game was [playable again](https://web.archive.org/web/20160303085928/http://archive.hi-res.net/donniedarko/) after many years, thanks to its availability on the Internet Archive.
+- **Archival Inconsistencies:** Unfortunately, the game often gets stuck after the initial menu or just after the first section. This varies depending on the site version or the specific archive capture accessed.
+- **Dispersed Archives:** Many game pages are archived, but they are scattered across different parts of the archive, requiring direct access to certain pages to progress through the game.
 
-It was possible to at least see a list of all the pages and files that was [archived](https://web.archive.org/web/*/http://archive.hi-res.net/donniedarko/*) as well as some from the [original site](https://web.archive.org/web/*/http://ww2.donniedarko.com/are/you/sleep/golfing/*) and an archive of a [guide to the site](https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm)! Along with these bits of evidence the website from the creator of this very excellent site - [Alexandra Jugovic](https://alexandrajugovic.com/donniedarko)has a website reel showcasing the website and most of the user journey. Using all these bits of digital archeology it was possible to start to build up a sitemap of the original site. Additionally the console would inidcate 404s when a resource could not be found, and back to the archive again to see if it could be found at different snapshot points. As 
+### Resources and Digital Archaeology
+- **Archived List of Pages and Files:** A comprehensive list of all the pages and files that were archived can be found [here](https://web.archive.org/web/*/http://archive.hi-res.net/donniedarko/*) and some from the [original site](https://web.archive.org/web/*/http://ww2.donniedarko.com/are/you/sleep/golfing/*).
+- **Guide to the Site:** An archived [guide to the site](https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm) has been invaluable.
+- **Creator’s Showcase:** Alexandra Jugovic, the site's creator, showcases the original site and much user journey on her [website reel](https://alexandrajugovic.com/donniedarko).
+- **Building a Sitemap:** Utilizing these resources, along with 404 errors indicated in the console, helped in constructing a sitemap of the original site.
 
-After managing to piece together via the Internet Archive, specifically the archive of the orignal site localed on donniedarko.com and laterly on archive.hi-res.net. So this is technically an archive of an archive of an archive or the original. 
+### Reconstruction and Archival Layers
+- **Multi-Layered Archive:** The current version is an archive of an archive of an archive, originating from donniedarko.com and later archive.hi-res.net.
+- **Lost Elements:** Unfortunately, some parts, particularly a few SWF files, were lost over time. These include files from Level 2 (`street.swf`, `love.swf`, `fear.swf`) and Level 3 (`lamp.swf`, `phone.swf`).
+- **Reconstruction Efforts:** These missing parts have been reconstructed in HTML, guided by the archived guide website, the website reel, and discussions on Reddit about the site's content.
 
-There were some parts that were just sadely lost to time, specifical a few swf files that appears to be streams (I think). From Level 2, street.swf, love.swf and fear.swf, Level 3; lamp.swf and phone.swf. As such I had to reconstruct these in HTML based on the archvied guide website, and the Website reel. Reddit was also a good source to find some text on the site that people discussed the meaning of (thankfully)
+### Community Contributions
+- **Reddit Insights:** Reddit discussions provided valuable insights and interpretations of the site's text, contributing significantly to the reconstruction process.
 
-### Experience
+---
+
+## Experience
 
 AI assistance
 Piecing together from Internet Archive / Videos / Original film
 
-### Missing parts and notes
+---
 
-Best on the desktop as requires some keyboard input. 
-New tabs are a little glitchy, best to go back to the [menu](menu.html) and start again if that happens
+## Missing parts and notes
 
-Missing sections - rebuilt some sections based on missing swf files, I've hooked into the loading porcess so whe it tries to get the missing swf file it loads in some parts I built in pure HTML/CSS/JS 
+#### Desktop Recommended for Optimal Experience
+- **Keyboard Input:** This application is best experienced on a desktop due to its reliance on keyboard input.
+- **Navigation Note:** Occasionally, new tabs may not function properly. If this occurs, it's recommended to return to the [main menu](menu.html) and restart the process. Or make sure only one tab is open. 
 
-`/are/you/sleep/golfing/love.swf` loads `/are/you/sleep/golfing/missing/intro.html`
+#### Content Reconstruction Updates:
+- **Missing Sections:** Some sections have been reconstructed in HTML/CSS/JavaScript to replace missing SWF files. The application now redirects to alternative content when attempting to access these files.
+  - For instance, when `/are/you/sleep/golfing/love.swf` is requested, it will now redirect to `/are/you/sleep/golfing/missing/intro.html`.
 
-```
-The second part of level 2 is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game it shouold load the missing section, otherwise <a href="/are/you/sleep/golfing/missing/intro.html">click here</a> to continue
-```
+#### Specific Level Updates:
+- **Level 2 - Second Part:**
+  - *Status:* The original SWF files for this section were not retrievable.
+  - *Solution:* A reconstructed version has been implemented.
+  - *Navigation:* Upon completing this segment, the game should automatically progress to the new content. If it does not, please [click here](/are/you/sleep/golfing/missing/intro.html) to continue.
 
-`/from/the/sky/phone.swf` loads `/from/the/sky/transcript.html`
+- **Level 3 - Second Part:**
+  - *Status:* The original SWF files for this section were also unavailable.
+  - *Solution:* This segment has been similarly rebuilt.
+  - *Navigation:* After finishing this part of the game, [click here](/from/the/sky/transcript.html) to proceed.
 
-```
-The second part of level 3 is missing as I couldn't find the swf files anywhere. So I've attempted to reconstruct it. After finishing this part of the game <a href="/from/the/sky/transcript.html">click here</a> to continue
-```
+---
 
-
-### Easter eggs
-
-Mailto on News popups
-
-### Flash
+## Flash
 
 ```
 sudo apt-get update
