@@ -136,6 +136,7 @@ html body {
 
                         //Load MP3 file
                         const audio = new Audio('/mp3/transcript.mp3');
+                        audio.loop = true;
                         audio.play();
 
                         ddScripts.animateText('scene-2');
