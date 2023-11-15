@@ -42,7 +42,7 @@
     {% block styles %}{% endblock %}
 
   </head>
-  <body>
+  <body class="{{ 'dark' if isDark else '' }}">
 
     <main>
       <div class="container full">
@@ -50,7 +50,11 @@
               This is content
         {% endblock %}
       </div>
+      {% if hasCredit != false %}
+      {% include "partials/credit.html" %}
+      {% endif %}
     </main>
+    
     
     {% if isAlpine %}
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.1-beta.0/dist/cdn.min.js"></script>

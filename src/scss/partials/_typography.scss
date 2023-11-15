@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-color);
+  color: var(--dark);
   line-height: 1;
   margin-inline: 0;
   margin-block: 1em 1rem;
@@ -22,4 +22,30 @@ h6 {
   font-size: 0.9375rem;
   font-weight: bold;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.credit {
+  margin: 1rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  color: var(--dark); 
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.dark {
+  .credit {
+    color: var(--light);
+    a {
+      color: inherit;
+    }
+  }
 }

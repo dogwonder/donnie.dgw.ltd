@@ -81,8 +81,8 @@ select {
   --mono: "Pixelated MS Sans Serif", monospace;
   --mono-2: "HI-LOGIN-BOLD-Regular", monospace;
   --times: "Times New Roman", "Times", serif;
-  --text-color: hsl(98, 0%, 0%);
-  --background: #ffffff;
+  --dark: hsl(98, 0%, 0%);
+  --light: #ffffff;
   --color-primary: 0, 98%;
   --l: 49%;
   --highlight: hsl(var(--color-primary),var(--l));
@@ -125,7 +125,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-color);
+  color: var(--dark);
   line-height: 1;
   margin-inline: 0;
   margin-block: 1em 1rem;
@@ -141,6 +141,30 @@ h6 {
   font-size: 0.9375rem;
   font-weight: bold;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.credit {
+  margin: 1rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  color: var(--dark);
+}
+.credit a {
+  text-decoration: underline;
+}
+.credit a:hover {
+  text-decoration: none;
+}
+
+.dark .credit {
+  color: var(--light);
+}
+.dark .credit a {
+  color: inherit;
 }
 
 html {
@@ -160,11 +184,15 @@ body {
   letter-spacing: var(--letter-spacing-base);
   word-spacing: var(--word-spacing--base);
   text-align: left;
-  background-color: var(--background);
-  color: var(--text-color);
+  background-color: var(--light);
+  color: var(--dark);
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100%;
+}
+body.dark {
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 main {
@@ -172,23 +200,23 @@ main {
 }
 
 a {
-  color: var(--text-color);
+  color: var(--dark);
   text-decoration: underline;
   text-decoration-thickness: max(0.0875em, .0625rem);
   text-underline-offset: 0.1em;
 }
 a:visited {
-  color: var(--text-color);
+  color: var(--dark);
 }
 a:hover {
   text-decoration-color: var(--highlight);
 }
 a:active {
-  color: var(--text-color);
+  color: var(--dark);
   text-decoration: none;
 }
 a:focus {
-  color: var(--text-color);
+  color: var(--dark);
   background-color: var(--focus);
   outline: 3px solid transparent;
   box-shadow: 0 -2px var(--focus), 0 4px #0b0c0c;

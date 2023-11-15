@@ -1,24 +1,27 @@
 # Donnie Darko website - 2023 
 
-So. I decided to rebuild a website from 2001. Donniedarko.com. It was utter madness. It was utter joy. I don't know why. 
+I decided to rebuild a defunct website from 2001. Donniedarko.com. 
+
+It is sort of finshed - [donnie.dgw.ltd](https://donnie.dgw.ltd). It was utter madness. It was utter joy. I don't know why. 
 
 ![Donnie Darko website screengrab](https://dogwonder.co.uk/wp-content/uploads/2023/11/animation-bg.jpg)
 
 ## But seriously...why?
-I've always loved this website. Remember, this was in 2001(!) when websites generally [looked like this](https://www.webdesignmuseum.org/gallery/microsoft-2000). We were just starting to use CSS and Semantic HTML to produce more interesting websites. But truthfully, back then, if you wanted to build a unique experience for users, you would use Flash. Flash is obviously now dead, after many security issues and Steve Jobs declaring it would never be allowed onto the iPhone in 2007.
+I've always loved this website. Remember, this was built in 2001(!) when websites generally [looked like this](https://www.webdesignmuseum.org/gallery/microsoft-2000). We were just starting to use CSS and Semantic HTML to produce more interesting websites. But truthfully, back then, if you wanted to build a unique experience for users, you would use Flash. Flash is obviously now dead, after many security issues and Steve Jobs declaring it would never be allowed onto the iPhone in 2007.
 
-At the time, this was just so impressive. Built by the agency Hi-ReS! and launched in October 2001, it totally eschewed the general approach to building websites. It was sprawling, narrative-driven, and immersive. There wasn't really any formal navigation; you progressed through the site through sheer exploration. It felt just so novel. And it really isn't something we've seen since. User experience design, accessibility, formal 'design' methodologies, design thinking, and education (the original creator was a [Fine Artist](https://alexandrajugovic.com/donniedarko)), development convention, and the sheer weight of user expectation have led (in many ways rightly) to something like this becoming impossible to imagine.
+At the time, this site was just so impressive and entered internet legend. Built by the agency Hi-ReS! and launched in October 2001, it totally eschewed the general approach to building websites. It was sprawling, narrative-driven, and immersive and brilliant. There wasn't really any formal navigation; you progressed through the site through sheer exploration. It felt just so novel. And it really isn't something we've seen since. User experience design, accessibility, formal 'design' methodologies, design thinking, development convention, and the sheer weight of user expectation have led (in many ways rightly) to something like this becoming impossible to imagine. The original creator is an award winning [Fine Artist & Creative Consultant](https://alexandrajugovic.com/donniedarko)), and I feel we don't have enough of these sort of creatives in modern web development anymore, but that's for another post. 
 
 Being a Flash site, it was semi-playable until recently via various archived versions of the site. But as Flash became basically obsolete, it was not possible to access this piece of internet history. I always dreamed of rebuilding it, either by reverse engineering it or attempting to try something in vanilla HTML/JS/CSS, which would have been a huge undertaking and probably nothing compared to the artistry of the original.
 
-Step in Ruffle.js, a Flash Player emulator built in the Rust programming language. Well, well, well. Maybe game on?
+Step in [Ruffle.rs](https://ruffle.rs), a Flash Player emulator built in the Rust programming language. Well, well, well. Maybe game on?
 
+---
 
-## Enter Ruffle.js and the Revival of the Game
+## Ruffle.rs and the Revival of the Game
 
 ### Playability Through the Internet Archive
-- **Ruffle.js Integration:** The game has been made playable again through Ruffle.js. 
-- **Internet Archive:** The game was [playable again](https://web.archive.org/web/20160303085928/http://archive.hi-res.net/donniedarko/) after many years, thanks to its availability on the Internet Archive.
+- **Ruffle.rs Integration:** The game has been made playable again through Ruffle.rs. 
+- **Internet Archive:** The game was [playable again](https://web.archive.org/web/20160303085928/http://archive.hi-res.net/donniedarko/) after many years, thanks to its availability on the Internet Archive and Ruffle.rs.
 - **Archival Inconsistencies:** Unfortunately, the game often got stuck after the initial menu or just after the first section. This varies depending on the site version or the specific archive capture accessed.
 - **Dispersed Archives:** Many game pages are archived, but they are scattered across different parts of the archive, requiring direct access to certain pages to progress through the game.
 
@@ -34,6 +37,8 @@ Step in Ruffle.js, a Flash Player emulator built in the Rust programming languag
 - **Lost Elements:** Unfortunately, some parts, particularly a few SWF files, were lost over time. These include files from Level 2 (`street.swf`, `love.swf`, `fear.swf`) and Level 3 (`lamp.swf`, `phone.swf`). These were the bits I had to reconstruct
 - **Reconstruction Efforts:** These missing parts have been reconstructed in HTML, guided by the archived guide website, the website reel, and discussions on Reddit about the site's content.
 
+---
+
 ## Experience and Assistance
 
 Now, given the missing parts I needed to basically reconstruct flash scenes in frigging HTML. I've been using GitHub CoPilot for about a year now, and honestly there were some part of this I could not have achieved without it. 
@@ -42,17 +47,21 @@ Utilising some [Windows 98](https://jdan.github.io/98.css/) style assets allowed
 
 Additional weird things like recording audo from parts of the Flash files to reuse in the reconstrcution effort. Hand-copying text from screen-grabs into HTML. It was utternly mad, but enjoyable. 
 
+---
+
 ## User Journey 
 
 This is bonkers and amazing. Kudos to the original developers, to use redirects and the url structure as part of the game is just very cool. They even apparently set up loads of satelite sites to enhance the online experience. Awesome.
 
-## Intro 
+I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the game as well, to help my own development as well as a guide to anyone that might get stuck in the game. 
+
+### Intro 
 
 1. **Initial Page Load**: 
    - Opens `intro.html`, which loads several swfs: `intro.swf`, `clouds.swf`, `book.swf`, and `menu.swf`
    - Option to skip to Level 1, else continue to full intro
 
-## Level 1
+### Level 1
 
 1.  **Menu**
    - Menu is displayed (loads `menu.swf`).
@@ -74,7 +83,7 @@ This is bonkers and amazing. Kudos to the original developers, to use redirects 
    - A series of SWFs are loaded in this order: `dad.swf`, `donnie.swf`, `straight.swf`, `gran-donnie.swf`.
    - Followed by `thebook.swf`.
 
-## Level 2
+### Level 2
 
 1. **Return to Menu**:
    - User opens `menu.html`, loading `menu.swf`, `clouds.swf`, and `book.swf`.
@@ -101,7 +110,7 @@ This is bonkers and amazing. Kudos to the original developers, to use redirects 
 7. **Sparkle Motion Section**:
    - Game progresses to `sparkle/motion/index.html`, which loads `phase2_end.swf`.
 
-## Level 3
+### Level 3
 
 1. **Revisiting Menu**:
    - User opens `menu.html` again, loading the same set of SWFs as before.
@@ -127,26 +136,26 @@ This is bonkers and amazing. Kudos to the original developers, to use redirects 
 
 ## Missing parts and notes
 
-#### Desktop Recommended for Optimal Experience
+### Desktop Recommended for Optimal Experience
 - **Keyboard Input:** This application is best experienced on a desktop due to its reliance on keyboard input.
 - **Know issues:** 
    - Occasionally, new tabs may not function properly and the game can't be progressed. If this occurs, it's recommended to return to the [main menu](https://donnie.dgw.ltd/menu.html) and restart the process. Or make sure only one tab is open. 
    - Also you know this is Flash, In 2023. So there's that. 
 
-#### Content Reconstruction Updates:
+### Content Reconstruction Updates:
 - **Missing Sections:** Some sections have been reconstructed in HTML/CSS/JavaScript to replace missing SWF files. The application now redirects to alternative content when attempting to access these files.
   - For instance, when `/are/you/sleep/golfing/love.swf` is requested, it will now redirect to `/are/you/sleep/golfing/missing/intro.html`.
 
-#### Specific Level Updates:
+### Specific Level Updates:
 - **Level 2 - Second Part:**
   - *Status:* The original SWF files for this section were not retrievable.
   - *Solution:* A reconstructed version has been implemented.
-  - *Navigation:* Upon completing this segment, the game should automatically progress to the new content. If it does not, please [click here](https://donnie.dgw.ltd/are/you/sleep/golfing/missing/intro.html) to continue.
+  - *Navigation:* Upon completing this segment, the game should automatically progress to the new content. If it does not [click here](https://donnie.dgw.ltd/are/you/sleep/golfing/missing/intro.html) to continue.
 
 - **Level 3 - Second Part:**
   - *Status:* The original SWF files for this section were also unavailable.
   - *Solution:* This segment has been similarly rebuilt.
-  - *Navigation:* After finishing this part of the game, [click here](https://donnie.dgw.ltd/from/the/sky/transcript.html) to proceed.
+  - *Navigation:* After finishing this part of the game [click here](https://donnie.dgw.ltd/from/the/sky/transcript.html) to proceed.
 
 --- 
 
