@@ -54,20 +54,20 @@ Responsive typography based on vw  - relative to container
 This is bonkers and amazing. 
 
 ### Level 1
-1. intro.html (loads intro.swf / clouds.swf / book.swf) // menu.html (loads menu.swf)
+1. intro.html (loads intro.swf / clouds.swf / book.swf / menu.swf ) // menu.html (loads menu.swf)
 2. news/pop1.html >> news/newspaper4.htm >> close (top.swf, side.swf)
 3. news/pop2.html >> news/newspaper3.htm >> close (top.swf, side.swf)
 4. the/tangent/index.html (loads smurf.swf)
 5. the/tangent/universe/is_unstable.html (loads philosophy.swf)
-6. loads dad.swf >> gran-donnie.swf >> thebook.swf >> donnie.swf >> straight.swf
+6. loads dad.swf >> donnie.swf >> straight.swf >> gran-donnie.swf (multiple toggle on/off?) >> thebook.swf 
 
 ### Level 2
-1. menu.html (menu.swf)
+1. menu.html (menu.swf / clouds.swf / book.swf)
 2. pop/pop_level2.html (loads pass2.swf)
 3. pop/close.html
 4. are/you/sleep/golfing/index.html (loads golf.swf, birds.swf, draw.swf)
 5. news/pop3.html >> news/newspaper2.htm
-6. Missing section (fear.swf, love.swf, street.swf)
+6. Missing section (street.swf, fear.swf, love.swf)
     1. are/you/sleep/golfing/missing/1.html
     2. are/you/sleep/golfing/missing/2.html
     3. are/you/sleep/golfing/missing/3.html >> news/newspaper5.htm
@@ -78,7 +78,7 @@ This is bonkers and amazing.
 7. sparkle/motion/index.html (loads phase2_end.swf)
 
 ### Level 3
-1. menu.html (menu.swf)
+1. menu.html (menu.swf / clouds.swf / book.swf)
 2. pop/pop_level3.html (loads pass3.swf)
 3. pop/close.html
 4. from/the/sky/index.html (loads trampolin.swf)
@@ -108,7 +108,7 @@ Ruffle.js...
 - **Archived List of Pages and Files:** A comprehensive list of all the pages and files that were archived can be found [here](https://web.archive.org/web/*/http://archive.hi-res.net/donniedarko/*) and some from the [original site](https://web.archive.org/web/*/http://ww2.donniedarko.com/are/you/sleep/golfing/*).
 - **Guide to the Site:** An archived [guide to the site](https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm) has been invaluable.
 - **Creator’s Showcase:** Alexandra Jugovic, the site's creator, showcases the original site and much user journey on her [website reel](https://alexandrajugovic.com/donniedarko).
-- **Building a Sitemap:** Utilizing these resources, along with 404 errors indicated in the console, helped in constructing a sitemap of the original site.
+- **Building a Sitemap:** Utilizing these resources, along with 404 errors indicated in the console and network tab, helped in constructing a sitemap of the original site.
 
 ### Reconstruction and Archival Layers
 - **Multi-Layered Archive:** The current version is an archive of an archive of an archive, originating from donniedarko.com and later archive.hi-res.net.
