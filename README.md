@@ -90,6 +90,75 @@ This is bonkers and amazing.
 
 1. Mailto on News popup, e.g. news/pop1.html (loads iseeyou.swf)
 
+## Level 1 User Journey
+
+1. **Initial Page Load**: 
+   - Opens `intro.html`, which loads several swfs: `intro.swf`, `clouds.swf`, `book.swf`, and `menu.swf`.
+   - Alternatively, `menu.html` can be loaded directly, which only loads `menu.swf`.
+
+2. **News pop-up (Part 1)**: 
+   - Pop-up is displayed - `news/pop1.html`, which in turn loads `news/newspaper4.htm` (loads `top.swf` & `side.swf`).
+   - The section is closed the next part of the game is loaded.
+
+3. **News pop-up (Part 2)**: 
+   - Pop-up is displayed - `news/pop2.html`, which in turn loads `news/newspaper3.htm` (loads `top.swf` & `side.swf`).
+   - Similar to the previous step, once closed the next part of the game is loaded.
+
+4. **The Tangent Universe Is Unstable (Part 1)**:
+   - Opens `the/tangent/index.html`, which loads `smurf.swf`.
+
+5. **The Tangent Universe Is Unstable (Part 2)**:
+   - Opens`the/tangent/universe/is_unstable.html, which loads `philosophy.swf`.
+   - A series of SWFs are loaded in this order: `dad.swf`, `donnie.swf`, `straight.swf`, `gran-donnie.swf`.
+   - Followed by `thebook.swf`.
+
+## Level 2 User Journey
+
+1. **Return to Menu**:
+   - User opens `menu.html`, loading `menu.swf`, `clouds.swf`, and `book.swf`.
+
+2. **Level 2 Pop Section**:
+   - Pop-up is displayed `pop/pop_level2.html`, which loads `pass2.swf`.
+
+3. **Closing the Pop Section**:
+   - Loads `pop/close.html`.
+
+4. **Golfing Experience**:
+   - Redirects to `are/you/sleep/golfing/index.html`.
+   - This page loads multiple SWFs: `golf.swf`, `birds.swf`, `draw.swf`.
+
+5. **Exploring News Section (Part 3)**:
+   - The user goes to `news/pop3.html` and then to `news/newspaper2.htm`.
+
+6. **Missing Section**:
+   - The SWF files `street.swf`, `love.swf` and `fear.swf` fails to load when this happens we listen for that network event and load up `are/you/sleep/golfing/missing/intro.html`
+   - The reconstructed game progresses from `are/you/sleep/golfing/missing/1.html` to `are/you/sleep/golfing/missing/7.html`.
+   - The journey includes a pop-up to `news/newspaper5.htm`.
+
+7. **Sparkle Motion Section**:
+   - Game progresses to `sparkle/motion/index.html`, which loads `phase2_end.swf`.
+
+## Level 3 User Journey
+
+1. **Revisiting Menu**:
+   - User opens `menu.html` again, loading the same set of SWFs as before.
+
+2. **Level 3 Pop Section**:
+   - Pop-up is displayed `pop/pop_level3.html`, loading `pass3.swf`.
+
+3. **Concluding the Pop Section**:
+   - Visits `pop/close.html`.
+
+4. **Sky-Themed Exploration**:
+   - Redirects to `from/the/sky/index.html`, which loads `trampolin.swf`.
+
+5. **Pop-up warning**:
+   - Pop-up is displayed `news/pop6.html`.
+
+6. **Final Missing Section**:
+   - The SWF files `lamp.swf` and `phone.swf` fail to load, once `phone.swf` fails we redirect to reconstructed page `from/the/sky/transcript.html`
+   - End of the game
+
 ---
 
 ## Inspiration
