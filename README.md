@@ -1,54 +1,5 @@
 # Notes 
 
-## SWF embed
-
-{% set swfFile = "/are/you/linker.swf" %}
-<div id="swf"></div>
-
-OR
-
-<object>
-    <embed src="/are/you/sleep/golfing/golf.swf" width="800" height="500">
-</object>
-
----
-
-## Missing
-
-Level 2
-
-```
-/are/you/sleep/golfing/street.swf
-/are/you/sleep/golfing/love.swf
-/are/you/sleep/golfing/fear.swf
-```
-
-Level 3
-
-```
-/from/the/sky/lamp.swf
-/from/the/sky/phone.swf
-```
-
----
-
-## Credits
-Created by the agency Hi-ReS! and launched in October 2001
-https://alexandrajugovic.com/donniedarko
-
-## Resources
-https://jdan.github.io/98.css/
-https://aaadaaam.com - noise filters
-
----
-
-## To Do 
-Improve
-Lines - /are/you/sleep/golfing/missing/7.html
-Responsive typography based on vw  - relative to container
-
----
-
 ## User Journey and site map
 
 This is bonkers and amazing. 
@@ -162,15 +113,20 @@ This is bonkers and amazing.
 ---
 
 ## Inspiration
-I've always loved this website...
-Ruffle.js...
+I've always loved this website. Remember this was....2001! When websites generally [looked like this](https://www.webdesignmuseum.org/gallery/microsoft-2000). We were just starting to use CSS and Semtantic layout methods to produce more interesting websites. But truthfully back then if you wanyted to build a unique experience for users you would use Flash. Flash obviously is now dead after many security issues and Steve Jobs killing it off after declaring it would never be allowed onto the iPhone in 2007. 
+
+At the time this was just so impressive. Built by the agency Hi-ReS! and launched in October 2001. It totally eshewed the general approach to building websites, it was spralling, there wasn't really any formal navigation. You progressed through the site through shear exploration, it felt just so novel. And it really isn't something we've seen since. User Experience design, accessibility, formal 'design' methodologies, design thinking and education (the original creator was a [Fine Artist](https://alexandrajugovic.com/donniedarko)), development convention and the shear weight of user expectation has led (in many ways rightly) to something like this becoming impossible to imagine. 
+
+Being a flash site it was semi-playable until recently via various archived version of the site. But as Flash became basically obsolete it was not possible to access this peice of internet history. I always dreamed of rebuilding it, either reverse engineering it or attempting to trry something in vanilla HTML/JS/CSS which would have been a huge undertaking and probably nothing compared to the artistry of the original
+
+Step in Ruffle.js...a Flash Player emulator built in the Rust programming language. Well well well. Maybe game on?
 
 ## Ruffle.js Revival of the Game
 
 ### Playability Through the Internet Archive
 - **Ruffle.js Integration:** The game has been made playable again through Ruffle.js. 
 - **Internet Archive:** The game was [playable again](https://web.archive.org/web/20160303085928/http://archive.hi-res.net/donniedarko/) after many years, thanks to its availability on the Internet Archive.
-- **Archival Inconsistencies:** Unfortunately, the game often gets stuck after the initial menu or just after the first section. This varies depending on the site version or the specific archive capture accessed.
+- **Archival Inconsistencies:** Unfortunately, the game often got stuck after the initial menu or just after the first section. This varies depending on the site version or the specific archive capture accessed.
 - **Dispersed Archives:** Many game pages are archived, but they are scattered across different parts of the archive, requiring direct access to certain pages to progress through the game.
 
 ### Resources and Digital Archaeology
@@ -178,21 +134,20 @@ Ruffle.js...
 - **Guide to the Site:** An archived [guide to the site](https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm) has been invaluable.
 - **Creator’s Showcase:** Alexandra Jugovic, the site's creator, showcases the original site and much user journey on her [website reel](https://alexandrajugovic.com/donniedarko).
 - **Building a Sitemap:** Utilizing these resources, along with 404 errors indicated in the console and network tab, helped in constructing a sitemap of the original site.
+- **Reddit Insights:** Reddit discussions provided valuable insights and interpretations of the site's text, contributing significantly to the reconstruction process.
 
 ### Reconstruction and Archival Layers
 - **Multi-Layered Archive:** The current version is an archive of an archive of an archive, originating from donniedarko.com and later archive.hi-res.net.
-- **Lost Elements:** Unfortunately, some parts, particularly a few SWF files, were lost over time. These include files from Level 2 (`street.swf`, `love.swf`, `fear.swf`) and Level 3 (`lamp.swf`, `phone.swf`).
+- **Lost Elements:** Unfortunately, some parts, particularly a few SWF files, were lost over time. These include files from Level 2 (`street.swf`, `love.swf`, `fear.swf`) and Level 3 (`lamp.swf`, `phone.swf`). These were the bits I had to reconstruct
 - **Reconstruction Efforts:** These missing parts have been reconstructed in HTML, guided by the archived guide website, the website reel, and discussions on Reddit about the site's content.
 
-### Community Contributions
-- **Reddit Insights:** Reddit discussions provided valuable insights and interpretations of the site's text, contributing significantly to the reconstruction process.
+## Experience and Assistance
 
----
+Now, given the missing parts I needed to basically reconstruct flash scenes in frigging HTML. I've been using GitHub CoPilot for about a year now, and honestly there were some part of this I could not have achieved without it. 
 
-## Experience
+Utilising some [Windows 98](https://jdan.github.io/98.css/) style assets allowed for a more authentic feel along side the orignal imagery. Also some pretty interesting effects via [SVG noise filters](https://aaadaaam.com)
 
-AI assistance
-Piecing together from Internet Archive / Videos / Original film
+Additional weird things like recording audo from parts of the Flash files to reuse in the reconstrcution effort. Hand-copying text from screen-grabs into HTML. It was utternly mad, but enjoyable. 
 
 ---
 
@@ -216,6 +171,47 @@ Piecing together from Internet Archive / Videos / Original film
   - *Status:* The original SWF files for this section were also unavailable.
   - *Solution:* This segment has been similarly rebuilt.
   - *Navigation:* After finishing this part of the game, [click here](/from/the/sky/transcript.html) to proceed.
+
+---
+
+## SWF embed
+
+{% set swfFile = "/are/you/linker.swf" %}
+<div id="swf"></div>
+
+OR
+
+<object>
+    <embed src="/are/you/sleep/golfing/golf.swf" width="800" height="500">
+</object>
+
+---
+
+## Missing
+
+Level 2
+
+```
+/are/you/sleep/golfing/street.swf
+/are/you/sleep/golfing/love.swf
+/are/you/sleep/golfing/fear.swf
+```
+
+Level 3
+
+```
+/from/the/sky/lamp.swf
+/from/the/sky/phone.swf
+```
+
+---
+
+## To Do 
+Improve
+Lines - /are/you/sleep/golfing/missing/7.html
+Responsive typography based on vw  - relative to container
+
+---
 
 ---
 
