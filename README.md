@@ -1,6 +1,8 @@
-# Notes 
+# Donnie Darko website - 2023 
 
 So. I decided to rebuild a website from 2001. Donniedarko.com. It was utter madness. It was utter joy. I don't know why. 
+
+![Donnie Darko website screengrab](https://dogwonder.co.uk/wp-content/uploads/2023/11/animation-bg.jpg)
 
 ## But seriously...why?
 I've always loved this website. Remember, this was in 2001(!) when websites generally [looked like this](https://www.webdesignmuseum.org/gallery/microsoft-2000). We were just starting to use CSS and Semantic HTML to produce more interesting websites. But truthfully, back then, if you wanted to build a unique experience for users, you would use Flash. Flash is obviously now dead, after many security issues and Steve Jobs declaring it would never be allowed onto the iPhone in 2007.
@@ -127,7 +129,9 @@ This is bonkers and amazing. Kudos to the original developers, to use redirects 
 
 #### Desktop Recommended for Optimal Experience
 - **Keyboard Input:** This application is best experienced on a desktop due to its reliance on keyboard input.
-- **Navigation Note:** Occasionally, new tabs may not function properly. If this occurs, it's recommended to return to the [main menu](menu.html) and restart the process. Or make sure only one tab is open. 
+- **Know issues:** 
+   - Occasionally, new tabs may not function properly and the game can't be progressed. If this occurs, it's recommended to return to the [main menu](https://donnie.dgw.ltd/menu.html) and restart the process. Or make sure only one tab is open. 
+   - Also you know this is Flash, In 2023. So there's that. 
 
 #### Content Reconstruction Updates:
 - **Missing Sections:** Some sections have been reconstructed in HTML/CSS/JavaScript to replace missing SWF files. The application now redirects to alternative content when attempting to access these files.
@@ -137,12 +141,12 @@ This is bonkers and amazing. Kudos to the original developers, to use redirects 
 - **Level 2 - Second Part:**
   - *Status:* The original SWF files for this section were not retrievable.
   - *Solution:* A reconstructed version has been implemented.
-  - *Navigation:* Upon completing this segment, the game should automatically progress to the new content. If it does not, please [click here](/are/you/sleep/golfing/missing/intro.html) to continue.
+  - *Navigation:* Upon completing this segment, the game should automatically progress to the new content. If it does not, please [click here](https://donnie.dgw.ltd/are/you/sleep/golfing/missing/intro.html) to continue.
 
 - **Level 3 - Second Part:**
   - *Status:* The original SWF files for this section were also unavailable.
   - *Solution:* This segment has been similarly rebuilt.
-  - *Navigation:* After finishing this part of the game, [click here](/from/the/sky/transcript.html) to proceed.
+  - *Navigation:* After finishing this part of the game, [click here](https://donnie.dgw.ltd/from/the/sky/transcript.html) to proceed.
 
 --- 
 
