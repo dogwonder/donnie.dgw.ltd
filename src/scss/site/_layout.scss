@@ -76,7 +76,7 @@ a {
     font-size: 0.75rem;
     color: #000000;
     span {
-      color: #FF0033;
+      color: var(--highlight);
       display: inline-block;
     }
     a {

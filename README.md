@@ -2,48 +2,57 @@
 
 I decided to rebuild a defunct website from 2001. Donniedarko.com. 
 
-It is sort of finshed - [donnie.dgw.ltd](https://donnie.dgw.ltd). It was utter madness. It was utter joy. I don't know why. 
+It is sort of finished - [donnie.dgw.ltd](https://donnie.dgw.ltd). It was utter madness. It was utter joy. I don't know why. 
+
+Think this might be the first time I needed to include a Table of Contents on this site. 
 
 ![Donnie Darko website screengrab](https://dogwonder.co.uk/wp-content/uploads/2023/11/animation-bg.jpg)
 
+## Table of Contents
+1. [But seriously...why?](#but-seriouslywhy)
+2. [Ruffle.rs and the Revival of the Game](#rufflers-and-the-revival-of-the-game)
+3. [Experience and Assistance](#experience-and-assistance)
+4. [User Journey](#user-journey)
+5. [Missing parts and notes](#missing-parts-and-notes)
+
 ## But seriously...why?
-I've always loved this website. Remember, this was built in 2001(!) when websites generally [looked like this](https://www.webdesignmuseum.org/gallery/microsoft-2000). We were just starting to use CSS and Semantic HTML to produce more interesting websites. But truthfully, back then, if you wanted to build a unique experience for users, you would use Flash. Flash is obviously now dead, after many security issues and Steve Jobs declaring it would never be allowed onto the iPhone in 2007.
+I've always loved this website. Remember, this was built in 2001(!) when websites generally [looked like this](https://www.webdesignmuseum.org/gallery/microsoft-2000). We were just starting to use CSS and Semantic HTML to produce more interesting websites outside of the contraints of table based layouts and hacks. But truthfully, back then, if you wanted to build a unique experience for users, you would use Flash. Flash is obviously now very dead, after many security issues and Steve Jobs declaring it would never be allowed onto the iPhone in 2007.
 
-At the time, this site was just so impressive and entered internet legend. Built by the agency Hi-ReS! and launched in October 2001, it totally eschewed the general approach to building websites. It was sprawling, narrative-driven, and immersive and brilliant. There wasn't really any formal navigation; you progressed through the site through sheer exploration. It felt just so novel. And it really isn't something we've seen since. User experience design, accessibility, formal 'design' methodologies, design thinking, development convention, and the sheer weight of user expectation have led (in many ways rightly) to something like this becoming impossible to imagine. The original creator is an award winning [Fine Artist & Creative Consultant](https://alexandrajugovic.com/donniedarko)), and I feel we don't have enough of these sort of creatives in modern web development anymore, but that's for another post. 
+At the time, this site was just so impressive and entered internet legend. Built by the agency Hi-ReS! and launched in October 2001, it totally eschewed the general approach to building websites. It was sprawling, narrative-driven, immersive and brilliant. There wasn't really any formal navigation; you progressed through the site through sheer exploration. It just felt so novel. And it really isn't something we've seen since. User experience design, accessibility, formal 'design' methodologies, design thinking, development convention, and the sheer weight of user expectation have led (in many ways rightly) to something like this becoming impossible to imagine being built today. The original creator is an award winning [Fine Artist & Creative Consultant](https://alexandrajugovic.com/donniedarko)), and I feel we don't have enough of these sort of creatives in modern web development anymore, but that's for another post. 
 
-Being a Flash site, it was semi-playable until recently via various archived versions of the site. But as Flash became basically obsolete, it was not possible to access this piece of internet history. I always dreamed of rebuilding it, either by reverse engineering it or attempting to try something in vanilla HTML/JS/CSS, which would have been a huge undertaking and probably nothing compared to the artistry of the original.
+Being a Flash site, it was semi-playable until recently via various archived versions of the site. The orignal agency that built it dissolved and their own archive (archive.hi-res.net) disapeared from the web, the Internet Archive was the only place this site could be concievable accessed. However with [Flash becoming obsolete](https://www.adobe.com/products/flashplayer/end-of-life.html), it was not possible to access this piece of internet history. I always dreamed of maybe rebuilding it, either by reverse engineering it or attempting to try something in vanilla HTML/JS/CSS, which would have been a huge undertaking and probably nothing compared to the artistry of the original.
 
 Step in [Ruffle.rs](https://ruffle.rs), a Flash Player emulator built in the Rust programming language. Well, well, well. Maybe game on?
+
+The Internet Archive has [Ruffle.js enabled](https://blog.archive.org/2020/11/19/flash-animations-live-forever-at-the-internet-archive/) which is awesome, so in theory the game would be totally playable, but not all the pages were archived in the same snapshot and also not all the sections were totally archived....so game off. Or was it?
+
+And thus the epic journey begins...
 
 ---
 
 ## Ruffle.rs and the Revival of the Game
 
 ### Playability Through the Internet Archive
-- **Ruffle.rs Integration:** The game has been made playable again through Ruffle.rs. 
-- **Internet Archive:** The game was [playable again](https://web.archive.org/web/20160303085928/http://archive.hi-res.net/donniedarko/) after many years, thanks to its availability on the Internet Archive and Ruffle.rs.
-- **Archival Inconsistencies:** Unfortunately, the game often got stuck after the initial menu or just after the first section. This varies depending on the site version or the specific archive capture accessed.
-- **Dispersed Archives:** Many game pages are archived, but they are scattered across different parts of the archive, requiring direct access to certain pages to progress through the game.
+- **Internet Archive:** The game was [playable again](https://web.archive.org/web/20160303085928/http://archive.hi-res.net/donniedarko/) thanks to its availability on the Internet Archive having archived it in the first place and now Ruffle.rs.
+- **Archival Inconsistencies:** Unfortunately, the game often got stuck after the initial menu or just after the first section, where the next step didn't existing within the same snapshot. This varied depending on the site version or the specific archive capture accessed.
+- **Dispersed Archives:** Many game pages were archived, but they were scattered across different parts of the archive, requiring direct access to certain pages to progress through the game. Meaning the game was effectively split across time periods, which was rather apt considering the subject matter and the site architecture. 
 
 ### Resources and Digital Archaeology
-- **Archived List of Pages and Files:** A comprehensive list of all the pages and files that were archived can be found [here](https://web.archive.org/web/*/http://archive.hi-res.net/donniedarko/*) and some from the [original site](https://web.archive.org/web/*/http://ww2.donniedarko.com/are/you/sleep/golfing/*).
-- **Guide to the Site:** An archived [guide to the site](https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm) has been invaluable.
-- **Creator’s Showcase:** Alexandra Jugovic, the site's creator, showcases the original site and much user journey on her [website reel](https://alexandrajugovic.com/donniedarko).
+- **Archived List of Pages and Files:** A pretty comprehensive list of all the pages and files that were archived can be found [here](https://web.archive.org/web/*/http://archive.hi-res.net/donniedarko/*) and some from the [original site](https://web.archive.org/web/*/http://ww2.donniedarko.com/are/you/sleep/golfing/*).
+- **Guide to the Site:** An archived [guide to the site](https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm) was invaluable to piece together the various part of the game.
+- **Creator’s Showcase:** Alexandra Jugovic, the site's creator, showcases the original site and much user journey on her [website reel](https://alexandrajugovic.com/donniedarko) again invaluable in trying to solve this puzzle.
 - **Building a Sitemap:** Utilizing these resources, along with 404 errors indicated in the console and network tab, helped in constructing a sitemap of the original site.
 - **Reddit Insights:** Reddit discussions provided valuable insights and interpretations of the site's text, contributing significantly to the reconstruction process.
 
 ### Reconstruction and Archival Layers
 - **Multi-Layered Archive:** The current version is an archive of an archive of an archive, originating from donniedarko.com and later archive.hi-res.net.
-- **Lost Elements:** Unfortunately, some parts, particularly a few SWF files, were lost over time. These include files from Level 2 (`street.swf`, `love.swf`, `fear.swf`) and Level 3 (`lamp.swf`, `phone.swf`). These were the bits I had to reconstruct
-- **Reconstruction Efforts:** These missing parts have been reconstructed in HTML, guided by the archived guide website, the website reel, and discussions on Reddit about the site's content.
+- **Lost Elements:** Unfortunately, some parts, particularly a few SWF files that I think might have been streamed in the original site and as such were not archived and so seemingly lost forever. These include files from Level 2 (`street.swf`, `love.swf`, `fear.swf`) and Level 3 (`lamp.swf`, `phone.swf`). These were the bits I had to reconstruct. It took some time. 
 
 ---
 
 ## Experience and Assistance
 
-Now, given the missing parts I needed to basically reconstruct flash scenes in frigging HTML. I've been using GitHub CoPilot for about a year now, and honestly there were some part of this I could not have achieved without it. 
-
-Utilising some [Windows 98](https://jdan.github.io/98.css/) style assets allowed for a more authentic feel along side the orignal imagery. Also some pretty interesting effects via [SVG noise filters](https://aaadaaam.com)
+Now, given the missing parts I needed to basically reconstruct Flash scenes in frigging HTML etc. I've been using GitHub CoPilot for about a year now, and honestly there were some parts of this I could not have achieved without it. So using a combination of Ruffle.rs, 11ty, Alpine.js, [98.css](https://jdan.github.io/98.css/), [SVG noise filters](https://aaadaaam.com), Tailwind (I know), AI, Photoshop, Lossless Cut and trusty 'ol HTML, CSS, and JavaScript I hunkered down and started to work.
 
 Additional weird things like recording audo from parts of the Flash files to reuse in the reconstrcution effort. Hand-copying text from screen-grabs into HTML. It was utternly mad, but enjoyable. 
 
@@ -57,21 +66,21 @@ I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the
 
 ### Intro 
 
-1. **Initial Page Load**: 
+1. **Intro**: 
    - Opens `intro.html`, which loads several swfs: `intro.swf`, `clouds.swf`, `book.swf`, and `menu.swf`
    - Option to skip to Level 1, else continue to full intro
 
 ### Level 1
 
-1.  **Menu**
+1.  **Main Menu**
    - Menu is displayed (loads `menu.swf`).
    - User clicks on Level 1 is active
 
-2. **News pop-up (Part 1)**: 
+2. **News article pop-up**: 
    - Pop-up is displayed - `news/pop1.html`, which in turn loads `news/newspaper4.htm` (loads `top.swf` & `side.swf`).
    - The section is closed the next part of the game is loaded.
 
-3. **News pop-up (Part 2)**: 
+3. **News article pop-up**: 
    - Pop-up is displayed - `news/pop2.html`, which in turn loads `news/newspaper3.htm` (loads `top.swf` & `side.swf`).
    - Similar to the previous step, once closed the next part of the game is loaded.
 
@@ -85,21 +94,21 @@ I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the
 
 ### Level 2
 
-1. **Return to Menu**:
+1. **Main Menu**:
    - User opens `menu.html`, loading `menu.swf`, `clouds.swf`, and `book.swf`.
    - User clicks on Level 2 is active
 
-2. **Level 2 Pop Section**:
+2. **Level 2 Pop-up**:
    - Pop-up is displayed `pop/pop_level2.html`, which loads `pass2.swf`.
 
-3. **Closing the Pop Section**:
+3. **Loads Level 2**:
    - Loads `pop/close.html`.
 
-4. **Golfing Experience**:
+4. **Are you sleep golfing?**:
    - Redirects to `are/you/sleep/golfing/index.html`.
    - This page loads multiple SWFs: `golf.swf`, `birds.swf`, `draw.swf`.
 
-5. **Exploring News Section (Part 3)**:
+5. **News article pop-up**:
    - The user goes to `news/pop3.html` and then to `news/newspaper2.htm`.
 
 6. **Missing Section**:
@@ -107,22 +116,22 @@ I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the
    - The reconstructed game progresses from `are/you/sleep/golfing/missing/1.html` to `are/you/sleep/golfing/missing/7.html`.
    - The journey includes a pop-up to `news/newspaper5.htm`.
 
-7. **Sparkle Motion Section**:
+7. **Sparkle Motion**:
    - Game progresses to `sparkle/motion/index.html`, which loads `phase2_end.swf`.
 
 ### Level 3
 
-1. **Revisiting Menu**:
+1. **Main Menu**:
    - User opens `menu.html` again, loading the same set of SWFs as before.
    - User clicks on Level 3 is active
 
-2. **Level 3 Pop Section**:
+2. **Level 3 Pop-up**:
    - Pop-up is displayed `pop/pop_level3.html`, loading `pass3.swf`.
 
-3. **Concluding the Pop Section**:
+3. **Loads Level 3**:
    - Visits `pop/close.html`.
 
-4. **Sky-Themed Exploration**:
+4. **From the sky**:
    - Redirects to `from/the/sky/index.html`, which loads `trampolin.swf`.
 
 5. **Pop-up warning**:

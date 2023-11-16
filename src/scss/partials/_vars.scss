@@ -10,19 +10,20 @@ $xxl: px-to-em(1920px);
 
 :root {
     --body: 'Arial', sans-serif;
-    --mono: 'Pixelated MS Sans Serif', monospace;
     --times: 'Times New Roman', 'Times', serif;
+    --mono: 'Pixelated MS Sans Serif', monospace;
 
     --dark: hsl(98, 0%, 0%);
     --light: #ffffff;
-
-    --color-primary: 0, 98%; //#f70503 
-    --l: 49%;
+    
+    --color-primary: 356, 98%; //#fc0d1b 
+    --l: 52%;
 
     --highlight: hsl(var(--color-primary),var(--l)); 
     --hover: hsl(var(--color-primary),calc(var(--l) - 10%));
-    --focus: hsl(var(--color-primary),var(--l));
     --visited: hsl(var(--color-primary),var(--l));
+
+    --focus: #ffdd00;
 
     //Spacing
     --space-xs: clamp(0.75rem, 0.69rem + 0.29vw, 0.9375rem);
