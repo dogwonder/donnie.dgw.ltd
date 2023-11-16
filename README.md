@@ -242,7 +242,6 @@ Level 3
 
 ## To Do 
 Improve
-Lines - /are/you/sleep/golfing/missing/7.html
 Responsive typography based on vw  - relative to container
 
 ---
