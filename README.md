@@ -238,13 +238,6 @@ Level 3
 /from/the/sky/phone.swf
 ```
 
----
-
-## To Do 
-Improve
-Responsive typography based on vw  - relative to container
-
----
 
 ---
 
@@ -253,22 +246,18 @@ Responsive typography based on vw  - relative to container
 ```
 sudo apt-get update
 sudo apt-get install mtasc
-touch fear.as
-rmate fear.as
-mtasc -main -header 200:150:30 fear.as -swf fear.swf
+touch test.as
+rmate test.as
+mtasc -main -header 200:150:30 test.as -swf test.swf
 ```
 
 
 ```
 // ActionScript 2.0
-class OpenURL {
+class Test {
     static function main() {
-        // Define the URL you want to open
-        var url:String = "/are/you/sleep/golfing/missing/intro.html";
-
-        // Use the getURL function to open the URL in the same window
-        // "_self" specifies that the URL should be opened in the same window
-        getURL(url, "_self");
+        // Your test here.
+        trace("Hello World!");
     }
 }
 ```
