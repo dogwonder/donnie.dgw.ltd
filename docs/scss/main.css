@@ -79,7 +79,6 @@ select {
 :root {
   --body: "Arial", sans-serif;
   --mono: "Pixelated MS Sans Serif", monospace;
-  --mono-2: "HI-LOGIN-BOLD-Regular", monospace;
   --times: "Times New Roman", "Times", serif;
   --dark: hsl(98, 0%, 0%);
   --light: #ffffff;
