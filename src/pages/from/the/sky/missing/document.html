@@ -33,18 +33,37 @@ body {
     -webkit-animation: blink 1s steps(5, start) infinite;
 }
 .document-text {
+    background-color: white;
+    box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+    padding: 1rem;
+    color: var(--highlight);
     position: absolute;
-    top: 20%;
-    height: 40%;
-    left: 10%;
-    max-width: 40%;
-    font-size: clamp(0.75rem, 0.9vw, 1rem);
+    bottom: 20%;
+    height: 50%;
+    left: 12%;
+    max-width: 30%;
+    font-size: clamp(0.75rem, 0.9vw, 0.8rem);
     font-family: var(--mono);
     font-weight: bold;
     overflow-x: hidden;
 }
 .window {
-    
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    overflow: hidden;
+}
+.window img {
+    width: 100%;
+    height: calc(100% - 22px);
+    object-fit: cover;
+}
+.interlace:hover {
+    cursor: pointer;
+    filter: url(#noise);
+    animation: .3s linear forwards noise infinite;
 }
 @keyframes blink {
     to {
@@ -60,7 +79,7 @@ body {
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
         <canvas id="image" width="800" height="500"></canvas>
-        <div class="document-text" id="scene-1">
+        <div class="document-text" id="document">
             FEDERAL AVIATION ADMINISTRATION<br>
             OFFICE OF ACCIDENT INVESTIGATION<br>
             TRANSCRIPT 345512334<br>
@@ -76,57 +95,56 @@ body {
             CONTINUE Y/N
         </div>
 
-        <div class="chandelier" id="scene-2">
-            <div class="window">
-                <div class="title-bar">
-                    <div class="title-bar-text px-1">Microsoft Explorer</div>
-                    <div class="title-bar-controls">
-                        <button aria-label="Minimize"></button>
-                        <button aria-label="Maximize"></button>
-                        <button aria-label="Close"></button>    
-                    </div>
-                  </div>
-                  <div class="interlace" data-url="from/the/sky/missing/transcript.html">
+        <div class="chandelier window">
+            <div class="title-bar">
+                <div class="title-bar-text px-1">Microsoft Explorer</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>    
+                </div>
+                </div>
+                <div class="interlace">
+                <img src="/images/missing/level3/chandelier-square.jpg">
+                <div x-data="{ open: false }" class="flex justify-center">
+
+                    <!-- Modal -->
+                    <div
+                        x-dialog
+                        x-model="open"
+                        style="display: none"
+                        class="fixed inset-0 overflow-y-auto z-10"
+                    >
+                        <!-- Overlay -->
+                        <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
                     
-                  </div>
-            </div>
+                        <!-- Panel -->
+                        <div class="relative min-h-screen flex items-center justify-center p-4">
+                            <div
+                                x-dialog:panel
+                                x-transition
+                                class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
+                            >
+                                <div class="title-bar">
+                                    <div class="title-bar-text"></div>
+                                    <div class="title-bar-controls">
+                                        <button aria-label="Close" @click="$dialog.close()"></button>
+                                    </div>
+                                </div>
+                    
+                                <!-- Body -->
+                                <div class="p-1">
+                                    <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
         </div>
 
-        <div x-data="{ open: false }" class="flex justify-center">
-    
-         <!-- Modal -->
-         <div
-             x-dialog
-             x-model="open"
-             style="display: none"
-             class="fixed inset-0 overflow-y-auto z-10"
-         >
-             <!-- Overlay -->
-             <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
-       
-             <!-- Panel -->
-             <div class="relative min-h-screen flex items-center justify-center p-4">
-                 <div
-                     x-dialog:panel
-                     x-transition
-                     class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
-                 >
-                     <div class="title-bar">
-                       <div class="title-bar-text"></div>
-                       <div class="title-bar-controls">
-                           <button aria-label="Close" @click="$dialog.close()"></button>
-                         </div>
-                     </div>
-       
-                     <!-- Body -->
-                     <div class="p-1">
-                       <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
-                     </div>
-       
-                 </div>
-             </div>
-         </div>
-       </div>
+
     </div>
 </div>
 
@@ -136,8 +154,6 @@ body {
 {% block scripts %}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-
-        const scene1 = document.getElementById('scene-1');
 
         ddScripts.animateText('scene-1');
 
@@ -158,22 +174,10 @@ body {
                     const y = document.createElement('span');
                     y.innerHTML = 'Y';
                     scene1.appendChild(y);
-                    //Delay the next scene
+                    //Redirect the user to transcript.html
                     setTimeout(() => {
-
-                        scene1.style.display = 'none';
-                        scene2.style.display = 'block';
-
-                        //Load MP3 file
-                        const audio = new Audio('/mp3/transcript.mp3');
-                        audio.loop = true;
-                        audio.play();
-
-                        const event = new CustomEvent('scene2Completed');
-                        document.dispatchEvent(event);
-
+                        window.location.href = '/from/the/sky/missing/transcript.html';
                     }, 1000);
-
                 }
             });
 
