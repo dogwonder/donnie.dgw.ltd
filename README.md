@@ -11,7 +11,7 @@ Think this might be the first time I needed to include a Table of Contents on th
 ## Table of Contents
 1. [But seriously...why?](#but-seriouslywhy)
 2. [Ruffle.rs and the Revival of the Game](#rufflers-and-the-revival-of-the-game)
-3. [Experience and Assistance](#experience-and-assistance)
+3. [Resources and Assistance](#experience-and-assistance)
 4. [User Journey](#user-journey)
 5. [Missing parts and notes](#missing-parts-and-notes)
 
@@ -37,7 +37,7 @@ And thus the epic journey begins...
 - **Archival Inconsistencies:** Unfortunately, the game often got stuck after the initial menu or just after the first section, where the next step didn't existing within the same snapshot. This varied depending on the site version or the specific archive capture accessed.
 - **Dispersed Archives:** Many game pages were archived, but they were scattered across different parts of the archive, requiring direct access to certain pages to progress through the game. Meaning the game was effectively split across time periods, which was rather apt considering the subject matter and the site architecture. 
 
-### Resources and Digital Archaeology
+### Digital Archaeology
 - **Archived List of Pages and Files:** A pretty comprehensive list of all the pages and files that were archived can be found [here](https://web.archive.org/web/*/http://archive.hi-res.net/donniedarko/*) and some from the [original site](https://web.archive.org/web/*/http://ww2.donniedarko.com/are/you/sleep/golfing/*).
 - **Guide to the Site:** An archived [guide to the site](https://web.archive.org/web/20130106005533/http://ruinedeye.com/cd/aid2.htm) was invaluable to piece together the various part of the game.
 - **Creator’s Showcase:** Alexandra Jugovic, the site's creator, showcases the original site and much user journey on her [website reel](https://alexandrajugovic.com/donniedarko) again invaluable in trying to solve this puzzle.
@@ -50,7 +50,7 @@ And thus the epic journey begins...
 
 ---
 
-## Experience and Assistance
+## Resources and Assistance
 
 Now, given the missing parts I needed to basically reconstruct Flash scenes in frigging HTML etc. I've been using GitHub CoPilot for about a year now, and honestly there were some parts of this I could not have achieved without it. So using a combination of Ruffle.rs, 11ty, Alpine.js, [98.css](https://jdan.github.io/98.css/), [SVG noise filters](https://aaadaaam.com), Tailwind (I know), AI, Photoshop, Lossless Cut and trusty 'ol HTML, CSS, and JavaScript I hunkered down and started to work.
 

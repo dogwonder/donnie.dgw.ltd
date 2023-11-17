@@ -36,13 +36,13 @@ let observer = new PerformanceObserver((list) => {
                 .then(response => {
                     if (!response.ok) {
                         // If the response is not successful, redirect
-                        window.location.href = '/from/the/sky/transcript.html';
+                        window.location.href = '/from/the/sky/missing/document.html';
                     }
                     // Handle successful response
                 })
                 .catch(error => {
                     // Handle network errors
-                    window.location.href = '/from/the/sky/transcript.html';
+                    window.location.href = '/from/the/sky/missing/document.html';
                 });
         }
     }
