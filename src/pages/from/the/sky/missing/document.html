@@ -3,7 +3,6 @@ permalink: /from/the/sky/missing/document.html
 ---
 
 {% set isAlpine = true %}
-{% set hasCredit = false %}
 
 {% css %}
 html body {
@@ -78,70 +77,81 @@ body {
 
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
+
         <canvas id="image" width="800" height="500"></canvas>
-        <div class="document-text" id="document">
-            FEDERAL AVIATION ADMINISTRATION<br>
-            OFFICE OF ACCIDENT INVESTIGATION<br>
-            TRANSCRIPT 345512334<br>
-            SOURCE: USA -- WASHINGTON D.C./UNITED KINGDOM -- LONDON<br>
-            DATE: 4/23/91 03:23:26 AM EST<br><br>
-            
-            DISCLAIMER:<br><br>
-            
-            THE OFFICE OF ACCIDENT INFORMATION (AAI) IS THE PRINCIPAL ORGANIZATION WITHIN THE FAA WITH<br> RESPECT TO AIRCRAFT INVESTIGATION AND ALL ACTIVITIES RELATED TO THE NATIONAL TRANSPORTATION<br> SAFETY BOARD (NTSB)<br><br>
-            
-            THE FOLLOWING TRANSCRIPT IS A CLASSIFIED DOCUMENT WITH LEVEL 6 RESTRICTIONS.<br>
+        <div id="scene-1">
+            <div class="document-text" id="document">
+                FEDERAL AVIATION ADMINISTRATION<br>
+                OFFICE OF ACCIDENT INVESTIGATION<br>
+                TRANSCRIPT 345512334<br>
+                SOURCE: USA -- WASHINGTON D.C./UNITED KINGDOM -- LONDON<br>
+                DATE: 4/23/91 03:23:26 AM EST<br><br>
+                
+                DISCLAIMER:<br><br>
+                
+                THE OFFICE OF ACCIDENT INFORMATION (AAI) IS THE PRINCIPAL ORGANIZATION WITHIN THE FAA WITH<br> RESPECT TO AIRCRAFT INVESTIGATION AND ALL ACTIVITIES RELATED TO THE NATIONAL TRANSPORTATION<br> SAFETY BOARD (NTSB)<br><br>
+                
+                THE FOLLOWING TRANSCRIPT IS A CLASSIFIED DOCUMENT WITH LEVEL 6 RESTRICTIONS.<br>
 
-            CONTINUE Y/N
-        </div>
+                CONTINUE <span id="yes">Y</span>/N
+            </div>
 
-        <div class="chandelier window">
-            <div class="title-bar">
-                <div class="title-bar-text px-1">Microsoft Explorer</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
-                    <button aria-label="Close"></button>    
-                </div>
-                </div>
-                <div class="interlace">
-                <img src="/images/missing/level3/chandelier-square.jpg">
-                <div x-data="{ open: false }" class="flex justify-center">
+            <div class="chandelier window">
+                <div class="title-bar">
+                    <div class="title-bar-text px-1">Microsoft Explorer</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>    
+                    </div>
+                    </div>
+                    <div class="interlace">
 
-                    <!-- Modal -->
-                    <div
-                        x-dialog
-                        x-model="open"
-                        style="display: none"
-                        class="fixed inset-0 overflow-y-auto z-10"
-                    >
-                        <!-- Overlay -->
-                        <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
-                    
-                        <!-- Panel -->
-                        <div class="relative min-h-screen flex items-center justify-center p-4">
-                            <div
-                                x-dialog:panel
-                                x-transition
-                                class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
-                            >
-                                <div class="title-bar">
-                                    <div class="title-bar-text"></div>
-                                    <div class="title-bar-controls">
-                                        <button aria-label="Close" @click="$dialog.close()"></button>
+
+                    <div x-data="{ open: false }" class="flex justify-center">
+
+                        <span x-on:click="open = true">
+                            <img src="/images/missing/level3/chandelier-square.jpg">
+                        </span>
+
+                        <!-- Modal -->
+                        <div
+                            x-dialog
+                            x-model="open"
+                            style="display: none"
+                            class="fixed inset-0 overflow-y-auto z-10"
+                        >
+                            <!-- Overlay -->
+                            <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
+                        
+                            <!-- Panel -->
+                            <div class="relative min-h-screen flex items-center justify-center p-4">
+                                <div
+                                    x-dialog:panel
+                                    x-transition
+                                    class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
+                                >
+                                    <div class="title-bar">
+                                        <div class="title-bar-text"></div>
+                                        <div class="title-bar-controls">
+                                            <button aria-label="Close" @click="$dialog.close()"></button>
+                                        </div>
                                     </div>
+                        
+                                    <!-- Body -->
+                                    <div class="p-1">
+                                        <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
+                                    </div>
+                        
                                 </div>
-                    
-                                <!-- Body -->
-                                <div class="p-1">
-                                    <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
-                                </div>
-                    
                             </div>
                         </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div id="scene-2">
+
         </div>
 
 
@@ -155,7 +165,10 @@ body {
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-        ddScripts.animateText('scene-1');
+        const scene1 = document.getElementById('scene-1');
+        const scene2 = document.getElementById('scene-2');
+
+        ddScripts.animateText('document');
 
         document.addEventListener('timeoutsCompleted', () => {
 
@@ -163,7 +176,7 @@ body {
             const cursor = document.createElement('span');
             cursor.classList.add('blink');
             cursor.innerHTML = '_';
-            document.getElementById('scene-1').appendChild(cursor);
+            document.getElementById('document').appendChild(cursor);
 
             //Allow the user to continue to the next scene by typing Y or N where the cursor is
             document.addEventListener('keydown', (event) => {
@@ -173,10 +186,11 @@ body {
                     //Add a Y to the end of the text
                     const y = document.createElement('span');
                     y.innerHTML = 'Y';
-                    scene1.appendChild(y);
-                    //Redirect the user to transcript.html
+                    document.getElementById('document').appendChild(y);
+                    
                     setTimeout(() => {
-                        window.location.href = '/from/the/sky/missing/transcript.html';
+                        scene1.style.display = 'none';
+                        scene2.style.display = 'block';
                     }, 1000);
                 }
             });
