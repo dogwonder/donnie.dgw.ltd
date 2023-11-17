@@ -26,10 +26,33 @@ body {
 .aspect-ratio canvas {
     width: 100%;
     height: auto;
-    background-image: url("/images/missing/level3/document.jpg");
+    background-image: url("/images/missing/level3/document-clear.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+}
+.blink {
+    animation: blink 1s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+}
+.document-text {
+    position: absolute;
+    top: 20%;
+    height: 40%;
+    left: 10%;
+    max-width: 40%;
+    font-size: clamp(0.75rem, 0.9vw, 1rem);
+    font-family: var(--mono);
+    font-weight: bold;
+    overflow-x: hidden;
+}
+.window {
+    
+}
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
 }
 @font-face {
       font-family: "Pixelated MS Sans Serif";
@@ -65,43 +88,73 @@ body {
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
         <canvas id="image" width="800" height="500"></canvas>
-        <div id="document" class="document text">
-            <div x-data="{ open: true }" class="flex justify-center">
-        
-             <!-- Modal -->
-             <div
-                 x-dialog
-                 x-model="open"
-                 style="display: none"
-                 class="fixed inset-0 overflow-y-auto z-10"
-             >
-                 <!-- Overlay -->
-                 <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
-           
-                 <!-- Panel -->
-                 <div class="relative min-h-screen flex items-center justify-center p-4">
-                     <div
-                         x-dialog:panel
-                         x-transition
-                         class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
-                     >
-                         <div class="title-bar">
-                           <div class="title-bar-text"></div>
-                           <div class="title-bar-controls">
-                               <button aria-label="Close" @click="$dialog.close()"></button>
-                             </div>
+        <div class="document-text" id="scene-1">
+            FEDERAL AVIATION ADMINISTRATION<br>
+            OFFICE OF ACCIDENT INVESTIGATION<br>
+            TRANSCRIPT 345512334<br>
+            SOURCE: USA -- WASHINGTON D.C./UNITED KINGDOM -- LONDON<br>
+            DATE: 4/23/91 03:23:26 AM EST<br><br>
+            
+            DISCLAIMER:<br><br>
+            
+            THE OFFICE OF ACCIDENT INFORMATION (AAI) IS THE PRINCIPAL ORGANIZATION WITHIN THE FAA WITH<br> RESPECT TO AIRCRAFT INVESTIGATION AND ALL ACTIVITIES RELATED TO THE NATIONAL TRANSPORTATION<br> SAFETY BOARD (NTSB)<br><br>
+            
+            THE FOLLOWING TRANSCRIPT IS A CLASSIFIED DOCUMENT WITH LEVEL 6 RESTRICTIONS.<br>
+
+            CONTINUE Y/N
+        </div>
+
+        <div class="chandelier" id="scene-2">
+            <div class="window">
+                <div class="title-bar">
+                    <div class="title-bar-text px-1">Microsoft Explorer</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>    
+                    </div>
+                  </div>
+                  <div class="interlace" data-url="from/the/sky/missing/transcript.html">
+                    
+                  </div>
+            </div>
+        </div>
+
+        <div x-data="{ open: false }" class="flex justify-center">
+    
+         <!-- Modal -->
+         <div
+             x-dialog
+             x-model="open"
+             style="display: none"
+             class="fixed inset-0 overflow-y-auto z-10"
+         >
+             <!-- Overlay -->
+             <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
+       
+             <!-- Panel -->
+             <div class="relative min-h-screen flex items-center justify-center p-4">
+                 <div
+                     x-dialog:panel
+                     x-transition
+                     class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
+                 >
+                     <div class="title-bar">
+                       <div class="title-bar-text"></div>
+                       <div class="title-bar-controls">
+                           <button aria-label="Close" @click="$dialog.close()"></button>
                          </div>
-           
-                         <!-- Body -->
-                         <div class="p-1">
-                           <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
-                         </div>
-           
                      </div>
+       
+                     <!-- Body -->
+                     <div class="p-1">
+                       <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
+                     </div>
+       
                  </div>
              </div>
-           </div>
-        </div>
+         </div>
+       </div>
     </div>
 </div>
 
@@ -115,7 +168,7 @@ body {
     
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.1-beta.0/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/focus@3.13.1/dist/cdn.min.js"></script>
-    <script defer src=" /scripts/alpine.js?v=1700223876284"></script>
+    <script defer src=" /scripts/alpine.js?v=1700224755429"></script>
     
 
     
@@ -138,6 +191,53 @@ body {
     <script src="/scripts/min/app.min.js"></script>
 
     
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const scene1 = document.getElementById('scene-1');
+
+        ddScripts.animateText('scene-1');
+
+        document.addEventListener('timeoutsCompleted', () => {
+
+            //Add a blinking cursor at the end of the text
+            const cursor = document.createElement('span');
+            cursor.classList.add('blink');
+            cursor.innerHTML = '_';
+            document.getElementById('scene-1').appendChild(cursor);
+
+            //Allow the user to continue to the next scene by typing Y or N where the cursor is
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'y' || event.key === 'Y') {
+                    //Remove the cursor
+                    cursor.remove();
+                    //Add a Y to the end of the text
+                    const y = document.createElement('span');
+                    y.innerHTML = 'Y';
+                    scene1.appendChild(y);
+                    //Delay the next scene
+                    setTimeout(() => {
+
+                        scene1.style.display = 'none';
+                        scene2.style.display = 'block';
+
+                        //Load MP3 file
+                        const audio = new Audio('/mp3/transcript.mp3');
+                        audio.loop = true;
+                        audio.play();
+
+                        const event = new CustomEvent('scene2Completed');
+                        document.dispatchEvent(event);
+
+                    }, 1000);
+
+                }
+            });
+
+        });
+        
+    });
+</script>
 
 
     <!--Bundle SVG-->
