@@ -322,6 +322,21 @@ table td, table p {
     filter: url(#noise1);
   }
 }
+.keyboard {
+  padding: 1rem;
+}
+@media (min-width: 48em) {
+  .keyboard {
+    display: none;
+  }
+}
+
+.icon-keyboard {
+  width: 2.4rem;
+  height: auto;
+  margin: 0.25rem;
+}
+
 .visually-hidden {
   height: 1px;
   width: 1px;

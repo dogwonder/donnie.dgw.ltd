@@ -146,7 +146,7 @@ I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the
 ## Missing parts and notes
 
 ### Desktop Recommended for Optimal Experience
-- **Keyboard Input:** This application is best experienced on a desktop due to its reliance on keyboard input.
+- **Keyboard Input:** This application is best experienced on a desktop due to its reliance on keyboard input. Although I have tried to implement a mobile keyboard for this.
 - **Know issues:** 
    - Occasionally, new tabs may not function properly and the game can't be progressed. If this occurs, it's recommended to return to the [main menu](https://donnie.dgw.ltd/menu.html) and restart the process. Or make sure only one tab is open. 
    - Also you know this is Flash, In 2023. So there's that. 
@@ -218,6 +218,28 @@ OR
 <object>
     <embed src="/are/you/sleep/golfing/golf.swf" width="800" height="500">
 </object>
+
+
+---
+
+## Keyboard
+
+Using [Simple-Keyboard](https://github.com/hodgef/simple-keyboard)
+
+```
+{% set hasKeyboard = true %}
+```
+
+```
+document.addEventListener('keyPress', function(e) {
+   console.log('A key was pressed: ', e.key);
+   if (e.key === 'y' || e.key === 'Y') {
+      //Do stuff
+   }
+});
+```
+
+
 
 ---
 

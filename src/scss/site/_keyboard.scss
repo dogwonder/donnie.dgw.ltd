@@ -1,0 +1,20 @@
+
+.keyboard {
+    padding: 1rem;
+    @media (min-width: $md) {
+        display: none;
+    }
+}
+.simple-keyboard {
+
+}
+
+.icon-keyboard {
+    width: 2.4rem;
+    height: auto;
+    margin: 0.25rem;
+}
+
+.toggle-keyboard {
+    
+}

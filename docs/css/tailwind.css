@@ -747,6 +747,10 @@ video {
   text-align: center;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .underline {
   text-decoration-line: underline;
 }

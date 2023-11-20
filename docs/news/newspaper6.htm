@@ -9,7 +9,39 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-frank.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-frank.png">
     
-    <style>
+    <style>table td img {
+  display: inline-block;
+  font-weight: 300;
+  line-height: 2;
+  text-align: center;
+
+  min-width: 200px;
+  min-height: 50px;
+  position: relative;
+}
+table td img:before {
+  content: '';
+  width: 100%;
+  height: calc(100% + 10px);
+  background-color: #ccc;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  transform: translateY(-50%);
+}
+table td img:after {
+  content: "\2639" " " attr(alt);
+  font-size: 18px;
+  color: rgb(100, 100, 100);
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 @font-face {
       font-family: "Pixelated MS Sans Serif";
       font-style: normal;
@@ -31,6 +63,8 @@
 
     <!-- 98.css -->
     <link rel="stylesheet" href="/css/98.css" />
+
+    
 
     
 
@@ -118,9 +152,12 @@
 
       </div>
       
+      
     </main>
     
     
+    
+
     
 
     
@@ -181,6 +218,7 @@
       <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
     </filter>
 </svg>
+
 
 
 
