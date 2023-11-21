@@ -31,18 +31,16 @@ body {
     animation: blink 1s steps(5, start) infinite;
     -webkit-animation: blink 1s steps(5, start) infinite;
 }
-.document-text-wrapper {
+.faa-window {
     position: absolute;
-    bottom: 20%;
-    height: 50%;
+    bottom: 10%;
+    height: 45%;
     left: 12%;
     max-width: calc(320px + 30ch);
     display: flex;
     gap: 2ch;
 }
-
-.document-text {
-    width: 320px;
+.faa-info {
     background-color: white;
     box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
     padding: 1rem;
@@ -51,6 +49,7 @@ body {
     font-family: var(--mono);
     font-weight: bold;
     overflow-x: hidden;
+    width: 320px;
 }
 .launch {
     color: var(--highlight);
@@ -65,11 +64,11 @@ body {
     cursor: pointer;
 }
 .window {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     position: absolute;
     right: 10%;
-    top: 10%;
+    bottom: 30%;
     overflow: hidden;
 }
 .window img {
@@ -77,7 +76,7 @@ body {
     height: calc(100% - 22px);
     object-fit: cover;
 }
-.open-newspaper:hover {
+.lamp:hover {
     cursor: pointer;
 }
 .interlace:hover {
@@ -117,26 +116,27 @@ body {
     <div class="aspect-ratio">
 
         <canvas id="image" width="800" height="500"></canvas>
-        <div id="scene-1" x-data="{ open: false }">
-            <div class="document-text-wrapper">
-                <div class="document-text" id="document">
-                    FEDERAL AVIATION ADMINISTRATION<br>
-                    OFFICE OF ACCIDENT INVESTIGATION<br>
-                    TRANSCRIPT 345512334<br>
-                    SOURCE: USA -- WASHINGTON D.C./UNITED KINGDOM -- LONDON<br>
-                    DATE: 4/23/91 03:23:26 AM EST<br><br>
-                    
-                    DISCLAIMER:<br><br>
-                    
-                    THE OFFICE OF ACCIDENT INFORMATION (AAI) IS THE PRINCIPAL ORGANIZATION WITHIN THE FAA WITH<br> RESPECT TO AIRCRAFT INVESTIGATION AND ALL ACTIVITIES RELATED TO THE NATIONAL TRANSPORTATION<br> SAFETY BOARD (NTSB)<br><br>
-                    
-                    THE FOLLOWING TRANSCRIPT IS A CLASSIFIED DOCUMENT WITH LEVEL 6 RESTRICTIONS.<br>
+        <div id="scene-1">
+            <div class="faa-window">
+                <div class="faa-info">
+                    <div id="words" style="display: none;">
+                        FEDERAL AVIATION ADMINISTRATION<br>
+                        OFFICE OF ACCIDENT INVESTIGATION<br>
+                        TRANSCRIPT 345512334<br>
+                        SOURCE: USA -- WASHINGTON D.C./UNITED KINGDOM -- LONDON<br>
+                        DATE: 4/23/91 03:23:26 AM EST<br><br>
+                        
+                        DISCLAIMER:<br><br>
+                        
+                        THE OFFICE OF ACCIDENT INFORMATION (AAI) IS THE PRINCIPAL ORGANIZATION WITHIN THE FAA WITH<br> RESPECT TO AIRCRAFT INVESTIGATION AND ALL ACTIVITIES RELATED TO THE NATIONAL TRANSPORTATION<br> SAFETY BOARD (NTSB)<br><br>
+                        
+                        THE FOLLOWING TRANSCRIPT IS A CLASSIFIED DOCUMENT WITH LEVEL 6 RESTRICTIONS.<br>
+                    </div>
                 </div>
-
-                <p class="launch" id="launch">>> Launch the document</p>
+                <p class="launch" id="launch" style="display:none;">>> Launch the document</p>
             </div>
 
-            <div class="chandelier window">
+            <div class="lamp window">
 
                 <div class="title-bar">
                     <div class="title-bar-text px-1">Microsoft Explorer</div>
@@ -148,42 +148,9 @@ body {
                     </div>
                     <div class="flex justify-center">
 
-                        <span x-on:click="open = true" class="open-newspaper">
-                            <img src="/images/missing/level3/chandelier-square.jpg">
+                        <span id="view">
+                            <img src="/images/missing/level3/lamp.jpg">
                         </span>
-
-                        <!-- Modal -->
-                        <div
-                            x-dialog
-                            x-model="open"
-                            style="display: none"
-                            class="fixed inset-0 overflow-y-auto z-10"
-                        >
-                            <!-- Overlay -->
-                            <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
-                        
-                            <!-- Panel -->
-                            <div class="relative min-h-screen flex items-center justify-center p-4 ">
-                                <div
-                                    x-dialog:panel
-                                    x-transition
-                                    class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto h-full"
-                                >
-                                    <div class="title-bar">
-                                        <div class="title-bar-text"></div>
-                                        <div class="title-bar-controls">
-                                            <button aria-label="Close" @click="$dialog.close()"></button>
-                                        </div>
-                                    </div>
-                        
-                                    <!-- Body -->
-                                    <div class="p-1">
-                                        <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
-                                    </div>
-                        
-                                </div>
-                            </div>
-                        </div>
                         
                     </div>
             </div>
@@ -236,60 +203,63 @@ body {
 
 {% block scripts %}
 <script>
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    const scene1 = document.getElementById('scene-1');
+    const scene2 = document.getElementById('scene-2');
+    const scene3 = document.getElementById('scene-3');
+
+     async function animateScenes() {
+
+        //Wait 1 second
+        await sleep(1000);
+
+        //Load MP3 file
+        const audio = new Audio('/mp3/transcript.mp3');
+        audio.loop = true;
+        audio.play();
+
+        scene1.style.display = 'none';
+        scene2.style.display = 'block';
+        ddScripts.animateText('scene-2');
+
+        //Wait 12 seconds
+        await sleep(12000);
+        
+        // const event = new Event('scene2Completed');
+        // document.dispatchEvent(event);
+
+        scene2.style.display = 'none';
+        scene3.style.transition = 'opacity 1s ease-in-out';
+        scene3.style.opacity = 1;
+
+    }
+
+
     document.addEventListener('DOMContentLoaded', (event) => {
 
-        const scene1 = document.getElementById('scene-1');
-        const scene2 = document.getElementById('scene-2');
-        const scene3 = document.getElementById('scene-3');
+        document.getElementById('view').addEventListener('click', () => {
+            //Load MP3 file
+            const audio = new Audio('/mp3/keys.mp3');
+            audio.play();
+            document.getElementById('words').style.display = 'block';
+            ddScripts.animateText('words');
+        });
+        
 
-        ddScripts.animateText('document');
-
-        document.addEventListener('timeoutsCompleted', () => {
-
+        document.addEventListener('wordsFinished', () => {
             //Add a blinking cursor at the end of the text
             const cursor = document.createElement('span');
             cursor.classList.add('blink');
             cursor.innerHTML = '_';
-            document.getElementById('document').appendChild(cursor);
-
-            //If #launch is clicked, trigger the next scene
-            document.getElementById('launch').addEventListener('click', () => {
-                const event = new Event('scene1Completed');
-                document.dispatchEvent(event);
-
-                //Load MP3 file
-                const audio = new Audio('/mp3/transcript.mp3');
-                audio.loop = true;
-                audio.play();
-                
-                setTimeout(() => {
-                    scene1.style.display = 'none';
-                    scene2.style.display = 'block';
-                    ddScripts.animateText('scene-2');
-                    //After 10 seconds create a new event to trigger the next scene
-                    setTimeout(() => {
-                        const event = new Event('scene2Completed');
-                        document.dispatchEvent(event);
-                    }, 10000);
-                }, 1000);
-            });
-
-
+            document.getElementById('words').appendChild(cursor);
+            document.getElementById('launch').style.display = 'block';
         });
 
-        document.addEventListener('scene2Completed', () => {
-
-            console.log('scene2Completed');
-
-            scene2.style.display = 'none';
-            scene3.style.transition = 'opacity 1s ease-in-out';
-            scene3.style.opacity = 1;
-
+        //If #launch is clicked, trigger the next scene
+        document.getElementById('launch').addEventListener('click', () => {
+            animateScenes();
         });
-
-
-
-        
 
     });
 </script>

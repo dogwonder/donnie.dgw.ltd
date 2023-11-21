@@ -295,7 +295,7 @@ $Bg8V@@@@@@@@@$0BB$@@@@@@@@@@@g0g8888G:~`          .&lt;^3CGC/
     
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.1-beta.0/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/focus@3.13.1/dist/cdn.min.js"></script>
-    <script defer src=" /scripts/alpine.js?v=1700499935516"></script>
+    <script defer src=" /scripts/alpine.js?v=1700588439840"></script>
     
 
     
@@ -313,7 +313,10 @@ $Bg8V@@@@@@@@@$0BB$@@@@@@@@@@@g0g8888G:~`          .&lt;^3CGC/
 
     
 <script>
-    const animateText = function() {
+
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    async function animateText() {
 
         const text = document.getElementById('scene-1');
         const words = text.innerHTML.split(' ');
@@ -327,29 +330,27 @@ $Bg8V@@@@@@@@@$0BB$@@@@@@@@@@@g0g8888G:~`          .&lt;^3CGC/
         audio.play();
 
         for (let i = 0; i < words.length; i++) {
-        setTimeout(() => {
-                text.innerHTML += words[i] + ' ';
-                timeoutsFinished++;
-                if (timeoutsFinished === numTimeouts) {
-                    audio.pause();
-                    const event = new CustomEvent('timeoutsCompleted');
-                    document.dispatchEvent(event);
-                }
-                if (i === words.length - 1) {
-                    setTimeout(() => {
-                        document.getElementById('scene-2').style.display = 'block';
-                        setTimeout(() => {
-                            document.getElementById('scene-1').style.display = 'none';
-                            document.getElementById('scene-2').style.display = 'none';
-                            setTimeout(() => {
-                                const event = new CustomEvent('scene2Completed');
-                                document.dispatchEvent(event);
-                            }, 1000);
-                        }, 2000);
-                    }, 1000);
-                }
-            }, i * 10);
+            setTimeout(() => {
+                    text.innerHTML += words[i] + ' ';
+                    timeoutsFinished++;
+                    if (timeoutsFinished === numTimeouts) {
+                        audio.pause();
+                        const event = new CustomEvent('scene1Completed');
+                        document.dispatchEvent(event);
+                    }
+                }, i * 10);
         }
+        
+    }
+
+    async function showFrank() {
+            await sleep(1000);
+            document.getElementById('scene-2').style.display = 'block';
+            document.getElementById('scene-1').style.display = 'none';
+            await sleep(2000);
+            document.getElementById('scene-2').style.display = 'none';
+            const event = new CustomEvent('scene2Completed');
+            document.dispatchEvent(event);
     }
 
     //Load MP3
@@ -362,6 +363,12 @@ $Bg8V@@@@@@@@@$0BB$@@@@@@@@@@@g0g8888G:~`          .&lt;^3CGC/
         animateText();
         playbutton.removeEventListener('click', () => {});
     });
+
+
+    document.addEventListener('scene1Completed', () => {
+        showFrank();
+    });
+
 
     document.addEventListener('scene2Completed', () => {
 

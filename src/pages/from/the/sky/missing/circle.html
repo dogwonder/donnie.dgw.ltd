@@ -1,0 +1,91 @@
+---
+permalink: /from/the/sky/missing/circle.html
+---
+
+{% set isRuffle = false %}
+
+{% css %}
+.aspect-ratio {
+    position: relative;
+    aspect-ratio: 800 / 500;
+}
+.aspect-ratio canvas {
+    width: 100%;
+    height: auto;
+    background-image: url("/images/missing/level2/intro.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+{% endcss %}
+
+{% extends "layouts/base.html" %}
+{% block content %}
+<div class="flex items-end h-full">
+    <div class="aspect-ratio">
+        <svg id="mySvg" width="800" height="600">
+            <!-- Initial Circle and Dot -->
+            <circle id="circle1" cx="500" cy="300" r="50" stroke="red" stroke-width="10" fill="none" />
+            <circle id="dot1" cx="500" cy="300" r="10" fill="red" />
+    
+            <!-- Line -->
+            <line id="line" x1="450" y1="300" x2="450" y2="300" stroke="red" stroke-width="10" />
+    
+            <!-- Second Circle and Dot (initially hidden) -->
+            <circle id="circle2" cx="150" cy="50" r="50" stroke="red" stroke-width="3" fill="none" visibility="hidden" />
+            <circle id="dot2" cx="150" cy="50" r="10" fill="red" visibility="hidden" />
+        </svg>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let line1 = document.getElementById("line");
+    let line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    let svg = document.getElementById("mySvg");
+    let circle2 = document.getElementById("circle2");
+    let dot2 = document.getElementById("dot2");
+
+    // Set up the second line (initially hidden)
+    line2.setAttribute("x1", "50");
+    line2.setAttribute("y1", "300");
+    line2.setAttribute("x2", "50");
+    line2.setAttribute("y2", "300");
+    line2.setAttribute("stroke", "red");
+    line2.setAttribute("stroke-width", "10");
+    line2.style.visibility = "hidden";
+    svg.appendChild(line2);
+
+    let frame = 0;
+    let interval = setInterval(function() {
+        frame++;
+
+        // Animate the first line horizontally
+        if (frame <= 300) {
+            line1.setAttribute("x2", 350 - frame);
+        }
+        // Initialize and animate the second line at -45 degrees
+        else if (frame === 301) {
+            line2.style.visibility = "visible";
+            line2.setAttribute("x1", line1.getAttribute("x2"));
+            line2.setAttribute("y1", line1.getAttribute("y2"));
+        }
+        else if (frame > 301 && frame <= 551) {
+            let dx = frame - 301;
+            let x = 50 - dx;
+            let y = 300 - dx;
+            line2.setAttribute("x2", x);
+            line2.setAttribute("y2", y);
+        }
+        // Show second circle and dot
+        if (frame === 551) {
+            circle2.setAttribute("visibility", "visible");
+            dot2.setAttribute("visibility", "visible");
+            clearInterval(interval); // Stop the animation
+        }
+    }, 20);
+});
+</script>
+{% endblock %}

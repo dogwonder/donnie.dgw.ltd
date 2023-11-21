@@ -12,6 +12,9 @@
     <style>html body {
     background-color: #DDDDCC;
 }
+.iframe-modal {
+    min-width: 720px;
+}
 @font-face {
       font-family: "Pixelated MS Sans Serif";
       font-style: normal;
@@ -45,17 +48,19 @@
       <div class="container full">
         
 
-<div class="flex items-center justify-center">
+<div class="flex items-center justify-center h-screen">
+    <p class="text-center">Close the window to continue</p>
 </div>
 
-<div x-data="{ open: true }" class="flex justify-center">
+<div x-data="{ window1Open: true, window2Open: false }">
 
-    <!-- Modal -->
+    <!-- Modal 1 -->
     <div
         x-dialog
-        x-model="open"
+        x-model="window1Open"
         style="display: none"
         class="fixed inset-0 overflow-y-auto z-10"
+        @x-dialog:close="window2Open = true"
     >
         <!-- Overlay -->
         <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
@@ -65,24 +70,59 @@
             <div
                 x-dialog:panel
                 x-transition
-                class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
+                class="iframe-modal text-center window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
             >
                 <div class="title-bar">
                   <div class="title-bar-text"></div>
                   <div class="title-bar-controls">
-                      <button aria-label="Close" @click="$dialog.close()"></button>
+                      <button aria-label="Close" @click="window1Open = false, window2Open = true"></button>
                     </div>
                 </div>
   
                 <!-- Body -->
                 <div class="p-1">
-                    The following document may give you knowledge which you may not want to have prior to seeing the movie!
+                    The following information may give you knowledge which you may not want to have prior to seeing the movie!
                 </div>
   
             </div>
         </div>
     </div>
-  </div>
+
+    <div
+    x-dialog
+    x-model="window2Open"
+    style="display: none"
+    class="fixed inset-0 overflow-y-auto z-10"
+    >
+    <!-- Overlay -->
+    <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Panel -->
+    <div class="relative min-h-screen flex items-center justify-center p-4 ">
+        <div
+            x-dialog:panel
+            x-transition
+            class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto h-full"
+        >
+            <div class="title-bar">
+                <div class="title-bar-text"></div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" @click="$dialog.close()"></button>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="p-1">
+                <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+
+
 
 
       </div>
@@ -94,7 +134,7 @@
     
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.1-beta.0/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/focus@3.13.1/dist/cdn.min.js"></script>
-    <script defer src=" /scripts/alpine.js?v=1700499935516"></script>
+    <script defer src=" /scripts/alpine.js?v=1700588439840"></script>
     
 
     

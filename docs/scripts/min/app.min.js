@@ -39,7 +39,7 @@ var ddScripts = {
                 timeoutsFinished++;
                 if (timeoutsFinished === numTimeouts) {
                     audio.pause();
-                    const event = new CustomEvent('timeoutsCompleted');
+                    const event = new CustomEvent('wordsFinished');
                     document.dispatchEvent(event);
                 }
             }, i * 10);

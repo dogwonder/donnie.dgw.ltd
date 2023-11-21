@@ -9,11 +9,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-frank.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-frank.png">
     
-    <style>body {
-    overflow-y: hidden;
+    <style>.aspect-ratio {
+    position: relative;
+    aspect-ratio: 800 / 500;
 }
-.iframe-modal  {
-  max-width: 730px !important;
+.aspect-ratio canvas {
+    width: 100%;
+    height: auto;
+    background-image: url("/images/missing/level2/intro.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
 @font-face {
       font-family: "Pixelated MS Sans Serif";
@@ -47,70 +53,40 @@
     <main>
       <div class="container full">
         
-
-<div class="flex items-center justify-center h-screen">
-    <p class="text-center">Close the window to continue</p>
+<div class="flex items-end h-full">
+    <div class="aspect-ratio">
+        <svg id="mySvg" width="800" height="600">
+            <!-- Initial Circle and Dot -->
+            <circle id="circle1" cx="500" cy="300" r="50" stroke="red" stroke-width="10" fill="none" />
+            <circle id="dot1" cx="500" cy="300" r="10" fill="red" />
+    
+            <!-- Line -->
+            <line id="line" x1="450" y1="300" x2="450" y2="300" stroke="red" stroke-width="10" />
+    
+            <!-- Second Circle and Dot (initially hidden) -->
+            <circle id="circle2" cx="150" cy="50" r="50" stroke="red" stroke-width="3" fill="none" visibility="hidden" />
+            <circle id="dot2" cx="150" cy="50" r="10" fill="red" visibility="hidden" />
+        </svg>
+    </div>
 </div>
 
-<div x-data="{ open: true }" class="flex justify-center">
-
-  <!-- Modal -->
-  <div
-      x-dialog
-      x-model="open"
-      style="display: none"
-      class="fixed inset-0 overflow-y-auto z-10"
-  >
-      <!-- Overlay -->
-      <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
-
-      <!-- Panel -->
-      <div class="relative min-h-screen flex items-center justify-center p-4">
-          <div
-              x-dialog:panel
-              x-transition
-              class="iframe-modal window relative max-w-xl w-full bg-white shadow-lg overflow-y-auto"
-          >
-              <div class="title-bar">
-                <div class="title-bar-text"></div>
-                <div class="title-bar-controls">
-                    <button aria-label="Close" @click="$dialog.close()"></button>
-                  </div>
-              </div>
-
-              <!-- Body -->
-              <div class="p-1">
-                <iframe src="/news/newspaper6.htm" width="100%" height="800px" frameborder="0" scrolling="yes"></iframe>
-              </div>
-
-          </div>
       </div>
-  </div>
+      
+      <div class="credit">
+    <p>
+        Credit: Created by <a href="https://alexandrajugovic.com/donniedarko">Hi-ReS!</a> in 2001<br>
+        <a href="https://dogwonder.co.uk/2023/11/donnie-darko-website-2023/">About this project</a>
+    </p>
 </div>
-
-
-      </div>
       
       
     </main>
     
     
     
-    <script defer src="https://unpkg.com/@alpinejs/ui@3.13.1-beta.0/dist/cdn.min.js"></script>
-    <script defer src="https://unpkg.com/@alpinejs/focus@3.13.1/dist/cdn.min.js"></script>
-    <script defer src=" /scripts/alpine.js?v=1700588439840"></script>
-    
 
     
 
-    
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <script>
-      window.RufflePlayer.config = {
-          autoplay: "on",
-          unmuteOverlay: "hidden",
-      };
-    </script>
     
 
     
@@ -123,6 +99,54 @@
     <script src="/scripts/min/app.min.js"></script>
 
     
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let line1 = document.getElementById("line");
+    let line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    let svg = document.getElementById("mySvg");
+    let circle2 = document.getElementById("circle2");
+    let dot2 = document.getElementById("dot2");
+
+    // Set up the second line (initially hidden)
+    line2.setAttribute("x1", "50");
+    line2.setAttribute("y1", "300");
+    line2.setAttribute("x2", "50");
+    line2.setAttribute("y2", "300");
+    line2.setAttribute("stroke", "red");
+    line2.setAttribute("stroke-width", "10");
+    line2.style.visibility = "hidden";
+    svg.appendChild(line2);
+
+    let frame = 0;
+    let interval = setInterval(function() {
+        frame++;
+
+        // Animate the first line horizontally
+        if (frame <= 300) {
+            line1.setAttribute("x2", 350 - frame);
+        }
+        // Initialize and animate the second line at -45 degrees
+        else if (frame === 301) {
+            line2.style.visibility = "visible";
+            line2.setAttribute("x1", line1.getAttribute("x2"));
+            line2.setAttribute("y1", line1.getAttribute("y2"));
+        }
+        else if (frame > 301 && frame <= 551) {
+            let dx = frame - 301;
+            let x = 50 - dx;
+            let y = 300 - dx;
+            line2.setAttribute("x2", x);
+            line2.setAttribute("y2", y);
+        }
+        // Show second circle and dot
+        if (frame === 551) {
+            circle2.setAttribute("visibility", "visible");
+            dot2.setAttribute("visibility", "visible");
+            clearInterval(interval); // Stop the animation
+        }
+    }, 20);
+});
+</script>
 
 
     <!--Bundle SVG-->
