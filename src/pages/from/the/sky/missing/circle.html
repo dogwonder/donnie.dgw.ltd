@@ -5,6 +5,10 @@ permalink: /from/the/sky/missing/circle.html
 {% set isRuffle = false %}
 
 {% css %}
+html body {
+    background-color: #ddddcc;
+    background: linear-gradient(to top, #ffffff 0%, #ffffff 400px, #ddddcc 500px, #ddddcc 100%);
+}
 .aspect-ratio {
     position: relative;
     aspect-ratio: 800 / 500;
@@ -12,29 +16,104 @@ permalink: /from/the/sky/missing/circle.html
 .aspect-ratio canvas {
     width: 100%;
     height: auto;
-    background-image: url("/images/missing/level2/intro.jpg");
+    background-image: url("/images/missing/level3/document-clear.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+}
+#animation {
+    position: absolute;
+    right: 14%;
+    top: 9%;
+    z-index: 2;
+    width: 70%;
+    height: 70%;
+}
+.window {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    right: 10%;
+    bottom: 30%;
+    overflow: hidden;
+    z-index: 1;
+}
+.faa-window {
+    position: absolute;
+    bottom: 10%;
+    height: 45%;
+    left: 12%;
+    max-width: 320px;
+    display: flex;
+    gap: 2ch;
+}
+.faa-info {
+    background-color: white;
+    box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+    padding: 1rem;
+    color: var(--highlight);
+    font-size: clamp(0.75rem, 0.9vw, 0.8rem);
+    font-family: var(--mono);
+    font-weight: bold;
+    overflow-x: hidden;
+    width: 260px;
+}
+#phone:hover {
+    cursor: pointer;
 }
 {% endcss %}
 
 {% extends "layouts/base.html" %}
 {% block content %}
+
+<!--TODO
+Absolutely position the phone and the rest of the animation
+-->
+
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
-        <svg id="mySvg" width="800" height="600">
-            <!-- Initial Circle and Dot -->
-            <circle id="circle1" cx="500" cy="300" r="50" stroke="red" stroke-width="10" fill="none" />
-            <circle id="dot1" cx="500" cy="300" r="10" fill="red" />
+        <canvas id="image" width="800" height="500"></canvas>
+        <svg id="animation" viewBox="0 0 800 500">
+            
+            <!-- Initial Circle and Dot 
+            -->
+            <circle id="circle1" cx="700" cy="300" r="50" stroke="var(--highlight)" stroke-width="0.8%" fill="none" visibility="hidden" />
+
+            <image x="675" y="275" id="phone" xlink:href="/images/missing/level3/phone.svg" x="250" y="175" width="50" height="50" visibility="visible" />
     
-            <!-- Line -->
-            <line id="line" x1="450" y1="300" x2="450" y2="300" stroke="red" stroke-width="10" />
+            <!-- Line 
+                650 is the x coordinate of the circle
+                300 is the y coordinate of the circle
+            -->
+            <line id="line" x1="650" y1="300" x2="650" y2="300" stroke="var(--highlight)" stroke-width="0.6%" />
+            <line id="line2" x1="375" y1="300" x2="377" y2="300" stroke="var(--highlight)" stroke-width="0.6%" />
     
             <!-- Second Circle and Dot (initially hidden) -->
-            <circle id="circle2" cx="150" cy="50" r="50" stroke="red" stroke-width="3" fill="none" visibility="hidden" />
-            <circle id="dot2" cx="150" cy="50" r="10" fill="red" visibility="hidden" />
+            <circle id="circle2" cx="250" cy="175" r="32" stroke="var(--highlight)" stroke-width="0.8%" fill="none" visibility="hidden" />
+            <circle id="dot" cx="250" cy="175" r="12" fill="var(--highlight)" visibility="hidden" />
         </svg>
+        <div class="faa-window">
+            <div class="faa-info">
+            </div>
+        </div>
+        <div class="lamp window">
+
+            <div class="title-bar">
+                <div class="title-bar-text px-1">Microsoft Explorer</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>    
+                </div>
+                </div>
+                <div class="flex justify-center">
+
+                    <span id="view">
+                        <img src="/images/missing/level3/lamp.jpg">
+                    </span>
+                    
+                </div>
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -42,50 +121,93 @@ permalink: /from/the/sky/missing/circle.html
 {% block scripts %}
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    let line1 = document.getElementById("line");
-    let line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-    let svg = document.getElementById("mySvg");
+
+    let svg = document.getElementById("animation");
+    let phone = document.getElementById("phone");
+    let circle1 = document.getElementById("circle1");
     let circle2 = document.getElementById("circle2");
-    let dot2 = document.getElementById("dot2");
+    let line1 = document.getElementById("line");
+    let line2 = document.getElementById("line2");
+    let dot = document.getElementById("dot");
+
+    //Set up the circle
+    //Animate the circle so the outline goes from nothing to full
+
+    let circumference1 = 2 * Math.PI * circle1.getAttribute("r");
+    let circumference2 = 2 * Math.PI * circle2.getAttribute("r");
+
+    // Set stroke-dasharray and stroke-dashoffset
+    circle1.style.strokeDasharray = circumference1;
+    circle1.style.strokeDashoffset = circumference1;
+    circle2.style.strokeDasharray = circumference2;
+    circle2.style.strokeDashoffset = circumference2;
+
+    // Rotate the circle 90 degrees counter-clockwise
+    circle1.setAttribute("transform", "rotate(180, 700, 300)");
+    circle2.setAttribute("transform", "rotate(180, 250, 175)");
 
     // Set up the second line (initially hidden)
-    line2.setAttribute("x1", "50");
-    line2.setAttribute("y1", "300");
-    line2.setAttribute("x2", "50");
-    line2.setAttribute("y2", "300");
-    line2.setAttribute("stroke", "red");
-    line2.setAttribute("stroke-width", "10");
     line2.style.visibility = "hidden";
-    svg.appendChild(line2);
 
+    
     let frame = 0;
-    let interval = setInterval(function() {
+    let isPaused = false;
+    let interval;
+
+    function animate() {
         frame++;
 
-        // Animate the first line horizontally
-        if (frame <= 300) {
-            line1.setAttribute("x2", 350 - frame);
+        if (frame <= 20) {
+            phone.style.visibility = "visible";
+            //Flicker the dot
+            if (frame % 10 == 0) {
+                phone.style.visibility = "visible";
+            } else if (frame % 10 == 5) {
+                phone.style.visibility = "hidden";
+            }
         }
-        // Initialize and animate the second line at -45 degrees
-        else if (frame === 301) {
+
+
+        else if (frame > 20 && frame <= 50) {
+            circle1.style.visibility = "visible";
+            circle1.style.strokeDashoffset = circumference1 - (frame - 20) / 30 * circumference1;
+        }
+
+        else if (frame > 50 && frame <= 275) {
+            line1.style.visibility = "visible";
+            line1.setAttribute("x2", 650 - frame);
+        }
+
+         // Initialize and animate the second line at -45 degrees
+        else if (frame > 275 && frame <= 400) {
             line2.style.visibility = "visible";
-            line2.setAttribute("x1", line1.getAttribute("x2"));
-            line2.setAttribute("y1", line1.getAttribute("y2"));
+            line2.setAttribute("x1", 377 - (frame - 275));
+            line2.setAttribute("y1", 300 - (frame - 275));
         }
-        else if (frame > 301 && frame <= 551) {
-            let dx = frame - 301;
-            let x = 50 - dx;
-            let y = 300 - dx;
-            line2.setAttribute("x2", x);
-            line2.setAttribute("y2", y);
+
+        //Now animate the second circle 
+        else if (frame > 400 && frame <= 500) {
+            circle2.style.visibility = "visible";
+            //Flicker the dot
+            if (frame % 10 == 0) {
+                dot.style.visibility = "visible";
+            } else if (frame % 10 == 5) {
+                dot.style.visibility = "hidden";
+            }
+            //Make if visible after a few iterations
+            if (frame > 420) {
+                dot.style.visibility = "visible";
+                circle2.style.strokeDashoffset = circumference2 - frame / 100 * circumference2;
+            }
+
         }
-        // Show second circle and dot
-        if (frame === 551) {
-            circle2.setAttribute("visibility", "visible");
-            dot2.setAttribute("visibility", "visible");
-            clearInterval(interval); // Stop the animation
-        }
-    }, 20);
+    }
+
+    phone.addEventListener('click', function() {
+        interval = setInterval(animate, 7);
+    });
+
+
 });
 </script>
 {% endblock %}
