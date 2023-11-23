@@ -21,6 +21,28 @@
     background-repeat: no-repeat;
     position: relative;
 }
+.correct {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.correct span {
+    font-size: 4rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 3px 3px #222;
+    animation: blink 0.7s steps(5, start) infinite;
+    -webkit-animation: blink 0.7s steps(5, start) infinite;
+    margin-block-start: 4rem;
+}
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
 @font-face {
       font-family: "Pixelated MS Sans Serif";
       font-style: normal;
@@ -65,6 +87,7 @@
             the wallet.<br><br>
             Please make your mark on the Lifeline.</p>
         </div>
+        <div class="correct" style="display:none;"><span>correct answer</span></div>
     </div>
 </div>
 
@@ -154,7 +177,10 @@
             isDrawing = false;
             lineCount++;
             if (lineCount >= 2) {
-                window.location.href = '3.html';
+                document.querySelector('.correct').style.display = 'flex';
+                setTimeout(() => {
+                    window.location.href = '3.html';
+                }, 2000);
             }
         });
     
