@@ -1,5 +1,8 @@
 
 .keyboard {
+    position: absolute;
+    top: 0;
+    left: 0;
     padding: 1rem;
     @media (min-width: $md) {
         display: none;
@@ -16,5 +19,9 @@
 }
 
 .toggle-keyboard {
-    
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+    font-size: 14px;
+    font-weight: bold;
 }

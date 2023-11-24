@@ -323,6 +323,9 @@ table td, table p {
   }
 }
 .keyboard {
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 1rem;
 }
 @media (min-width: 48em) {
@@ -335,6 +338,14 @@ table td, table p {
   width: 2.4rem;
   height: auto;
   margin: 0.25rem;
+}
+
+.toggle-keyboard {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .visually-hidden {
