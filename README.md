@@ -4,7 +4,7 @@ I decided to rebuild a defunct website from 2001. Donniedarko.com.
 
 It is sort of finished - [donnie.dgw.ltd](https://donnie.dgw.ltd). It was utter madness. It was utter joy. I don't know why. 
 
-Think this might be the first time I needed to include a Table of Contents on this site. 
+Think this might be the first time I needed to include a Table of Contents on a post. 
 
 ![Donnie Darko website screengrab](https://dogwonder.co.uk/wp-content/uploads/2023/11/animation-bg.jpg)
 
@@ -136,9 +136,10 @@ I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the
 
 5. **Pop-up warning**:
    - Pop-up is displayed `news/pop6.html`.
+   - When dismissed a new one displays `news/newspaper6.htm`.
 
-6. **Final Missing Section**:
-   - The SWF files `lamp.swf` and `phone.swf` fail to load, once `phone.swf` fails we redirect to reconstructed page `from/the/sky/transcript.html`
+6. **Missing Section**:
+   - The SWF files `lamp.swf` and `phone.swf` fail to load, once `phone.swf` fails we redirect to reconstructed page `from/the/sky/document.html`
    - End of the game
 
 ---
@@ -156,15 +157,15 @@ I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the
   - For instance, when `/are/you/sleep/golfing/love.swf` is requested, it will now redirect to `/are/you/sleep/golfing/missing/intro.html`.
 
 ### Specific Level Updates:
-- **Level 2 - Second Part:**
-  - *Status:* The original SWF files for this section were not retrievable.
+- **Level 2 - Missing section:**
+  - *Problem:* The original SWF files for this section were not retrievable.
   - *Solution:* A reconstructed version has been implemented.
   - *Navigation:* Upon completing this segment, the game should automatically progress to the new content. If it does not [click here](https://donnie.dgw.ltd/are/you/sleep/golfing/missing/intro.html) to continue.
 
-- **Level 3 - Second Part:**
-  - *Status:* The original SWF files for this section were also unavailable.
+- **Level 3 - Missing section:**
+  - *Problem:* The original SWF files for this section were also unavailable.
   - *Solution:* This segment has been similarly rebuilt.
-  - *Navigation:* After finishing this part of the game [click here](https://donnie.dgw.ltd/from/the/sky/transcript.html) to proceed.
+  - *Navigation:* After finishing this part of the game [click here](https://donnie.dgw.ltd/from/the/sky/missing/document.html) to proceed.
 
 --- 
 
@@ -204,7 +205,7 @@ I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the
 4. from/the/sky/index.html (loads trampolin.swf)
 5. news/pop6.html 
 6. Missing section (lamp.swf, phone.swf)
-    1. from/the/sky/transcript.html
+    1. from/the/sky/missing/document.html
 
 ---
 

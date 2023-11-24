@@ -301,6 +301,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             //Make if visible after a few iterations
             if (frame > 440) {
+                circle2.style.visibility = "visible";
                 dot.style.visibility = "visible";
                 circle2.style.strokeDashoffset = circumference2 - frame / 100 * circumference2;
             }
