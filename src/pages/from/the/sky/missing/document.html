@@ -16,10 +16,14 @@ html body {
 .aspect-ratio canvas {
     width: 100%;
     height: auto;
-    background-image: url("/images/missing/level3/document-clear.jpg");
+    background-image: url("/images/missing/level3/document.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+}
+.scene {
+    width: 100%;
+    height: 100%;
 }
 #animation {
     position: absolute;
@@ -115,6 +119,14 @@ html body {
         visibility: hidden;
     }
 }
+.fade-in {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 {% endcss %}
 
 {% extends "layouts/base.html" %}
@@ -127,7 +139,7 @@ Absolutely position the phone and the rest of the animation
 <div class="flex items-end h-full">
     <div class="aspect-ratio">
         <canvas id="image" width="800" height="500"></canvas>
-        <div id="scene-1">
+        <div class="scene" id="scene-1">
             <svg id="animation" viewBox="0 0 800 500">
             
                 <image x="525" y="175" id="window" width="250" height="250" xlink:href="/images/missing/level3/window-lamp.jpg" />
@@ -168,45 +180,49 @@ Absolutely position the phone and the rest of the animation
                 <p class="launch" id="launch" style="opacity: 0;">>> Launch the document</p>
             </div>
         </div>
-        <div class="transcript"  id="scene-2" style="display:none;">
-            FEDERAL AVIATION ADMINISTRATION<br>
-            OFFICE OF ACCIDENT INVESTIGATION<br>
-            TRANSCRIPT #345512334<br>
-            SOURCE: USA -- WASHINGTON D.C./UNITED KINGDOM -- LONDON<br>
-            DATE: 4/23/91 03:23:26 AM EST<br><br>
-
-            [CALLER 1]: Hello?<br>
-
-            [CALLER 2]: Yes, is this [NAME WITHHELD]?<br>
-
-            [CALLER 1]: Yes.<br>
-
-            [CALLER 2]: This is [NAME WITHHELD]. I apologize for calling you at home, but I am calling from London and this appears to be a very urgent matter.<br>
-
-            [CALLER 1]: I understand. What have you got for me?<br>
-
-            [CALLER 2]: We have run the tests on the engine parts that you sent to Heathrow and I have some rather conclusive results to share with you.<br>
-
-            [CALLER 1]: Do we have a match?<br>
-
-            [CALLER 2]: Indeed we do. The parts from engine x that you sent appear to be exact replicas from the [NAME WITHHELD] 747 that just returned from Honolulu. We have compared the serial numbers and they are exact matches.<br>
-
-            [CALLER 1]: Are you sure of this? I need confirmation on all of the parts sent.<br>
-
-            [CALLER 2]: Not only can I give you confirmation on all of the parts, I can confirm that the handpainted spiral is identical to the [NAME WITHHELD] 747 design. We have detailed proof that the designs are identical down to the fraction of an inch.<br>
-
-            [CALLER 2]: Now I am at a loss as to how an exact replica of this engine could have fallen from a plane in your country on the evening in question. I have charted the flight records from this aircraft and I can confirm that this plane was en route to San Francisco from Denver, Colorado on the night of October 2, 1988. It landed safely at approximately 4:30 in the morning. We have confirmation on this plane as having been fully operational for international and domestic flights for more than six years.<br>
-
-            [CALLER 2]: I must tell you that we are all at a loss as to how this could have occurred. It appears to defy logical explanation and we are all quite astonished with the information we have retrieved.<br>
-
-            [CALLER 2]: How would you like to proceed in this matter?<br>
-
-            [CALLER 2]: Hello? Are you still there? Hello?<br>
-
-            &lt;&lt;&lt;&lt;&lt;&lt;&lt;DISCONNECT<br>
+        <div class="scene" id="scene-2" style="display:none;">
+            <div id="transcript" class="transcript">
+                FEDERAL AVIATION ADMINISTRATION<br>
+                OFFICE OF ACCIDENT INVESTIGATION<br>
+                TRANSCRIPT #345512334<br>
+                SOURCE: USA -- WASHINGTON D.C./UNITED KINGDOM -- LONDON<br>
+                DATE: 4/23/91 03:23:26 AM EST<br><br>
+    
+                [CALLER 1]: Hello?<br>
+    
+                [CALLER 2]: Yes, is this [NAME WITHHELD]?<br>
+    
+                [CALLER 1]: Yes.<br>
+    
+                [CALLER 2]: This is [NAME WITHHELD]. I apologize for calling you at home, but I am calling from London and this appears to be a very urgent matter.<br>
+    
+                [CALLER 1]: I understand. What have you got for me?<br>
+    
+                [CALLER 2]: We have run the tests on the engine parts that you sent to Heathrow and I have some rather conclusive results to share with you.<br>
+    
+                [CALLER 1]: Do we have a match?<br>
+    
+                [CALLER 2]: Indeed we do. The parts from engine x that you sent appear to be exact replicas from the [NAME WITHHELD] 747 that just returned from Honolulu. We have compared the serial numbers and they are exact matches.<br>
+    
+                [CALLER 1]: Are you sure of this? I need confirmation on all of the parts sent.<br>
+    
+                [CALLER 2]: Not only can I give you confirmation on all of the parts, I can confirm that the handpainted spiral is identical to the [NAME WITHHELD] 747 design. We have detailed proof that the designs are identical down to the fraction of an inch.<br>
+    
+                [CALLER 2]: Now I am at a loss as to how an exact replica of this engine could have fallen from a plane in your country on the evening in question. I have charted the flight records from this aircraft and I can confirm that this plane was en route to San Francisco from Denver, Colorado on the night of October 2, 1988. It landed safely at approximately 4:30 in the morning. We have confirmation on this plane as having been fully operational for international and domestic flights for more than six years.<br>
+    
+                [CALLER 2]: I must tell you that we are all at a loss as to how this could have occurred. It appears to defy logical explanation and we are all quite astonished with the information we have retrieved.<br>
+    
+                [CALLER 2]: How would you like to proceed in this matter?<br>
+    
+                [CALLER 2]: Hello? Are you still there? Hello?<br>
+    
+                &lt;&lt;&lt;&lt;&lt;&lt;&lt;DISCONNECT<br>
+            </div>
         </div>
-        <div class="times-up text-dark"  id="scene-3" style="opacity: 0;">
-            time is up, donnie
+        <div class="scene" id="scene-3">
+            <div class="times-up text-dark" id="times-up" style="opacity: 0;">
+                time is up, donnie
+            </div>
         </div>
     </div>
 </div>
@@ -337,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function animateDocument() {
 
-        //Wait 1 second
+        //Wait 2 seconds
         await sleep(2000);
 
         //Load MP3 file
@@ -347,10 +363,10 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('words').style.display = 'block';
         ddScripts.animateText('words');
 
-
     };
 
     async function animateLaunch() {
+
         await sleep(3250);
         //Add a blinking cursor at the end of the text
         const cursor = document.createElement('span');
@@ -368,15 +384,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
         scene1.style.display = 'none';
         scene2.style.display = 'block';
+
+        //Fade it in 
+        let element = document.querySelector('.aspect-ratio canvas');
+        element.style.backgroundImage = "url('/images/missing/level3/transcript.jpg')";
+        element.classList.add('fade-in');
         
-        ddScripts.animateText('scene-2');
+        ddScripts.animateText('transcript');
 
         //Wait 24 seconds
         await sleep(24000);
 
         scene2.style.display = 'none';
-        scene3.style.transition = 'opacity 1s ease-in-out';
-        scene3.style.opacity = 1;
+        scene3.style.display = 'block';
+        document.getElementById('times-up').style.transition = 'opacity 1s ease-in-out';
+        document.getElementById('times-up').style.opacity = 1;
 
     }
 

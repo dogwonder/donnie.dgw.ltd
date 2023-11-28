@@ -147,8 +147,8 @@ I also rebuilt the [archived guide](https://donnie.dgw.ltd/aid/aid1.html) to the
 ## Missing parts and notes
 
 ### Desktop Recommended for Optimal Experience
-- **Keyboard Input:** This application is best experienced on a desktop due to its reliance on keyboard input. Although I have tried to implement a mobile keyboard for this.
-- **Know issues:** 
+- **Keyboard Input:** This application is best experienced on a desktop due to its reliance on keyboard input. Although I have tried to implement a mobile keyboard for this some parts require direct keyboard access.
+- **Known issues:** 
    - Occasionally, new tabs may not function properly and the game can't be progressed. If this occurs, it's recommended to return to the [main menu](https://donnie.dgw.ltd/menu.html) and restart the process. Or make sure only one tab is open. 
    - Also you know this is Flash, In 2023. So there's that. 
 
@@ -239,7 +239,6 @@ document.addEventListener('keyPress', function(e) {
    }
 });
 ```
-
 
 
 ---
