@@ -288,7 +288,7 @@ table td, table p {
 }
 .aspect-ratio > img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .interlace {
