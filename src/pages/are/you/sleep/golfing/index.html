@@ -35,9 +35,9 @@ p > a {
 {% extends "layouts/base.html" %}
 
 {% block content %}
-
 <div class="flex items-start justify-end flex-col h-full">
     <div id="swf" class="ruffle-container"></div>
+    <p class="text m-2"><a href="/sparkle/motion/index.html">After this part has finished go to the next step</a></p>
 </div>
 {% endblock %}
 
@@ -58,26 +58,27 @@ window.addEventListener("load", (event) => {
 });
 
 
-let observer = new PerformanceObserver((list) => {
-    for (let entry of list.getEntries()) {
-        if (entry.name.includes('love.swf')) {
-            fetch('/are/you/sleep/golfing/love.swf')
-                .then(response => {
-                    if (!response.ok) {
-                        // If the response is not successful, redirect
-                        window.location.href = '/are/you/sleep/golfing/missing/intro.html';
-                    }
-                    // Handle successful response
-                })
-                .catch(error => {
-                    // Handle network errors
-                    window.location.href = '/are/you/sleep/golfing/missing/intro.html';
-                });
-        }
-    }
-});
+// let observer = new PerformanceObserver((list) => {
+//     for (let entry of list.getEntries()) {
+//         if (entry.name.includes('love.swf')) {
+//             fetch('/are/you/sleep/golfing/love.swf')
+//                 .then(response => {
+//                     if (!response.ok) {
+//                         // If the response is not successful, redirect
+//                         window.location.href = '/are/you/sleep/golfing/missing/intro.html';
+//                     }
+//                     // Handle successful response
+//                 })
+//                 .catch(error => {
+//                     // Handle network errors
+//                     window.location.href = '/are/you/sleep/golfing/missing/intro.html';
+//                 });
+//         }
+//     }
+// });
 
-observer.observe({ entryTypes: ['resource'] });
+// observer.observe({ entryTypes: ['resource'] });
+
 
 </script>
 {% endblock %}
