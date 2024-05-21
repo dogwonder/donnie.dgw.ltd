@@ -19,7 +19,7 @@ var ddScripts = {
 
     },
 
-    animateText: function(element, audioFile) {
+  animateText: function(element, audioFile) {
       const text = document.getElementById(element);
       // If no text is found bail
       if (!text) return;
