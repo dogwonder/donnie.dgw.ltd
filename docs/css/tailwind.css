@@ -616,6 +616,10 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }

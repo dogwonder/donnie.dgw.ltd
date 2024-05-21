@@ -399,3 +399,10 @@ table td, table p {
 .stack > * + * {
   margin-block-start: var(--space-m);
 }
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: white;
+}
